@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CollectablesSheet.png-b8110bca0f79813c66364c1cd00f227f.stex"
+path="res://.import/sal_klas1.png-81bdde5102bd1f603a91dae99b6b654f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/CollectablesSheet.png"
-dest_files=[ "res://.import/CollectablesSheet.png-b8110bca0f79813c66364c1cd00f227f.stex" ]
+source_file="res://assets/scenes/sal_klas1.png"
+dest_files=[ "res://.import/sal_klas1.png-81bdde5102bd1f603a91dae99b6b654f.stex" ]
 
 [params]
 
