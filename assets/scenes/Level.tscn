@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scenes/Kelenner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scenes/sal_klas1.png" type="Texture" id=3]
-[ext_resource path="res://assets/scripts/poentou.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/LabelScore.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/LabelTime.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -107,6 +107,17 @@ margin_right = 813.111
 margin_bottom = 53.2862
 text = "Amzer: xxxxx"
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLetters" type="Label" parent="."]
+margin_left = 728.0
+margin_top = 59.0
+margin_right = 936.0
+margin_bottom = 183.0
+text = "Letters: "
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
