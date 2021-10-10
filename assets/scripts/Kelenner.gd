@@ -96,13 +96,13 @@ func heart_attack(aimed : bool):
 	bullet.radius = 6
 	
 	var pattern_left = Pattern.new(self, bullet)
-	pattern_left.number = 20
-	pattern_left.angle_step = 0.15
+	pattern_left.number = 16
+	pattern_left.angle_step = 0.17
 	pattern_left.rate = 0.1
 	
 	var pattern_right = Pattern.new(self, bullet)
-	pattern_right.number = 20
-	pattern_right.angle_step = -0.15
+	pattern_right.number = 16
+	pattern_right.angle_step = -0.17
 	pattern_right.rate = 0.1
 	
 	if aimed:

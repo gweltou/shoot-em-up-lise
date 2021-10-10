@@ -39,3 +39,5 @@ func _on_Area2D_area_entered(area):
 	if area.get_owner() is Bullet:
 		var bullet = area.get_owner()
 		swag += bullet.hitval
+		if bullet.letter != '':
+			get_parent().get_node("LabelLetters").text += bullet.letter
