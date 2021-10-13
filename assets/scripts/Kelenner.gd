@@ -55,11 +55,15 @@ func _process(delta):
 		else:
 			shoot_random()
 		fire_time = FIRE_RATE
+	
 	move_time += delta
 	if move_time > 3:
 		move_time = 0
 		destination = choose_destination()
-	position += (destination-position).normalized()   ##finvadenn ar gelenner
+	
+	var to_dest = destination-position
+	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
+		position += to_dest.normalized() * 2   ##finvadenn ar gelenner
 
 
 

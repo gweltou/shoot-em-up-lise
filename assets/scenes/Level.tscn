@@ -67,7 +67,7 @@ shape = SubResource( 1 )
 position = Vector2( 557.236, 478.998 )
 shape = SubResource( 1 )
 
-[node name="Podium" type="CollisionShape2D" parent="Tables"]
+[node name="Estrade" type="CollisionShape2D" parent="Tables"]
 position = Vector2( 481.982, 123.373 )
 shape = SubResource( 2 )
 
