@@ -21,7 +21,7 @@ func _draw():
 #	pass
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var vel = Vector2()
 	if Input.is_action_pressed("move_up"):
 		vel.y -= 1

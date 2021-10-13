@@ -7,12 +7,12 @@ onready var player = get_parent().get_node("Player")
 var type = 0
 var direction = Vector2(0, 1)  # Normalized vector
 var speed = 100
-var drag = 0        # Air friction drag, between 0 and 1
-var lifetime = 8    # In seconds
+var drag = 0        	# Air friction drag, between 0 and 1
+var lifetime = 8    	# In seconds
 var hitval = 0
 var radius = 8 setget set_radius
 var letter = ""
-var homing = false
+var homing = false		# Bullet follows player
 
 
 # Called when the node enters the scene tree for the first time.
@@ -52,7 +52,7 @@ func _draw():
 	
 	if letter != "":
 		var font = GameVariables.bullet_font
-		var offset = GameVariables.bullet_font_size / 2
+		var offset = GameVariables.bullet_font_size / 2.0
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
 
 
