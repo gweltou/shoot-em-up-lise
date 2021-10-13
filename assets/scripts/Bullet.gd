@@ -44,7 +44,7 @@ func _draw():
 	if hitval > 0:
 		col = Color(0, 1, 0)
 	elif hitval < 0:
-		col = Color(1, 0, 0)
+		col = Color(1, 1, 0)
 	draw_circle(Vector2(0, 0), radius, col)
 	
 	if letter != "":
