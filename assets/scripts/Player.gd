@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		vel.x += 1
 	
-	move_and_slide(vel * MOVE_SPEED)
+	move_and_slide(vel.normalized() * MOVE_SPEED)
 
 
 func _on_Area2D_area_entered(area):
