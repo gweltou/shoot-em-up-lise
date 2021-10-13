@@ -2,7 +2,6 @@ extends Node2D
 class_name Bullet
 
 
-# Declare member variables here. Examples:
 var type = 0
 var direction = Vector2(0, 1)  # Normalized vector
 
@@ -48,8 +47,9 @@ func _draw():
 	draw_circle(Vector2(0, 0), radius, col)
 	
 	if letter != "":
-		var font = Control.new().get_font("font")
-		draw_string(font, Vector2(-4, 4), letter, Color(0, 0, 0))
+		var font = GameVariables.bullet_font
+		var offset = GameVariables.bullet_font_size / 2
+		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
 
 
 func _on_Area2D_body_entered(_body):
