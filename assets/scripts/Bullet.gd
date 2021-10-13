@@ -1,10 +1,11 @@
 extends Node2D
 class_name Bullet
 
+onready var player = get_parent().get_node("Player")
+
 
 var type = 0
 var direction = Vector2(0, 1)  # Normalized vector
-
 var speed = 100
 var drag = 0        # Air friction drag, between 0 and 1
 var lifetime = 8    # In seconds
@@ -20,7 +21,10 @@ func _ready():
 
 
 func _physics_process(delta):
-	
+	if homing:
+		var to_player = player.position - position
+		var a = direction.angle_to(to_player) * 0.016
+		direction = direction.rotated(a)
 	position += direction * speed * delta
 	speed = speed * (1 - drag * delta)
 

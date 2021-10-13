@@ -71,6 +71,7 @@ func shoot_random():
 	var bullet = Bullet.instance()
 	bullet.radius = 9
 	bullet.hitval = -1
+	bullet.homing = false
 	
 	var angle = randf() * 2 * PI
 	shoot(bullet, angle)
