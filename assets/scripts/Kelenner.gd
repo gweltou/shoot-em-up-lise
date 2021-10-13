@@ -31,9 +31,11 @@ var patterns = []
 func _ready():
 	destination = choose_destination()
 
+
 func _draw():
 	var vertices = [Vector2(-12, -10), Vector2(12, -10), Vector2(12, 30), Vector2(-12, 30)]
 	draw_colored_polygon(vertices, Color(0, 0, 1))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -65,6 +67,17 @@ func _process(delta):
 	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
 		position += to_dest.normalized() * 2   ##finvadenn ar gelenner
 
+
+func choose_destination():
+	var max_x = estrade.position.x + estrade.shape.extents.x
+	var min_x = estrade.position.x - estrade.shape.extents.x
+	var max_y = estrade.position.y + estrade.shape.extents.y
+	var min_y = estrade.position.y - estrade.shape.extents.y
+	var new_destination = Vector2()
+	randomize()
+	new_destination.x = randf() * (max_x - min_x) + min_x
+	new_destination.y = randf() * (max_y - min_y) + min_y
+	return new_destination
 
 
 func shoot_random():
@@ -140,8 +153,8 @@ class Pattern:
 	var time_counter = 0
 	var ended = false
 	
-	func _init(parent : Kelenner, b : Bullet):
-		self.parent = parent
+	func _init(p : Kelenner, b : Bullet):
+		self.parent = p
 		self.bullet = b.copy()
 	
 	func set_aimed(v):
@@ -164,15 +177,3 @@ class Pattern:
 				time_counter = 0
 				if number <= 0:
 					ended = true
-
-
-func choose_destination():
-	var max_x = estrade.position.x + estrade.shape.extents.x
-	var min_x = estrade.position.x - estrade.shape.extents.x
-	var max_y = estrade.position.y + estrade.shape.extents.y
-	var min_y = estrade.position.y - estrade.shape.extents.y
-	var new_destination = Vector2()
-	randomize()
-	new_destination.x = randf() * (max_x - min_x) + min_x
-	new_destination.y = randf() * (max_y - min_y) + min_y
-	return new_destination
