@@ -3,9 +3,13 @@ class_name Kelenner
 
 onready var Bullet = preload("res://assets/scenes/Bullet.tscn")
 onready var player = get_parent().get_node("Player")
+onready var estrade = get_owner().get_node("Tables/Estrade")
+
 
 #enum {IDLE, WALKING, PATTERN1}
 #var state = IDLE
+var destination = Vector2()
+var move_time = 0.0
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
@@ -25,8 +29,7 @@ var patterns = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	destination = choose_destination()
 
 func _draw():
 	var vertices = [Vector2(-12, -10), Vector2(12, -10), Vector2(12, 30), Vector2(-12, 30)]
@@ -52,6 +55,12 @@ func _process(delta):
 		else:
 			shoot_random()
 		fire_time = FIRE_RATE
+	move_time += delta
+	if move_time > 3:
+		move_time = 0
+		destination = choose_destination()
+	position += (destination-position).normalized()   ##finvadenn ar gelenner
+
 
 
 func shoot_random():
@@ -150,3 +159,15 @@ class Pattern:
 				time_counter = 0
 				if number <= 0:
 					ended = true
+
+
+func choose_destination():
+	var max_x = estrade.position.x + estrade.shape.extents.x
+	var min_x = estrade.position.x - estrade.shape.extents.x
+	var max_y = estrade.position.y + estrade.shape.extents.y
+	var min_y = estrade.position.y - estrade.shape.extents.y
+	var new_destination = Vector2()
+	randomize()
+	new_destination.x = randf() * (max_x - min_x) + min_x
+	new_destination.y = randf() * (max_y - min_y) + min_y
+	return new_destination
