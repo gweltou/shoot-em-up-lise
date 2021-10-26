@@ -33,7 +33,7 @@ func _ready():
 
 
 func _draw():
-	var vertices = [Vector2(-12, -10), Vector2(12, -10), Vector2(12, 30), Vector2(-12, 30)]
+	var vertices = [Vector2(-12, 0), Vector2(12, 0), Vector2(12, 30), Vector2(-12, 30)]
 	draw_colored_polygon(vertices, Color(0, 0, 1))
 
 
@@ -42,7 +42,7 @@ func _process(delta):
 	# Execute every patterns in queue and remove finished ones
 	var new_patterns = []
 	for p in patterns:
-		p.update(delta)
+#		p.update(delta)
 		if not p.ended:
 			new_patterns.append(p)
 	patterns = new_patterns
@@ -50,7 +50,7 @@ func _process(delta):
 	fire_time -= delta
 	if fire_time <= 0:
 		if randf() < 0.1:
-			heart_attack(true)
+			fivestar_attack(true)
 		elif randf() < 0.1:
 			var n = randi()%len(words)
 			shoot_word(words[n])
@@ -82,7 +82,7 @@ func choose_destination():
 
 func shoot_random():
 	var bullet = Bullet.instance()
-	bullet.radius = 9
+	bullet.radius = 5
 	bullet.hitval = -1
 	bullet.homing = false
 	
@@ -115,19 +115,31 @@ func shoot_word(word):
 		angle -= angle_step
 
 
-func heart_attack(aimed : bool):		
+func fivestar_attack(aimed : bool):
+	var bullet = Bullet.instance()
+	bullet.speed = 100
+	bullet.hitval = -0.5
+	bullet.radius = 6
+	bullet.homing = true
+	
+	var pattern = StarPattern.new(self, bullet)
+	pattern.number = 5
+	pattern.aimed = true
+
+
+func heart_attack(aimed : bool):
 	var bullet = Bullet.instance()
 	bullet.speed = 160
 	bullet.drag = 0.3
 	bullet.hitval = -0.5
 	bullet.radius = 6
 	
-	var pattern_left = Pattern.new(self, bullet)
+	var pattern_left = SequencePattern.new(self, bullet)
 	pattern_left.number = 16
 	pattern_left.angle_step = 0.17
 	pattern_left.rate = 0.1
 	
-	var pattern_right = Pattern.new(self, bullet)
+	var pattern_right = SequencePattern.new(self, bullet)
 	pattern_right.number = 16
 	pattern_right.angle_step = -0.17
 	pattern_right.rate = 0.1
@@ -135,45 +147,3 @@ func heart_attack(aimed : bool):
 	if aimed:
 		pattern_left.aimed = true
 		pattern_right.aimed = true
-	
-	patterns.append(pattern_left)
-	patterns.append(pattern_right)
-
-
-## Pattern attacks
-class Pattern:
-	var parent : Kelenner
-	var bullet : Bullet
-	var rate = 0.2		# Rate of fire (in seconds)
-	var number = 4		# Number of bullets in pattern
-	var angle = PI * 0.5	# Start angle of pattern
-	var angle_step = 0.2	# Angle between each bullet
-	var delay = 0			# Delay before start of pattern (in seconds)
-	var aimed = false setget set_aimed
-	var time_counter = 0
-	var ended = false
-	
-	func _init(p : Kelenner, b : Bullet):
-		self.parent = p
-		self.bullet = b.copy()
-	
-	func set_aimed(v):
-		aimed = v
-		if aimed:
-			var player = parent.get_parent().get_node("Player")
-			angle = parent.position.angle_to_point(player.position) + PI
-		else:
-			angle = PI * 0.5
-	
-	func update(delta):
-		if delay > 0:
-			delay -= delta
-		else:
-			time_counter += delta
-			if time_counter >= rate:
-				parent.shoot(bullet.copy(), angle)
-				number -= 1
-				angle += angle_step
-				time_counter = 0
-				if number <= 0:
-					ended = true

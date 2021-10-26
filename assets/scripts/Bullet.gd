@@ -1,18 +1,19 @@
 extends Node2D
 class_name Bullet
 
+
 onready var player = get_parent().get_node("Player")
 
 
 var type = 0
-var direction = Vector2(0, 1)  # Normalized vector
+var direction = Vector2(0, 1)	# Normalized vector
 var speed = 100
-var drag = 0        	# Air friction drag, between 0 and 1
-var lifetime = 8    	# In seconds
-var hitval = 0
+var drag = 0        			# Air friction drag, between 0 and 1
+var lifetime = 8				# In seconds
+var hitval = 0					# Score added or reduces when player is hit
 var radius = 8 setget set_radius
 var letter = ""
-var homing = false		# Bullet follows player
+var homing = false				# Bullet follows player
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,7 @@ func _physics_process(delta):
 		var to_player = player.position - position
 		var a = direction.angle_to(to_player) * 0.016
 		direction = direction.rotated(a)
+	
 	position += direction * speed * delta
 	speed = speed * (1 - drag * delta)
 

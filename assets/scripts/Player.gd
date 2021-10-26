@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
+
 const MOVE_SPEED = 250
 
 var swag = 0
