@@ -1,19 +1,25 @@
 Prototip Shoot 'Em Up savet el lise
 
+## Shooting bullets
 
-## Impli "pattern"-où evit bannadelloù al liveoù SEU
-3 doare pattern a zo :
-StarPattern
-Tennet e vez n bannadell er memes amzer, strevet tro dro d'ar banner.
 
-FanPattern
-Shoot number bullets at same time within a sector of angle_spread angle.
+## Building bullet patterns
+There is 3 kind of bullet patterns pre-built :
 
-SequencePattern
-Tennet e vez number bannadell, o c'hortoz t amzer etre pep bannadell a gant angle_step derez (e radians) etre pep bannadell.
-var rate = 0.2						# Rate of fire (in seconds)
+### StarPattern
+Shoot `number` bullets at the same time, evenly spaced around the thrower.
+
+### FanPattern
+Shoot `number` bullets at same time within a sector of `angle_spread` angle.
+
+### SequencePattern
+Shoot `number` bullets, one after the other with a interval time of `rate` and with an angle of `angle_step` between each bullet.
+
+```gdscript
+# Default values
+var rate = 0.2					# Rate of fire (in seconds)
 var angle_step = 0.2				# Angle between each bullet
-
+```
 
 ## Da ober :
  * Diabarzhañ tresadennoù Loula
