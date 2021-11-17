@@ -1,8 +1,8 @@
-Prototip Shoot 'Em Up savet el lise
+# Prototip Shoot 'Em Up savet el lise
 
 ## Shooting bullets
 
-Intanciating a bullet and change its parameters :
+Intanciating a bullet and changing its parameters :
 ```gdscript
 var bullet = Bullet.instance()
 bullet.speed = 150
@@ -17,7 +17,7 @@ Below is a list of parameters you can change to change the bullet's behaviour :
 `hitval` : score penalty (if negative) or bonus (if positive) when bullet hits the player \
 `radius` : collision radius of the bullet (defaults to 8) \
 `homing` : bullet will follow player if true (true/false, defaults to false) \
-`letter` : bullet will be the specified letter \
+`letter` : bullet will be the specified letter
 
 ## Building bullet patterns
 
@@ -41,7 +41,7 @@ For every kind of bullet pattern you have access to those parameters:
 
 `number` : number of bullets to be shot (integer) \
 `delay` : delay before start of the pattern (in seconds) \
-`aimed` : is the pattern aimed in the direction of the player ? (true/false) \
+`aimed` : is the pattern aimed in the direction of the player ? (true/false)
 
 There is 3 kind of pre-built bullet patterns :
 
