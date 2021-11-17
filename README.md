@@ -10,21 +10,38 @@ bullet.hitval = -1
 ```
 
 Below is a list of parameters you can change to change the bullet's behaviour :
-`speed` : Flying speed of the bullet (defaults to 100) \\
-`drag` : Air friction, will slow bullet down if positive (defaults to 0)
-`lifetime` : Bullet will disapear after the specified time (in seconds, defaults to 8s)
-`hitval` : score penalty (if negative) or bonus (if positive) when bullet hits the player
-`radius` : collision radius of the bullet (defaults to 8)
-`homing` : bullet will follow player if true (true/false, defaults to false)
-`letter` : bullet will be the specified letter 
+
+`speed` : Flying speed of the bullet (defaults to 100) \
+`drag` : Air friction, will slow bullet down if positive (defaults to 0) \
+`lifetime` : Bullet will disapear after the specified time (in seconds, defaults to 8s) \
+`hitval` : score penalty (if negative) or bonus (if positive) when bullet hits the player \
+`radius` : collision radius of the bullet (defaults to 8) \
+`homing` : bullet will follow player if true (true/false, defaults to false) \
+`letter` : bullet will be the specified letter \
 
 ## Building bullet patterns
 
+To build a pattern, first create a bullet. This bullet will serve as template for the whole pattern. \
+The pattern will be automatically added to the game tree when instanciated and will be automatically removed when used. \
+For example :
+
+```gdscript
+func fivestar_attack():
+	var bullet = Bullet.instance()
+	bullet.speed = 100
+	bullet.hitval = -0.5
+	bullet.radius = 6
+	bullet.homing = true
+	
+	var pattern = StarPattern.new(self, bullet)
+	pattern.number = 5
+```
+
 For every kind of bullet pattern you have access to those parameters:
 
-`number` : number of bullets to be shot (integer)
-`delay` : delay before start of the pattern (in seconds)
-`aimed` : is the pattern aimed in the direction of the player ? (true/false)
+`number` : number of bullets to be shot (integer) \
+`delay` : delay before start of the pattern (in seconds) \
+`aimed` : is the pattern aimed in the direction of the player ? (true/false) \
 
 There is 3 kind of pre-built bullet patterns :
 
@@ -34,13 +51,18 @@ Shoot `number` bullets at the same time, evenly spaced around the thrower.
 ### FanPattern
 Shoot `number` bullets at same time within a sector of `angle_cone` angle (in radian).
 
+```gdscript
+# Default values
+var angle_cone = PI / 3
+```
+
 ### SequencePattern
 Shoot `number` bullets, one after the other with a interval time of `rate` and with an angle of `angle_step` between each bullet.
 
 ```gdscript
 # Default values
 var rate = 0.2					# Rate of fire (in seconds)
-var angle_step = 0.2				# Angle between each bullet
+var angle_step = 0.2			# Angle between each bullet
 ```
 
 ## Da ober :
