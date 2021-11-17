@@ -2,7 +2,7 @@ extends _BulletPattern
 class_name FanPattern
 
 
-var angle_spread = PI / 3			# Angle of 
+var angle_cone = PI / 3			# Angle of shooting cone/sector
 
 
 func _init(t , b : Bullet).(t, b):
@@ -17,7 +17,9 @@ func _process(delta):
 	if self.delay > 0:
 		self.delay -= delta
 	else:
-		var angle_step = 2 * PI / self.number
+		get_aim()
+		var angle_step = angle_cone / (self.number - 1)
+		self.angle -= (self.number - 1) * 0.5 * angle_step
 		for i in range(self.number):
 			self._thrower.shoot(self._bullet.copy(), self.angle)
 			self.angle += angle_step

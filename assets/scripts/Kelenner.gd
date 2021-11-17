@@ -50,7 +50,9 @@ func _process(delta):
 	fire_time -= delta
 	if fire_time <= 0:
 		if randf() < 0.1:
-			fivestar_attack(true)
+			fivestar_attack()
+			#heart_attack(true)
+			#double_bullet_attack()
 		elif randf() < 0.1:
 			var n = randi()%len(words)
 			shoot_word(words[n])
@@ -115,7 +117,7 @@ func shoot_word(word):
 		angle -= angle_step
 
 
-func fivestar_attack(aimed : bool):
+func fivestar_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 100
 	bullet.hitval = -0.5
@@ -124,6 +126,18 @@ func fivestar_attack(aimed : bool):
 	
 	var pattern = StarPattern.new(self, bullet)
 	pattern.number = 5
+
+
+func double_bullet_attack():
+	var bullet = Bullet.instance()
+	bullet.speed = 250
+	bullet.drag = 0
+	bullet.hitval = -1
+	bullet.radius = 8
+	
+	var pattern = FanPattern.new(self, bullet)
+	pattern.number = 2
+	pattern.angle_cone = 0.1
 	pattern.aimed = true
 
 

@@ -15,6 +15,7 @@ func _process(delta):
 	if self.delay > 0:
 		self.delay -= delta
 	else:
+		get_aim()
 		var angle_step = 2 * PI / self.number
 		for i in range(self.number):
 			self._thrower.shoot(self._bullet.copy(), self.angle)
