@@ -2,7 +2,7 @@ Prototip Shoot 'Em Up savet el lise
 
 ## Shooting bullets
 
-You'll need to intanciate a bullet with
+Intanciating a bullet and change its parameters :
 ```gdscript
 var bullet = Bullet.instance()
 bullet.speed = 150
@@ -10,7 +10,7 @@ bullet.hitval = -1
 ```
 
 Below is a list of parameters you can change to change the bullet's behaviour :
-`speed` : Flying speed of the bullet (defaults to 100)
+`speed` : Flying speed of the bullet (defaults to 100) \\
 `drag` : Air friction, will slow bullet down if positive (defaults to 0)
 `lifetime` : Bullet will disapear after the specified time (in seconds, defaults to 8s)
 `hitval` : score penalty (if negative) or bonus (if positive) when bullet hits the player
