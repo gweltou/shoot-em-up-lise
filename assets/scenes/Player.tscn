@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://seu/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/collect_letter.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/collect_word.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -17,5 +19,15 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[node name="LetterSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+pitch_scale = 1.4
+
+[node name="WordSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+pitch_scale = 0.9
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

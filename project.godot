@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://assets/scripts/Bullet.gd"
+"path": "res://seu/Bullet.gd"
 }, {
 "base": "_BulletPattern",
 "class": "FanPattern",
@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Kelenner",
 "language": "GDScript",
-"path": "res://assets/scripts/Kelenner.gd"
+"path": "res://seu/Kelenner.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://assets/scripts/Player.gd"
+"path": "res://seu/Player.gd"
 }, {
 "base": "_BulletPattern",
 "class": "SequencePattern",
@@ -65,7 +65,7 @@ config/icon="res://icon.png"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
-GameVariables="*res://assets/scripts/GameVariables.gd"
+GameVariables="*res://GameVariables.gd"
 
 [editor_plugins]
 
