@@ -20,7 +20,7 @@ func _process(delta):
 		get_aim()
 		var angle_step = angle_cone / (self.number - 1)
 		self.angle -= (self.number - 1) * 0.5 * angle_step
-		for i in range(self.number):
+		for _i in range(self.number):
 			self._thrower.shoot(self._bullet.copy(), self.angle)
 			self.angle += angle_step
 		.queue_free()

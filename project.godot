@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Shooter Lise"
-run/main_scene="res://assets/scenes/Level.tscn"
+run/main_scene="res://seu/Level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -117,7 +117,3 @@ move_right={
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://assets/scenes/default_env.tres"
