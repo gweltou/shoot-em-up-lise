@@ -73,7 +73,7 @@ func set_letter(l):
 
 
 func copy():
-	var new_bullet = load("res://assets/scenes/Bullet.tscn").instance()
+	var new_bullet = load("res://seu/Bullet.tscn").instance()
 	new_bullet.type = type
 	new_bullet.speed = speed
 	new_bullet.drag = drag

@@ -1,7 +1,7 @@
 extends Node2D
 class_name Kelenner
 
-onready var Bullet = preload("res://assets/scenes/Bullet.tscn")
+onready var Bullet = preload("res://seu/Bullet.tscn")
 onready var player = get_parent().get_node("Player")
 onready var estrade = get_owner().get_node("Tables/Estrade")
 
