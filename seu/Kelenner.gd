@@ -10,6 +10,8 @@ onready var estrade = get_owner().get_node("Tables/Estrade")
 #var state = IDLE
 var destination = Vector2()
 var move_time = 0.0
+var wait_time = 0.0
+
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
@@ -30,7 +32,7 @@ var patterns = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	destination = choose_destination()
-
+	randomize()
 
 func _draw():
 	var vertices = [Vector2(-12, 0), Vector2(12, 0), Vector2(12, 30), Vector2(-12, 30)]
@@ -59,11 +61,12 @@ func _process(delta):
 		else:
 			shoot_random()
 		fire_time = FIRE_RATE
-	
 	move_time += delta
-	if move_time > 3:
+	if move_time > wait_time :
 		move_time = 0
+		wait_time = rand_range(1.0, 5.0)
 		destination = choose_destination()
+
 	
 	var to_dest = destination-position
 	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
