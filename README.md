@@ -66,8 +66,8 @@ var angle_step = 0.2			# Angle between each bullet
 ```
 
 ## Cheñch amzer gortoz ar c'hellener etre pep fiñvadenn
-Kellener.gd
-func _process -> if move_time > wait_time:
+Kellener.gd \
+func _process -> if move_time > wait_time: \
 cheñch talvoudou ar range_range()
 
 ## Da ober :
