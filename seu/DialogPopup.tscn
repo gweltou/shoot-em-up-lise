@@ -1,58 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://seu/DialogPopup.gd" type="Script" id=1]
 [ext_resource path="res://seu/dialogPanel.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=1]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rect_scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath(".:rect_scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "open_dialog"
-length = 0.3
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rect_scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.25 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath(".:rect_scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.05, 0.3 )
-}
-
 [node name="DialogPopup" type="NinePatchRect"]
-margin_right = 91.0
-margin_bottom = 29.0
+margin_left = 4.84844
+margin_top = 6.46887
+margin_right = 22.8484
+margin_bottom = 24.4689
 texture = ExtResource( 2 )
 patch_margin_left = 9
 patch_margin_top = 9
@@ -62,22 +17,16 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-text = "Dialog box"
 
 [node name="Label" type="Label" parent="."]
 margin_left = 12.0
 margin_top = 8.0
-margin_right = 80.0
-margin_bottom = 22.0
 rect_clip_content = true
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Dialog box"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/open_dialog = SubResource( 2 )
+[node name="Tween" type="Tween" parent="."]
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
