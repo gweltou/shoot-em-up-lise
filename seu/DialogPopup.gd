@@ -1,36 +1,34 @@
-tool
 extends NinePatchRect
 class_name DialogPopup
 
-export var text : String = "Dialog Box" setget set_text
+var text : String
 var writing : bool = false
 var waiting : bool = false
 const letterDelay = 0.04
 var letterIdx : int = 0
 var timeCounter = 0
 
+onready var font = $Label.get_font("font")
+onready var tween = $Tween
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	visible = false
+	rect_size = Vector2()
+	
+
+func say(t : String):
+	var toSize = font.get_string_size(t) + Vector2(24, 15)
+	self.rect_position = Vector2(-toSize.x / 2, -toSize.y - 10)
+	self.text = t
 	$Label.text = ""
-	var font = $Label.get_font("font")
-	self.rect_size = font.get_string_size(self.text) + Vector2(24, 15)
-	self.rect_pivot_offset += self.rect_size * 0.5
-	self.rect_position -= Vector2(self.rect_size.x/2, self.rect_size.y + 12)
-	$AnimationPlayer.play("open_dialog", -1, 0.4)
-
-
-func set_text(txt : String):
-	text = txt
 	self.letterIdx = 0
 	self.timeCounter = 0
-	if Engine.editor_hint:
-		$Label.text = self.text
-		var font = $Label.get_font("font")
-		self.rect_size = font.get_string_size(self.text) + Vector2(24, 15)
-		writing = false
+	self.writing = false
+	self.visible = true
+	tween.interpolate_property(self, "rect_size", rect_size, toSize, 0.2)
+	tween.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if writing:
 		timeCounter += delta
@@ -45,8 +43,9 @@ func _process(delta):
 		timeCounter += delta
 		# Free itself after a time period depending on text length
 		if timeCounter > self.text.length() * 0.1 and not Engine.editor_hint:
-			queue_free()
+			self.visible = false
 			
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+
+func _on_Tween_tween_all_completed():
 	writing = true

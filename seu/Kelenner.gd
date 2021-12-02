@@ -2,7 +2,7 @@ extends Node2D
 class_name Kelenner
 
 onready var Bullet = preload("res://seu/Bullet.tscn")
-onready var DialogPopup = preload("res://seu/DialogPopup.tscn")
+onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
 onready var player = get_parent().get_node("Player")
 onready var estrade = get_owner().get_node("Tables/Estrade")
 
@@ -32,6 +32,7 @@ var patterns = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(dialog)
 	destination = choose_destination()
 	randomize()
 
@@ -54,10 +55,12 @@ func _process(delta):
 	if fire_time <= 0:
 		if randf() < 0.02:
 			fivestar_attack()
-			var dialog = DialogPopup.instance()
-			if randf() < 0.5: dialog.text = "Eat my special attack !"
-			else: dialog.text = "Mouahaha"
-			add_child(dialog)
+			var exclamations = ["Eat my special attack !",
+								"Obey your teacher !",
+								"MOUAHAHAHAHA",
+								"Take this !"]
+			dialog.say(exclamations[randi()%len(exclamations)])
+			
 			#heart_attack(true)
 			#double_bullet_attack()
 		elif randf() < 0.08:
