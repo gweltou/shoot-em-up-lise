@@ -4,6 +4,8 @@ class_name Kelenner
 onready var Bullet = preload("res://seu/Bullet.tscn")
 onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
 onready var player = get_parent().get_node("Player")
+onready var scoreBar = get_parent().get_node("ScoreBar")
+onready var letterCollector = get_parent().get_node("LetterCollector")
 onready var estrade = get_owner().get_node("Tables/Estrade")
 
 
@@ -108,6 +110,8 @@ func shoot(bullet : Bullet, angle):
 	bullet.global_position = global_position
 	bullet.direction = Vector2(cos(angle), sin(angle))
 	owner.add_child(bullet)
+	bullet.connect("letter_collected", letterCollector, "_on_letter_collected")
+	bullet.connect("player_hit", scoreBar, "_on_player_hit")
 
 
 func shoot_letter(letter, angle):
