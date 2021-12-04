@@ -32,6 +32,5 @@ func _process(delta):
 	timeLabel.text = "%02d:%02d" % [fake_time, fake_seconds]
 
 
-func _on_player_hit(points):
-	print("player hit")
+func _on_add_score(points):
 	score += points

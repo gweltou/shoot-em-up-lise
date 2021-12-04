@@ -109,19 +109,17 @@ func shoot_random():
 func shoot(bullet : Bullet, angle):
 	bullet.global_position = global_position
 	bullet.direction = Vector2(cos(angle), sin(angle))
-	owner.add_child(bullet)
+	bullet.connect("player_hit", scoreBar, "_on_add_score")
 	bullet.connect("letter_collected", letterCollector, "_on_letter_collected")
-	bullet.connect("player_hit", scoreBar, "_on_player_hit")
+	owner.add_child(bullet)
 
 
 func shoot_letter(letter, angle):
 	var bullet = Bullet.instance()
-	bullet.global_position = global_position
-	bullet.direction = Vector2(cos(angle), sin(angle))
+	bullet.set_letter(letter)
 	bullet.hitval = 0.5
 	bullet.speed = 60
-	bullet.set_letter(letter)
-	owner.add_child(bullet)
+	shoot(bullet, angle)
 
 
 func shoot_word(word):

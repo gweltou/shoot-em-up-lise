@@ -18,6 +18,7 @@ var homing = false				# Bullet follows player
 
 signal player_hit(points)
 signal letter_collected(letter)
+signal sig_test
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,7 +70,6 @@ func _on_Area2D_body_entered(body):
 		emit_signal("player_hit", hitval)
 		if self.letter != '':
 			emit_signal("letter_collected", letter)
-			print("sig emited")
 	queue_free()
 
 

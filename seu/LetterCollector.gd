@@ -6,7 +6,10 @@ onready var letterSound = $LetterSoundPlayer
 onready var wordSound = $WordSoundPlayer
 
 const bonus_words = ["ab"]
-var collected = []
+var collected := []
+
+
+signal add_score(points)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,8 +22,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
+func join_array(arr : Array) -> String:
+	var s : String = ""
+	for e in arr:
+		s += e
+	return s
+
+
 func _on_letter_collected(letter):
-	print("letter collected")
 	letterSound.play()
 	var n = collected.size()
 	# Check number of consecutive letters
@@ -32,17 +42,17 @@ func _on_letter_collected(letter):
 			else: break
 	if n_consecutive >= 2 and letter != collected[-1]:
 		# Collect consecutive letters bonus
-		#swag += (n_consecutive+1) * (n_consecutive+1)
+		emit_signal("add_score", (n_consecutive+1) * (n_consecutive+1))
 		collected = collected.slice(0, n-n_consecutive-1)
 		wordSound.play()
 	collected.append(letter)
-	
-	var joined : String = collected.join('')
+
+	var joined : String = join_array(collected)
 	for bw in bonus_words:
 		if joined.ends_with(bw):
 			joined = joined.trim_suffix(bw)
 			collected = collected.slice(0, n-len(bw))
-			#swag += len(bw) * len(bw)
+			emit_signal("add_score", len(bw) * len(bw))
 			wordSound.play()
 			break
-	label.text = joined
+	label.text = joined.to_upper()

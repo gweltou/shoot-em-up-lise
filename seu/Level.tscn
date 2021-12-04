@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/sounds/collect_word.wav" type="AudioStream" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://seu/sal_klas1.png" type="Texture" id=4]
@@ -89,6 +88,3 @@ position = Vector2( 738, 28 )
 
 [node name="ScoreBar" parent="." instance=ExtResource( 2 )]
 position = Vector2( 742.927, 555.824 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
