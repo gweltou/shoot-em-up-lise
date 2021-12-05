@@ -13,21 +13,9 @@ onready var tween = $Tween
 
 
 func _ready():
-	visible = false
+	hide()
 	rect_size = Vector2()
 	
-
-func say(t : String):
-	var toSize = font.get_string_size(t) + Vector2(24, 15)
-	self.rect_position = Vector2(-toSize.x / 2, -toSize.y - 10)
-	self.text = t
-	$Label.text = ""
-	self.letterIdx = 0
-	self.timeCounter = 0
-	self.writing = false
-	self.visible = true
-	tween.interpolate_property(self, "rect_size", rect_size, toSize, 0.2)
-	tween.start()
 
 func _process(delta):
 	if writing:
@@ -45,6 +33,28 @@ func _process(delta):
 		if timeCounter > self.text.length() * 0.1 and not Engine.editor_hint:
 			self.visible = false
 			
+
+func say(t : String):
+	#var toSize = font.get_string_size(t) + Vector2(24, 15)
+	var toSize = _get_text_size(t) + Vector2(24, 15)
+	self.rect_position = Vector2(-toSize.x / 2, -toSize.y - 10)
+	self.text = t
+	$Label.text = ""
+	self.letterIdx = 0
+	self.timeCounter = 0
+	self.writing = false
+	self.visible = true
+	tween.interpolate_property(self, "rect_size", rect_size, toSize, 0.2)
+	tween.start()
+
+
+func _get_text_size(t : String):
+	var max_len := 0
+	var n = 0
+	for l in t.split('\n'):
+		n += 1
+		max_len = max(max_len, font.get_string_size(l).x)
+	return Vector2(max_len, n * (font.get_height() + 2))
 
 
 func _on_Tween_tween_all_completed():

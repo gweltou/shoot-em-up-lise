@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://seu/sal_klas1.png" type="Texture" id=4]
+[ext_resource path="res://seu/Colleague.tscn" type="PackedScene" id=5]
 [ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
 
@@ -28,7 +29,7 @@ scale = Vector2( 0.580611, 0.547291 )
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 403.416, 432.601 )
+position = Vector2( 631.276, 502.194 )
 
 [node name="Kelenner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 482, 127 )
@@ -90,3 +91,6 @@ position = Vector2( 738, 28 )
 
 [node name="ScoreBar" parent="." instance=ExtResource( 2 )]
 position = Vector2( 742.927, 555.824 )
+
+[node name="Colleague" parent="." instance=ExtResource( 5 )]
+position = Vector2( 401.575, 426.568 )
