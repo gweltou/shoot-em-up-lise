@@ -9,6 +9,7 @@ onready var timer = $Timer
 onready var timeLabel = $TimeLabel
 
 const ROUND_DURATION = 300	# in seconds
+const TIME_PENALTY = 0.7
 var score = 50
 
 
@@ -19,7 +20,7 @@ func _ready():
 
 
 func _process(delta):
-	score -= delta * 0.5
+	score -= delta * TIME_PENALTY
 	scorebar.texture_progress = bar_green
 	if score < scorebar.max_value * 0.7:
 		scorebar.texture_progress = bar_yellow

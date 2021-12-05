@@ -16,14 +16,12 @@ var letter = ''
 var homing = false				# Bullet follows player
 
 
-signal player_hit(points)
+signal add_score(points)
 signal letter_collected(letter)
-signal sig_test
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#connect("player_hit", )
 	pass # Replace with function body.
 
 
@@ -67,7 +65,7 @@ func _draw():
 func _on_Area2D_body_entered(body):
 	# Destroy bullet if it touches anything else
 	if body.get_name() == "Player":
-		emit_signal("player_hit", hitval)
+		emit_signal("add_score", hitval)
 		if self.letter != '':
 			emit_signal("letter_collected", letter)
 	queue_free()

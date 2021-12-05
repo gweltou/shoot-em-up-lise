@@ -43,7 +43,7 @@ func _on_letter_collected(letter):
 	if n_consecutive >= 2 and letter != collected[-1]:
 		# Collect consecutive letters bonus
 		emit_signal("add_score", (n_consecutive+1) * (n_consecutive+1))
-		collected = collected.slice(0, n-n_consecutive-1)
+		collected = collected.slice(0, n-n_consecutive-2)
 		wordSound.play()
 	collected.append(letter)
 

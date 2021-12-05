@@ -1,5 +1,19 @@
 # Prototip Shoot 'Em Up savet el lise
 
+## Project structure
+The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
+Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively. \
+
+ .
+ ├── vn
+ │   ├── assets
+ │   │   └── (images, sounds, fonts...)
+ │   └── (scripts and scenes)
+ └── seu
+     ├── assets
+     │   └── (images, sounds, fonts...)
+     └── (scripts and scenes)
+
 ## Shooting bullets
 
 Intanciating a bullet and changing its parameters :
@@ -65,16 +79,18 @@ var rate = 0.2					# Rate of fire (in seconds)
 var angle_step = 0.2			# Angle between each bullet
 ```
 
-## Cheñch amzer gortoz ar c'hellener etre pep fiñvadenn
-Kellener.gd \
-func _process -> if move_time > wait_time: \
-cheñch talvoudou ar range_range()
-
 ## Da ober :
  * Diabarzhañ tresadennoù Loula
- * Gortoz ur pennadig amzer random etre pep fiñv ar c'helenner
+ * Krouiñ diazez al lodenn visual novel
+ * "Game over" ma ya ar score da 0
+ * ur "Pause" bouton evit ar SEU (touchenn 'p' da skouer)
  * Krouiñ patternoù diwar menozioù disheñvel
  * Tennañ an taolioù eus al live (tresadenn SVG ha collision shape)
- * Krouiñ ur scene "taol"
+ * Krouiñ ur scene "taol", evit gallout krouiñ levelioù gant dasparzhioù taolioù disheñvel
  * Gallout diviz frekañs an tagadennoù hag hini lizhiri bonus dre variennoù
- * Krouiñ al lodenn visual novel
+
+## Bugoù :
+
+## Menozioù :
+ * Penalty gant an niver a lizherennoù hag a chomm er "collector" -> fiñval goustadikoc'h pe un dra all
+ * Implij "buhezioù" ma vez marvet (pa vez ar score da 0), araok kaout un "game over"
