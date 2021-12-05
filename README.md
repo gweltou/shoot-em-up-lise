@@ -4,15 +4,17 @@
 The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
 Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively. \
 
- . \
- ├─ vn \
- │   ├─ assets \
- │   │   └─ (images, sounds, fonts...) \
- │   └─ (scripts and scenes) \
- └─ seu \
-     ├─ assets \
-     │   └─ (images, sounds, fonts...) \
-     └─ (scripts and scenes) \
+```
+ .
+ ├─ vn
+ │   ├─ assets
+ │   │   └─ (images, sounds, fonts...)
+ │   └─ (scripts and scenes)
+ └─ seu
+     ├─ assets
+     │   └─ (images, sounds, fonts...)
+     └─ (scripts and scenes)
+```
 
 ## Shooting bullets
 
