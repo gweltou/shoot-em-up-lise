@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://seu/DialogPopup.gd" type="Script" id=1]
-[ext_resource path="res://seu/dialogPanel.png" type="Texture" id=2]
+[ext_resource path="res://seu/assets/dialogPanel.png" type="Texture" id=2]
 
 [node name="DialogPopup" type="NinePatchRect"]
+modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 4.84844
 margin_top = 6.46887
 margin_right = 22.8484

@@ -31,8 +31,9 @@ func _process(delta):
 		timeCounter += delta
 		# Free itself after a time period depending on text length
 		if timeCounter > self.text.length() * 0.1 and not Engine.editor_hint:
-			self.visible = false
-			
+			hide()
+			rect_size = Vector2()
+
 
 func say(t : String):
 	#var toSize = font.get_string_size(t) + Vector2(24, 15)

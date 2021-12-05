@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogPanel.png-246f3f5cc3a2f271e9516dac832937ef.stex"
+path="res://.import/dialogPanel.png-8a25c825b6aab89d5565d9420439059a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://seu/dialogPanel.png"
-dest_files=[ "res://.import/dialogPanel.png-246f3f5cc3a2f271e9516dac832937ef.stex" ]
+source_file="res://seu/assets/dialogPanel.png"
+dest_files=[ "res://.import/dialogPanel.png-8a25c825b6aab89d5565d9420439059a.stex" ]
 
 [params]
 

@@ -32,3 +32,7 @@ func _process(delta):
 		if randf() < 0.2:
 			dialog.say(sentences[sentence_idx%len(sentences)])
 			sentence_idx += 1
+
+func _on_add_score(points):
+	if points > 20:
+		dialog.say("Nice !")
