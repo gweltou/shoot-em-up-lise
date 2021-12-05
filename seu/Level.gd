@@ -1,15 +1,14 @@
-extends Label
+extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var letterCollector = $LetterCollector
+onready var scoreBar = $ScoreBar
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_font_override("font", GameVariables.bullet_font)
-	text = ""
+	letterCollector.connect("add_score", scoreBar, "_on_add_score")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

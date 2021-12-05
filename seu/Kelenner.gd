@@ -4,6 +4,8 @@ class_name Kelenner
 onready var Bullet = preload("res://seu/Bullet.tscn")
 onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
 onready var player = get_parent().get_node("Player")
+onready var scoreBar = get_parent().get_node("ScoreBar")
+onready var letterCollector = get_parent().get_node("LetterCollector")
 onready var estrade = get_owner().get_node("Tables/Estrade")
 
 
@@ -25,9 +27,6 @@ var words = ["John is in the kitchen",
 
 var patterns = []
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -97,7 +96,7 @@ func choose_destination():
 func shoot_random():
 	var bullet = Bullet.instance()
 	bullet.radius = 5
-	bullet.hitval = -1
+	bullet.hitval = -2
 	bullet.homing = false
 	
 	var angle = randf() * 2 * PI
@@ -107,17 +106,17 @@ func shoot_random():
 func shoot(bullet : Bullet, angle):
 	bullet.global_position = global_position
 	bullet.direction = Vector2(cos(angle), sin(angle))
+	bullet.connect("add_score", scoreBar, "_on_add_score")
+	bullet.connect("letter_collected", letterCollector, "_on_letter_collected")
 	owner.add_child(bullet)
 
 
 func shoot_letter(letter, angle):
 	var bullet = Bullet.instance()
-	bullet.global_position = global_position
-	bullet.direction = Vector2(cos(angle), sin(angle))
+	bullet.set_letter(letter)
 	bullet.hitval = 0.5
 	bullet.speed = 60
-	bullet.set_letter(letter)
-	owner.add_child(bullet)
+	shoot(bullet, angle)
 
 
 func shoot_word(word):
@@ -132,7 +131,7 @@ func shoot_word(word):
 func fivestar_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 100
-	bullet.hitval = -0.5
+	bullet.hitval = -2
 	bullet.radius = 6
 	bullet.homing = true
 	
@@ -144,7 +143,7 @@ func double_bullet_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 250
 	bullet.drag = 0
-	bullet.hitval = -1
+	bullet.hitval = -5
 	bullet.radius = 8
 	
 	var pattern = FanPattern.new(self, bullet)
@@ -157,7 +156,7 @@ func heart_attack(aimed : bool):
 	var bullet = Bullet.instance()
 	bullet.speed = 160
 	bullet.drag = 0.3
-	bullet.hitval = -0.5
+	bullet.hitval = -2
 	bullet.radius = 6
 	
 	var pattern_left = SequencePattern.new(self, bullet)

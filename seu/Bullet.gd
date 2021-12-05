@@ -12,8 +12,12 @@ var drag = 0        			# Air friction drag, between 0 and 1
 var lifetime = 8				# In seconds
 var hitval = 0					# Score added or reduces when player is hit
 var radius = 8 setget set_radius
-var letter = ""
+var letter = ''
 var homing = false				# Bullet follows player
+
+
+signal add_score(points)
+signal letter_collected(letter)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -58,14 +62,19 @@ func _draw():
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
 
 
-func _on_Area2D_body_entered(_body):
+func _on_Area2D_body_entered(body):
 	# Destroy bullet if it touches anything else
+	if body.get_name() == "Player":
+		emit_signal("add_score", hitval)
+		if self.letter != '':
+			emit_signal("letter_collected", letter)
 	queue_free()
 
 
 func set_radius(r):
 	radius = r
 	$Area2D/CollisionShape2D.shape.radius = r
+
 
 func set_letter(l):
 	letter = l[0]
