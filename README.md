@@ -4,15 +4,15 @@
 The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
 Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively. \
 
- .
- ├── vn
- │   ├── assets
- │   │   └── (images, sounds, fonts...)
- │   └── (scripts and scenes)
- └── seu
-     ├── assets
-     │   └── (images, sounds, fonts...)
-     └── (scripts and scenes)
+ . \
+ ├─ vn \
+ │   ├─ assets \
+ │   │   └─ (images, sounds, fonts...) \
+ │   └─ (scripts and scenes) \
+ └─ seu \
+     ├─ assets \
+     │   └─ (images, sounds, fonts...) \
+     └─ (scripts and scenes) \
 
 ## Shooting bullets
 
@@ -75,7 +75,7 @@ Shoot `number` bullets, one after the other with a interval time of `rate` and w
 
 ```gdscript
 # Default values
-var rate = 0.2					# Rate of fire (in seconds)
+var rate = 0.2				# Rate of fire (in seconds)
 var angle_step = 0.2			# Angle between each bullet
 ```
 
