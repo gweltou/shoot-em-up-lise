@@ -1,5 +1,7 @@
 # Prototip Shoot 'Em Up savet el lise
 
+![Game screenshot](/ressources/screenshot_21-12-6.png)
+
 ## Project structure
 The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
 Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively.
