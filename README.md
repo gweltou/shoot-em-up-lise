@@ -2,7 +2,7 @@
 
 ## Project structure
 The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
-Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively. \
+Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, respectively.
 
 ```
  .
