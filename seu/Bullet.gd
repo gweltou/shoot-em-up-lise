@@ -60,6 +60,7 @@ func _draw():
 		var font = GameVariables.bullet_font
 		var offset = GameVariables.bullet_font_size / 2.0
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
+		$Sprite.hide()
 
 
 func _on_Area2D_body_entered(body):
