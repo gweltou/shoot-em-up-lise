@@ -18,7 +18,7 @@ var wait_time = 0.0
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
-var words = ["John is in the kitchen",
+var phrases = ["John is in the kitchen",
 			 "silence !", "please",
 			 "repeat after me",
 			 "please be quiet",
@@ -63,8 +63,8 @@ func _process(delta):
 			#heart_attack(true)
 			#double_bullet_attack()
 		elif randf() < 0.08:
-			var n = randi()%len(words)
-			shoot_word(words[n])
+			var n = randi()%len(phrases)
+			shoot_word(phrases[n])
 		else:
 			shoot_random()
 		fire_time = FIRE_RATE
@@ -95,8 +95,7 @@ func choose_destination():
 
 func shoot_random():
 	var bullet = Bullet.instance()
-	bullet.radius = 5
-	bullet.hitval = -2
+	bullet.hitval = -5
 	bullet.homing = false
 	
 	var angle = randf() * 2 * PI
@@ -113,9 +112,10 @@ func shoot(bullet : Bullet, angle):
 
 func shoot_letter(letter, angle):
 	var bullet = Bullet.instance()
-	bullet.set_letter(letter)
-	bullet.hitval = 0.5
+	bullet.letter = letter
+	bullet.hitval = 1
 	bullet.speed = 60
+	bullet.lifetime = 10
 	shoot(bullet, angle)
 
 
@@ -131,8 +131,8 @@ func shoot_word(word):
 func fivestar_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 100
-	bullet.hitval = -2
-	bullet.radius = 6
+	bullet.hitval = -5
+	bullet.size = 1.2
 	bullet.homing = true
 	
 	var pattern = StarPattern.new(self, bullet)
@@ -143,8 +143,8 @@ func double_bullet_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 250
 	bullet.drag = 0
-	bullet.hitval = -5
-	bullet.radius = 8
+	bullet.hitval = -10
+	#bullet.radius = 1
 	
 	var pattern = FanPattern.new(self, bullet)
 	pattern.number = 2
@@ -157,7 +157,7 @@ func heart_attack(aimed : bool):
 	bullet.speed = 160
 	bullet.drag = 0.3
 	bullet.hitval = -2
-	bullet.radius = 6
+	bullet.size = 0.8
 	
 	var pattern_left = SequencePattern.new(self, bullet)
 	pattern_left.number = 16

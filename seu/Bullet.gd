@@ -5,14 +5,14 @@ class_name Bullet
 onready var player = get_parent().get_node("Player")
 
 
-var type = 0
+#var type = 0
 var direction = Vector2(0, 1)	# Normalized vector
 var speed = 100
-var drag = 0        			# Air friction drag, between 0 and 1
+var drag = 0					# Air friction drag, between 0 and 1
 var lifetime = 8				# In seconds
 var hitval = 0					# Score added or reduces when player is hit
-var radius = 8 setget set_radius
-var letter = ''
+var size = 1 setget set_size
+var letter = '' setget set_letter
 var homing = false				# Bullet follows player
 
 
@@ -54,13 +54,13 @@ func _draw():
 		col = Color(0, 1, 0)
 	elif hitval < 0:
 		col = Color(1, 0.4, 0)
-	draw_circle(Vector2(0, 0), radius, col)
+	draw_circle(Vector2(0, 0), size*8, col)
 	
 	if letter != "":
+		$Sprite.hide()
 		var font = GameVariables.bullet_font
 		var offset = GameVariables.bullet_font_size / 2.0
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
-		$Sprite.hide()
 
 
 func _on_Area2D_body_entered(body):
@@ -68,28 +68,29 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
 		emit_signal("add_score", hitval)
 		if self.letter != '':
-			emit_signal("letter_collected", letter)
+			emit_signal("letter_collected", letter, global_position)
 	queue_free()
 
 
-func set_radius(r):
-	radius = r
-	$Area2D/CollisionShape2D.shape.radius = r
+func set_size(s):
+	size = s
+	$Area2D.scale = Vector2(s, s)
+	$Sprite.scale = Vector2(s, s)
 
 
 func set_letter(l):
-	letter = l[0]
+	letter = l
 	update()     # Redraw bullet
 
 
 func copy():
 	var new_bullet = load("res://seu/Bullet.tscn").instance()
-	new_bullet.type = type
+	#new_bullet.type = type
 	new_bullet.speed = speed
 	new_bullet.drag = drag
 	new_bullet.lifetime = lifetime
 	new_bullet.hitval = hitval
-	new_bullet.radius = radius
+	new_bullet.size = size
 	new_bullet.letter = letter
 	new_bullet.homing = homing
 	return new_bullet
