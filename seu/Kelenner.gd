@@ -18,7 +18,7 @@ var wait_time = 0.0
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
-var words = ["John is in the kitchen",
+var phrases = ["John is in the kitchen",
 			 "silence !", "please",
 			 "repeat after me",
 			 "please be quiet",
@@ -63,8 +63,8 @@ func _process(delta):
 			#heart_attack(true)
 			#double_bullet_attack()
 		elif randf() < 0.08:
-			var n = randi()%len(words)
-			shoot_word(words[n])
+			var n = randi()%len(phrases)
+			shoot_word(phrases[n])
 		else:
 			shoot_random()
 		fire_time = FIRE_RATE

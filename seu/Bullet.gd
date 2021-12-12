@@ -5,7 +5,7 @@ class_name Bullet
 onready var player = get_parent().get_node("Player")
 
 
-var type = 0
+#var type = 0
 var direction = Vector2(0, 1)	# Normalized vector
 var speed = 100
 var drag = 0        			# Air friction drag, between 0 and 1
@@ -57,10 +57,10 @@ func _draw():
 	draw_circle(Vector2(0, 0), radius, col)
 	
 	if letter != "":
+		$Sprite.hide()
 		var font = GameVariables.bullet_font
 		var offset = GameVariables.bullet_font_size / 2.0
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
-		$Sprite.hide()
 
 
 func _on_Area2D_body_entered(body):
@@ -84,7 +84,7 @@ func set_letter(l):
 
 func copy():
 	var new_bullet = load("res://seu/Bullet.tscn").instance()
-	new_bullet.type = type
+	#new_bullet.type = type
 	new_bullet.speed = speed
 	new_bullet.drag = drag
 	new_bullet.lifetime = lifetime

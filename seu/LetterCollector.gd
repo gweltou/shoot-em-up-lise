@@ -35,6 +35,10 @@ func join_array(arr : Array) -> String:
 
 func _on_letter_collected(letter):
 	letterSound.play()
+	# Filter out non letters characters
+	if not letter.to_lower() in "abcdefghijklmnopqrstuvwxyz":
+		return
+	
 	var n = collected.size()
 	# Check number of consecutive letters
 	var n_consecutive = 1
