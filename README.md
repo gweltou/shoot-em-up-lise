@@ -48,7 +48,7 @@ func fivestar_attack():
 	var bullet = Bullet.instance()
 	bullet.speed = 100
 	bullet.hitval = -0.5
-	bullet.radius = 6
+	bullet.size = 1.2
 	bullet.homing = true
 	
 	var pattern = StarPattern.new(self, bullet)
