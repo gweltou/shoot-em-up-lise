@@ -33,7 +33,7 @@ Below is a list of parameters you can change to change the bullet's behaviour :
 `drag` : Air friction, will slow bullet down if positive (defaults to 0) \
 `lifetime` : Bullet will disapear after the specified time (in seconds, defaults to 8s) \
 `hitval` : score penalty (if negative) or bonus (if positive) when bullet hits the player \
-`radius` : collision radius of the bullet (defaults to 8) \
+`size` : scale the size of the bullet (defaults to 1, a size of 2 will double the default size) \
 `homing` : bullet will follow player if true (true/false, defaults to false) \
 `letter` : bullet will be the specified letter
 
@@ -95,6 +95,7 @@ var angle_step = 0.2			# Angle between each bullet
  * Gallout diviz frekañs an tagadennoù hag hini lizhiri bonus dre variennoù
 
 ### Tresañ :
+ * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.**
  * Ur galon evit diskouez ar buhez(ioù) a chomm
  * Ur sprite simpl evit ar c'helenner (hep animasion, evit gwelet ar ment hag ar style evit kregiñ)
 
@@ -103,3 +104,4 @@ var angle_step = 0.2			# Angle between each bullet
 ## Menozioù :
  * Penalty gant an niver a lizherennoù hag a chomm er "collector" -> fiñval goustadikoc'h pe un dra all
  * Implij "buhezioù" ma vez marvet (pa vez ar score da 0), araok kaout un "game over"
+ * Un talvoud disheñvel etre pep lizherenn hervez e frekañs

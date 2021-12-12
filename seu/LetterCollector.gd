@@ -48,12 +48,14 @@ func _on_letter_collected(letter, pos : Vector2):
 		transit(letter, pos)
 
 
-func transit(letter, pos : Vector2):
+func transit(letter, pos : Vector2, push_front := false):
 	var transitLetter = TransitLetter.new()
 	transitLetter.letter = letter
 	transitLetter.start = pos
+	# get_next_char_pos should exclude transit letters if push_front is set to true
 	transitLetter.destination = get_next_char_pos(transitLetter.letter)
-	in_transit.append(transitLetter)
+	if push_front: in_transit.push_front(transitLetter)
+	else : in_transit.append(transitLetter)
 	add_child(transitLetter)
 
 
@@ -88,7 +90,7 @@ func register_letter(letter):
 			collected.pop_back()
 		wordSound.play()
 		joined = join_array(collected)
-		transit(letter, char_pos)
+		transit(letter, char_pos, true)
 	else:
 		collected.append(letter)
 		joined = join_array(collected)
