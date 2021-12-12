@@ -50,7 +50,7 @@ func say(t : String):
 
 
 func _get_text_size(t : String):
-	var max_len := 0
+	var max_len : int = 0
 	var n = 0
 	for l in t.split('\n'):
 		n += 1

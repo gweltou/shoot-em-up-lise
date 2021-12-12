@@ -113,7 +113,7 @@ func shoot(bullet : Bullet, angle):
 
 func shoot_letter(letter, angle):
 	var bullet = Bullet.instance()
-	bullet.set_letter(letter)
+	bullet.letter = letter
 	bullet.hitval = 0.5
 	bullet.speed = 60
 	shoot(bullet, angle)

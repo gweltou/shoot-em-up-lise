@@ -84,6 +84,7 @@ var angle_step = 0.2			# Angle between each bullet
 ```
 
 ## Da ober :
+### Kodiñ :
  * Diabarzhañ tresadennoù Loula
  * Krouiñ diazez al lodenn visual novel
  * "Game over" ma ya ar score da 0
@@ -92,6 +93,10 @@ var angle_step = 0.2			# Angle between each bullet
  * Tennañ an taolioù eus al live (tresadenn SVG ha collision shape)
  * Krouiñ ur scene "taol", evit gallout krouiñ levelioù gant dasparzhioù taolioù disheñvel
  * Gallout diviz frekañs an tagadennoù hag hini lizhiri bonus dre variennoù
+
+### Tresañ :
+ * Ur galon evit diskouez ar buhez(ioù) a chomm
+ * Ur sprite simpl evit ar c'helenner (hep animasion, evit gwelet ar ment hag ar style evit kregiñ)
 
 ## Bugoù :
 

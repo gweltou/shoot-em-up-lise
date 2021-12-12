@@ -9,7 +9,7 @@ onready var timer = $Timer
 onready var timeLabel = $TimeLabel
 
 const ROUND_DURATION = 300	# in seconds
-const TIME_PENALTY = 0.7
+const TIME_PENALTY = 0.6
 var score = 50
 
 
