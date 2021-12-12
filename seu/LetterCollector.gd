@@ -52,21 +52,27 @@ func transit(letter, pos : Vector2, push_front := false):
 	var transitLetter = TransitLetter.new()
 	transitLetter.letter = letter
 	transitLetter.start = pos
-	# get_next_char_pos should exclude transit letters if push_front is set to true
-	transitLetter.destination = get_next_char_pos(transitLetter.letter)
-	if push_front: in_transit.push_front(transitLetter)
-	else : in_transit.append(transitLetter)
+	
+	if push_front:
+		in_transit.push_front(transitLetter)
+		var offset = joined
+		for tl in in_transit:
+			offset += tl.letter
+			tl.destination = get_next_char_pos(offset)
+	else :
+		var transiting := []
+		for e in in_transit:
+			transiting.append(e.letter)
+		transitLetter.destination = get_next_char_pos(joined + join_array(transiting) + letter)
+		in_transit.append(transitLetter)
 	add_child(transitLetter)
 
 
-func get_next_char_pos(letter : String) -> Vector2:
+func get_next_char_pos(string : String) -> Vector2:
 	var w : int = label.rect_size.x
-	var transiting := []
-	for e in in_transit:
-		transiting.append(e.letter)
-	var string_size = font.get_string_size(joined + join_array(transiting) + letter)
+	var string_size = font.get_string_size(string)
 	var x : int = int(string_size.x) % w
-	var y = floor(string_size.x / w) * string_size.y + string_size.y
+	var y = floor(string_size.x / w) * string_size.y + string_size.y * 0.5
 	return global_position + Vector2(x, y)
 
 
@@ -85,7 +91,7 @@ func register_letter(letter):
 	if n_consecutive >= 3 and letter != collected[-1]:
 		emit_signal("add_score", n_consecutive * n_consecutive)
 		# Remove letter combo from collected
-		var char_pos = get_next_char_pos(letter)
+		var char_pos = get_next_char_pos(joined + letter)
 		for _i in range(n_consecutive):
 			collected.pop_back()
 		wordSound.play()
