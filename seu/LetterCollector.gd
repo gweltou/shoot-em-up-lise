@@ -15,6 +15,7 @@ var joined : String = ""
 
 
 signal add_score(points)
+signal letter_collected(number)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -110,3 +111,4 @@ func register_letter(letter):
 			wordSound.play()
 			break
 	label.text = joined.to_upper()
+	emit_signal("letter_collected", len(collected))
