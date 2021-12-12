@@ -99,9 +99,10 @@ var angle_step = 0.2			# Angle between each bullet
  * Ur galon evit diskouez ar buhez(ioù) a chomm
  * Ur sprite simpl evit ar c'helenner (hep animasion, evit gwelet ar ment hag ar style evit kregiñ)
 
-## Bugoù :
-
 ## Menozioù :
- * Penalty gant an niver a lizherennoù hag a chomm er "collector" -> fiñval goustadikoc'h pe un dra all
+ * Ur bullet bonus evit tennañ lizherennoù er baner
  * Implij "buhezioù" ma vez marvet (pa vez ar score da 0), araok kaout un "game over"
  * Un talvoud disheñvel etre pep lizherenn hervez e frekañs
+
+## Bugoù :
+ * 
