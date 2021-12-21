@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://seu/Colleague.tscn" type="PackedScene" id=5]
 [ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.6477, 20.554 )
@@ -20,7 +21,13 @@ extents = Vector2( 221.119, 40.1627 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20.0906, 322.852 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 32
+extra_spacing_char = 4
+font_data = ExtResource( 8 )
+
 [node name="Level" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="sal_klas1" type="Sprite" parent="."]
@@ -29,9 +36,11 @@ scale = Vector2( 0.580611, 0.547291 )
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
+pause_mode = 1
 position = Vector2( 631.276, 502.194 )
 
 [node name="Kelenner" parent="." instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 482, 127 )
 
 [node name="Tables" type="StaticBody2D" parent="."]
@@ -87,10 +96,28 @@ position = Vector2( 685.506, 325.347 )
 shape = SubResource( 4 )
 
 [node name="LetterCollector" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 position = Vector2( 738, 28 )
 
 [node name="ScoreBar" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 742.927, 555.824 )
 
 [node name="Colleague" parent="." instance=ExtResource( 5 )]
+pause_mode = 1
 position = Vector2( 401.575, 426.568 )
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseLabel" type="Label" parent="TopLayer"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 396.142
+margin_top = 243.57
+margin_right = 568.142
+margin_bottom = 323.57
+custom_fonts/font = SubResource( 5 )
+text = "PAUSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
