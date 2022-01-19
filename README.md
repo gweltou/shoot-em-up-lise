@@ -87,6 +87,7 @@ var angle_step = 0.2			# Angle between each bullet
 ### Kodiñ :
  * Diabarzhañ tresadennoù Loula
  * Krouiñ diazez al lodenn visual novel
+ * Krouiñ ar menu degemer
  * "Game over" ma ya ar score da 0
  * Krouiñ patternoù diwar menozioù disheñvel
  * Tennañ an taolioù eus al live (tresadenn SVG ha collision shape)
@@ -97,6 +98,7 @@ var angle_step = 0.2			# Angle between each bullet
  * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.**
  * Ur galon evit diskouez ar buhez(ioù) a chomm
  * Ur sprite simpl evit ar c'helenner (hep animasion, evit gwelet ar ment hag ar style evit kregiñ)
+ * Ur pav kaz evit ar menu degemer
 
 ## Menozioù :
  * Ur bullet bonus evit tennañ lizherennoù er baner
