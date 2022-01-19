@@ -31,7 +31,11 @@ func _process(delta):
 	var decimal_part = fake_time - floor(fake_time)
 	var fake_seconds = lerp(0, 60, decimal_part)	
 	timeLabel.text = "%02d:%02d" % [fake_time, fake_seconds]
-
+	if score <= 0:
+		print("score = 0")
+		get_tree().change_scene("res://seu/GameOver.tscn")
 
 func _on_add_score(points):
 	score += points
+
+

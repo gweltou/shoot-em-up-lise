@@ -39,6 +39,4 @@ func _physics_process(_delta):
 
 
 func _on_letter_collected(num_letters : int):
-	print("on_letter_collected")
 	move_speed = MAX_MOVE_SPEED * max(0.33, (50.0 - num_letters) / 50.0)
-	print("move speed ", move_speed)
