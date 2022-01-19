@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogPanel.png-8a25c825b6aab89d5565d9420439059a.stex"
+path="res://.import/black_screen.png-5b0ac7d58b22347e1b1e356b3f96e6b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://seu/assets/dialogPanel.png"
-dest_files=[ "res://.import/dialogPanel.png-8a25c825b6aab89d5565d9420439059a.stex" ]
+source_file="res://seu/black_screen.png"
+dest_files=[ "res://.import/black_screen.png-5b0ac7d58b22347e1b1e356b3f96e6b0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
