@@ -1,0 +1,173 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://title/assets/title.png" type="Texture" id=1]
+[ext_resource path="res://title/assets/btn_story.png" type="Texture" id=2]
+[ext_resource path="res://title/assets/btn_options.png" type="Texture" id=3]
+[ext_resource path="res://title/assets/cat.png" type="Texture" id=4]
+[ext_resource path="res://title/assets/btn_arcade.png" type="Texture" id=5]
+[ext_resource path="res://title/assets/btn_quit.png" type="Texture" id=6]
+[ext_resource path="res://title/assets/date.png" type="Texture" id=7]
+[ext_resource path="res://title/assets/cat_paw.png" type="Texture" id=8]
+[ext_resource path="res://title/TitleScreen.gd" type="Script" id=9]
+[ext_resource path="res://title/assets/menu.wav" type="AudioStream" id=10]
+[ext_resource path="res://title/assets/menu_accept.wav" type="AudioStream" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 8 )
+region = Rect2( 200, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 8 )
+region = Rect2( 400, 0, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 200, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 400, 200, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 200, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 8 )
+region = Rect2( 400, 400, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 600, 200, 200 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 8 )
+region = Rect2( 200, 600, 200, 200 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="TitleMenu" type="Node"]
+script = ExtResource( 9 )
+
+[node name="Title" type="TextureRect" parent="."]
+margin_left = 37.755
+margin_top = 33.9795
+margin_right = 617.755
+margin_bottom = 138.979
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnStory" type="TextureRect" parent="."]
+margin_left = 212.979
+margin_top = 200.571
+margin_right = 463.979
+margin_bottom = 283.571
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnArcade" type="TextureRect" parent="."]
+margin_left = 213.316
+margin_top = 294.071
+margin_right = 470.316
+margin_bottom = 352.071
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnOption" type="TextureRect" parent="."]
+margin_left = 214.418
+margin_top = 379.458
+margin_right = 383.418
+margin_bottom = 456.458
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnQuit" type="TextureRect" parent="."]
+margin_left = 214.53
+margin_top = 468.396
+margin_right = 394.53
+margin_bottom = 544.396
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cat" type="TextureRect" parent="."]
+margin_left = 620.294
+margin_top = 143.357
+margin_right = 859.294
+margin_bottom = 602.357
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyelid1" type="ColorRect" parent="Cat"]
+margin_left = 130.0
+margin_top = 167.0
+margin_right = 213.0
+margin_bottom = 221.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyelid2" type="ColorRect" parent="Cat"]
+margin_left = 19.2861
+margin_top = 168.119
+margin_right = 102.286
+margin_bottom = 222.119
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="TextureRect" parent="."]
+margin_left = 868.76
+margin_top = 536.088
+margin_right = 984.76
+margin_bottom = 576.088
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paw" type="AnimatedSprite" parent="."]
+position = Vector2( 150.847, 235.201 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 12 )
+flip_h = true
+
+[node name="MenuChange" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -15.0
+
+[node name="MenuAccept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[connection signal="animation_finished" from="Paw" to="." method="_on_Paw_animation_finished"]
