@@ -127,6 +127,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Eyelid1" type="ColorRect" parent="Cat"]
+margin_left = 130.0
+margin_top = 167.0
+margin_right = 213.0
+margin_bottom = 221.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyelid2" type="ColorRect" parent="Cat"]
+margin_left = 19.2861
+margin_top = 168.119
+margin_right = 102.286
+margin_bottom = 222.119
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Date" type="TextureRect" parent="."]
 margin_left = 868.76
 margin_top = 536.088
