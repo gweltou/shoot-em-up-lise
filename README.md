@@ -12,10 +12,12 @@ Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, re
  │   ├─ assets
  │   │   └─ (images, sounds, fonts...)
  │   └─ (scripts and scenes)
- └─ seu
-     ├─ assets
-     │   └─ (images, sounds, fonts...)
-     └─ (scripts and scenes)
+ ├─ seu
+ │   ├─ assets
+ │   │   └─ (images, sounds, fonts...)
+ │   └─ (scripts and scenes)
+ └─ title
+     └─ ...
 ```
 
 ## Shooting bullets
