@@ -1,0 +1,76 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": true,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Awww, ar mintin eo dija ?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.6
+		},
+		{
+			"action": "join",
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.3
+		},
+		{
+			"action": "join",
+			"character": "character-1644673466.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1644673466.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Miaou ?"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1644673113.json",
+		"name": "a01s01"
+	}
+}
