@@ -6,7 +6,12 @@
 		"Characters": {
 			"files": [
 				"character-1644673207.json",
-				"character-1644673466.json"
+				"character-1644673466.json",
+				"character-1645612503.json",
+				"character-1645612661.json",
+				"character-1645612781.json",
+				"character-1645612818.json",
+				"character-1645612879.json"
 			],
 			"folders": {
 
@@ -30,7 +35,8 @@
 		},
 		"Themes": {
 			"files": [
-				"default-theme.cfg"
+				"default-theme.cfg",
+				"theme-1645612458.cfg"
 			],
 			"folders": {
 

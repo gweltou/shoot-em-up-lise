@@ -1,11 +1,11 @@
 {
-	"color": "#ff454545",
+	"color": "#ff0c327c",
 	"description": "",
 	"display_name": "",
 	"display_name_bool": false,
-	"id": "character-1644673466.json",
+	"id": "character-1645612503.json",
 	"mirror_portraits": false,
-	"name": "kazh",
+	"name": "chibi boy",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
@@ -13,8 +13,8 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://vn/images/chibi cat.png"
+			"path": "res://vn/images/chibi boy.png"
 		}
 	],
-	"scale": 25
+	"scale": 40
 }

@@ -66,6 +66,99 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Miaou ?"
+		},
+		{
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Piv all a zo amañ ?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1644673466.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.6
+		},
+		{
+			"action": "join",
+			"character": "character-1645612503.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645612503.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Euh... me"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1645612503.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.6
+		},
+		{
+			"action": "join",
+			"character": "character-1645612879.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645612879.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ha me, ar c'helennerezh skiantoù !"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1645612879.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.6
+		},
+		{
+			"action": "join",
+			"character": "character-1645612781.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645612781.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Me ivez, ar c'helenner matematikoù"
 		}
 	],
 	"metadata": {

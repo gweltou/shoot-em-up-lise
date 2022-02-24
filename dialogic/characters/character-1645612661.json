@@ -1,20 +1,20 @@
 {
-	"color": "#ff454545",
+	"color": "#ff02c983",
 	"description": "",
 	"display_name": "",
 	"display_name_bool": false,
-	"id": "character-1644673466.json",
+	"id": "character-1645612661.json",
 	"mirror_portraits": false,
-	"name": "kazh",
+	"name": "Kelenner Sport",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 10,
+	"offset_y": 0,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://vn/images/chibi cat.png"
+			"path": "res://vn/images/kelenner sport.png"
 		}
 	],
-	"scale": 25
+	"scale": 40
 }
