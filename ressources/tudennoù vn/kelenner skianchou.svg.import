@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sal_klas1.png-ee2f806a96e373ce25ce9fabfdf737e2.stex"
+path="res://.import/kelenner skianchou.svg-080fe01d166d49f37d167092c00b7a9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://seu/assets/sal_klas1.png"
-dest_files=[ "res://.import/sal_klas1.png-ee2f806a96e373ce25ce9fabfdf737e2.stex" ]
+source_file="res://ressources/tudennoù vn/kelenner skianchou.svg"
+dest_files=[ "res://.import/kelenner skianchou.svg-080fe01d166d49f37d167092c00b7a9f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
