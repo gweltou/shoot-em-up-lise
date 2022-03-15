@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://title/assets/title.png" type="Texture" id=1]
 [ext_resource path="res://title/assets/btn_story.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://title/TitleScreen.gd" type="Script" id=9]
 [ext_resource path="res://title/assets/menu.wav" type="AudioStream" id=10]
 [ext_resource path="res://title/assets/menu_accept.wav" type="AudioStream" id=11]
+[ext_resource path="res://title/assets/IMG_7144.JPG" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -67,11 +68,50 @@ animations = [ {
 [node name="TitleMenu" type="Node"]
 script = ExtResource( 9 )
 
+[node name="BackgroundGroup" type="Node2D" parent="."]
+
+[node name="Img7144" type="Sprite" parent="BackgroundGroup"]
+position = Vector2( 556.251, 338.984 )
+scale = Vector2( 1.43776, 1.43776 )
+texture = ExtResource( 12 )
+
+[node name="Cat" type="TextureRect" parent="BackgroundGroup"]
+margin_left = 625.957
+margin_top = 158.459
+margin_right = 864.957
+margin_bottom = 617.459
+rect_pivot_offset = Vector2( 120, 229 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyelid1" type="ColorRect" parent="BackgroundGroup/Cat"]
+margin_left = 130.0
+margin_top = 167.0
+margin_right = 213.0
+margin_bottom = 221.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eyelid2" type="ColorRect" parent="BackgroundGroup/Cat"]
+margin_left = 19.2861
+margin_top = 168.119
+margin_right = 102.286
+margin_bottom = 222.119
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Title" type="TextureRect" parent="."]
-margin_left = 37.755
-margin_top = 33.9795
-margin_right = 617.755
-margin_bottom = 138.979
+margin_left = 46.8315
+margin_top = 35.4134
+margin_right = 626.832
+margin_bottom = 140.413
+rect_pivot_offset = Vector2( 290, 50 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,36 +157,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cat" type="TextureRect" parent="."]
-margin_left = 620.294
-margin_top = 143.357
-margin_right = 859.294
-margin_bottom = 602.357
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Eyelid1" type="ColorRect" parent="Cat"]
-margin_left = 130.0
-margin_top = 167.0
-margin_right = 213.0
-margin_bottom = 221.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Eyelid2" type="ColorRect" parent="Cat"]
-margin_left = 19.2861
-margin_top = 168.119
-margin_right = 102.286
-margin_bottom = 222.119
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Date" type="TextureRect" parent="."]
 margin_left = 868.76
 margin_top = 536.088
@@ -169,5 +179,12 @@ volume_db = -15.0
 
 [node name="MenuAccept" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+pitch_scale = 1.1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="animation_finished" from="Paw" to="." method="_on_Paw_animation_finished"]
+[connection signal="finished" from="MenuAccept" to="." method="_on_MenuAccept_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
