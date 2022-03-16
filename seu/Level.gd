@@ -7,15 +7,20 @@ onready var colleague = $Colleague
 onready var letterCollector = $LetterCollector
 onready var scoreBar = $ScoreBar
 onready var pauseLabel = $TopLayer/PauseLabel
+var dialog
 
 var counter := 0.0
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():	
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
 	letterCollector.connect("letter_collected", player, "_on_letter_collected")
+	
+	dialog = Dialogic.start('k01')
+	add_child(dialog)
+	dialog
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
