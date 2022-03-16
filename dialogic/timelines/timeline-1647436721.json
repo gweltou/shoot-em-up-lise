@@ -18,7 +18,33 @@
 			"character": "character-1645612818.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "test test test"
+			"text": "You\"re almost 37 seconds late, Harozez !"
+		},
+		{
+			"action": "join",
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Euh, sorry miss Kelenerez"
+		},
+		{
+			"character": "character-1645612818.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I expect you'll put your best efforts for the first class of the week !"
 		}
 	],
 	"metadata": {
