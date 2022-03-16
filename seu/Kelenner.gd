@@ -66,7 +66,8 @@ func _process(delta):
 			var n = randi()%len(phrases)
 			shoot_word(phrases[n])
 		else:
-			shoot_random()
+			#shoot_random()
+			rifle_attack(true)
 		fire_time = FIRE_RATE
 	move_time += delta
 	
@@ -82,12 +83,13 @@ func _process(delta):
 
 
 func choose_destination():
+	# Teacher choose a new destination do walk to
 	var max_x = estrade.position.x + estrade.shape.extents.x
 	var min_x = estrade.position.x - estrade.shape.extents.x
 	var max_y = estrade.position.y + estrade.shape.extents.y
 	var min_y = estrade.position.y - estrade.shape.extents.y
 	var new_destination = Vector2()
-	randomize()
+	#randomize()
 	new_destination.x = randf() * (max_x - min_x) + min_x
 	new_destination.y = randf() * (max_y - min_y) + min_y
 	return new_destination
@@ -150,6 +152,19 @@ func double_bullet_attack():
 	pattern.number = 2
 	pattern.angle_cone = 0.1
 	pattern.aimed = true
+
+
+func rifle_attack(aimed : bool):
+	var bullet = Bullet.instance()
+	bullet.speed = 160
+	bullet.drag = 0.1
+	bullet.hitval = -2
+	bullet.size = 0.8
+	
+	var pattern = SequencePattern.new(self, bullet)
+	pattern.number = 9
+	pattern.rate = 0.3
+	pattern.aimed = aimed
 
 
 func heart_attack(aimed : bool):

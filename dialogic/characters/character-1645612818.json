@@ -8,13 +8,13 @@
 	"name": "Kelennerezh Yezh",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 10,
+	"offset_x": 140,
+	"offset_y": 70,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": "res://vn/images/kelennerezh yezh.png"
 		}
 	],
-	"scale": 40
+	"scale": 50
 }

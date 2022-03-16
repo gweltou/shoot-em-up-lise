@@ -46,7 +46,7 @@ func _ready():
 func move_paw():
 	Paw.position.y = menu_pos[menu_idx]
 	$MenuChange.play()
-	
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_up") and not freezed:
