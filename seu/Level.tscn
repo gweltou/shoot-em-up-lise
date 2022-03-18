@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
@@ -8,19 +8,6 @@
 [ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://ressources/player 3.png" type="Texture" id=9]
-[ext_resource path="res://ressources/player 4.png" type="Texture" id=10]
-[ext_resource path="res://ressources/player 5.png" type="Texture" id=11]
-[ext_resource path="res://ressources/player 1.png" type="Texture" id=12]
-[ext_resource path="res://ressources/player 2.png" type="Texture" id=13]
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "default",
-"speed": 6.0
-} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.6477, 21.277 )
@@ -51,12 +38,6 @@ texture = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 7 )]
 pause_mode = 1
 position = Vector2( 631.276, 502.194 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 0.724028, -0.193999 )
-scale = Vector2( 2.64296, 2.64296 )
-frames = SubResource( 6 )
-frame = 3
 
 [node name="Kelenner" parent="." instance=ExtResource( 6 )]
 pause_mode = 1

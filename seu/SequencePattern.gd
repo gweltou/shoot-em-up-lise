@@ -10,16 +10,13 @@ func _init(t , b : Bullet).(t, b):
 	pass
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 func _process(delta):
 	if self.delay > 0:
 		self.delay -= delta
 	else:
+		print("pre", angle)
 		get_aim()
+		print("post", angle)
 		self._time_counter += delta
 		if self._time_counter >= rate:
 			self._thrower.shoot(self._bullet.copy(), self.angle)

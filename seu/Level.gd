@@ -24,7 +24,6 @@ func _ready():
 	dialog = Dialogic.start('k01')
 	add_child(dialog)
 	in_dialog = true
-	print(dialog)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

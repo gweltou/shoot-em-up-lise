@@ -1,9 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
-
-const MAX_MOVE_SPEED = 350
-var move_speed = MAX_MOVE_SPEED
+var move_speed = 400
+var moving = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,11 +31,26 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("move_right"):
 		vel.x += 1
 	
+	var l = vel.length_squared()
+	if not moving and l > 0:
+		$AnimatedSprite.play("default")
+		moving = true
+	elif moving and l == 0:
+		$AnimatedSprite.stop()
+		$AnimatedSprite.set_frame(0)
+		moving = false
+		
 	move_and_slide(vel.normalized() * move_speed)
 #	for i in range(get_slide_count() - 1):
 #		var collision = get_slide_collision(i)
 #		print(collision.collider.name)
 
 
-func _on_letter_collected(num_letters : int):
-	move_speed = MAX_MOVE_SPEED * max(0.33, (50.0 - num_letters) / 50.0)
+func hit(hitval):
+	if hitval < 0:
+		$PlayerHit.play()
+	else:
+		if $PlayerLetter.is_playing():
+			$PlayerLetter2.play()
+		else:
+			$PlayerLetter.play()

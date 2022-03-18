@@ -13,11 +13,12 @@ var lifetime = 8				# In seconds
 var hitval = 0					# Score added or reduces when player is hit
 var size = 1 setget set_size
 var letter = '' setget set_letter
+var collected = false
 var homing = false				# Bullet follows player
 
 
 signal add_score(points)
-signal letter_collected(letter)
+signal letter_collected(letter, pos)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,7 +51,9 @@ func _process(delta):
 
 func _draw():
 	var col = Color(1, 1, 1)
-	if hitval > 0:
+	if collected:
+		col = Color(1, 1, 0)
+	elif hitval > 0:
 		col = Color(0, 1, 0)
 	elif hitval < 0:
 		col = Color(1, 0.4, 0)
@@ -67,8 +70,10 @@ func _on_Area2D_body_entered(body):
 	# Destroy bullet if it touches anything else
 	if body.get_name() == "Player":
 		emit_signal("add_score", hitval)
-		if self.letter != '':
+		if collected and self.letter != '':
 			emit_signal("letter_collected", letter, global_position)
+		else:
+			body.hit(hitval)
 	queue_free()
 
 
@@ -93,4 +98,5 @@ func copy():
 	new_bullet.size = size
 	new_bullet.letter = letter
 	new_bullet.homing = homing
+	new_bullet.collected = collected
 	return new_bullet

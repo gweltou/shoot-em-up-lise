@@ -1,6 +1,10 @@
 {
 	"events": [
 		{
+			"background": "res://vn/background/IMG_7194.JPG",
+			"event_id": "dialogic_021"
+		},
+		{
 			"action": "join",
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_002",
@@ -159,6 +163,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Me ivez, ar c'helenner matematikoù"
+		},
+		{
+			"change_scene": "res://seu/Level.tscn",
+			"event_id": "dialogic_041"
 		}
 	],
 	"metadata": {
