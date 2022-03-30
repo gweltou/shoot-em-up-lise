@@ -37,9 +37,9 @@ func _ready():
 	destination = choose_destination()
 	randomize()
 
-func _draw():
-	var vertices = [Vector2(-12, 0), Vector2(12, 0), Vector2(12, 30), Vector2(-12, 30)]
-	draw_colored_polygon(vertices, Color(0, 0, 1))
+#func _draw():
+	#var vertices = [Vector2(-12, 0), Vector2(12, 0), Vector2(12, 30), Vector2(-12, 30)]
+	# draw_colored_polygon(vertices, Color(0, 0, 1))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

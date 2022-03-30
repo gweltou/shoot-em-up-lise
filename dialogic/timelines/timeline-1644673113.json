@@ -2,7 +2,8 @@
 	"events": [
 		{
 			"background": "res://vn/background/IMG_7194.JPG",
-			"event_id": "dialogic_021"
+			"event_id": "dialogic_021",
+			"fade_duration": 1
 		},
 		{
 			"action": "join",
