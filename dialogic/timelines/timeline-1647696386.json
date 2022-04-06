@@ -1,0 +1,65 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1644673207.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh my god ! Echu eo ar gentel kentañ..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tost da vervel e oant !!!"
+		},
+		{
+			"action": "join",
+			"character": "character-1645612818.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645612818.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good job Harozez !"
+		},
+		{
+			"character": "character-1645612818.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And the best of luck for the rest of the day <3"
+		},
+		{
+			"change_scene": "res://title/TitleScreen.tscn",
+			"event_id": "dialogic_041"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1647696386.json",
+		"name": "gounezet"
+	}
+}
