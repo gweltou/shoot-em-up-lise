@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/morning.png-b54e554bffdd86f007217881579d88cf.stex"
+path="res://.import/trousenn.png-509c9f14a16c67bfe8f4973c7a1c8da5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/morning.png"
-dest_files=[ "res://.import/morning.png-b54e554bffdd86f007217881579d88cf.stex" ]
+source_file="res://seu/classroom/trousenn.png"
+dest_files=[ "res://.import/trousenn.png-509c9f14a16c67bfe8f4973c7a1c8da5.stex" ]
 
 [params]
 

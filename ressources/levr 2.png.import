@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player mc base no face.png-117f28abb3e18055763d84737dc0cb2f.stex"
+path="res://.import/levr 2.png-411fe8065c6a402d42f53f4ded361394.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/player mc base no face.png"
-dest_files=[ "res://.import/player mc base no face.png-117f28abb3e18055763d84737dc0cb2f.stex" ]
+source_file="res://ressources/levr 2.png"
+dest_files=[ "res://.import/levr 2.png-411fe8065c6a402d42f53f4ded361394.stex" ]
 
 [params]
 

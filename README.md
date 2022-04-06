@@ -87,22 +87,16 @@ var angle_step = 0.2			# Angle between each bullet
 
 ## Da ober :
 ### Kodiñ :
- * Diabarzhañ tresadennoù Loula
- * Krouiñ diazez al lodenn visual novel
- * Krouiñ ar menu degemer
- * Krouiñ patternoù diwar menozioù disheñvel
+ * Pattern "wave"
  * Tennañ an taolioù eus al live (tresadenn SVG ha collision shape)
  * Krouiñ ur scene "taol", evit gallout krouiñ levelioù gant dasparzhioù taolioù disheñvel
- * Gallout diviz frekañs an tagadennoù hag hini lizhiri bonus dre variennoù
 
 ### Tresañ :
- * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.**
- * Ur galon evit diskouez ar buhez(ioù) a chomm
- * Ur sprite simpl evit ar c'helenner (hep animasion, evit gwelet ar ment hag ar style evit kregiñ)
- * Ur pav kaz evit ar menu degemer
+ * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.*
+ * Ar sprite "pod" (seu/classroom/pod.png) a zo iskis (re vihan marteze ?)
 
 ## Menozioù :
- * Ur bullet bonus evit tennañ lizherennoù er baner
+ * Al lisead "kasos" oc'h ober evezhiadennoù tagus pa vez gloazet an aroz er SEU
  * Implij "buhezioù" ma vez marvet (pa vez ar score da 0), araok kaout un "game over"
  * Un talvoud disheñvel etre pep lizherenn hervez e frekañs
 

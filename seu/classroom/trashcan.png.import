@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/leoc'h 2.png-afc158a60d7a7283afc4ae9aaf404a02.stex"
+path="res://.import/trashcan.png-b4cad23b8dfad0730eaa46d8c52b9349.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/leoc'h 2.png"
-dest_files=[ "res://.import/leoc'h 2.png-afc158a60d7a7283afc4ae9aaf404a02.stex" ]
+source_file="res://seu/classroom/trashcan.png"
+dest_files=[ "res://.import/trashcan.png-b4cad23b8dfad0730eaa46d8c52b9349.stex" ]
 
 [params]
 

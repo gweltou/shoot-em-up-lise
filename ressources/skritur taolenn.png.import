@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kelenerezh yezh walk.png-3fa89f323141a780a4c6a9016c6acd0f.stex"
+path="res://.import/skritur taolenn.png-c212a0a8b7ead1a8c058abd45b261eb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/kelenerezh yezh walk.png"
-dest_files=[ "res://.import/kelenerezh yezh walk.png-3fa89f323141a780a4c6a9016c6acd0f.stex" ]
+source_file="res://ressources/skritur taolenn.png"
+dest_files=[ "res://.import/skritur taolenn.png-c212a0a8b7ead1a8c058abd45b261eb3.stex" ]
 
 [params]
 

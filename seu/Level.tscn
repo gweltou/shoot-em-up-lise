@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://seu/classroom/trashcan.png" type="Texture" id=9]
+[ext_resource path="res://seu/classroom/trousenn.png" type="Texture" id=10]
+[ext_resource path="res://seu/classroom/skritur taolenn.png" type="Texture" id=11]
+[ext_resource path="res://seu/classroom/levr 2.png" type="Texture" id=12]
+[ext_resource path="res://seu/classroom/levr 1.png" type="Texture" id=13]
+[ext_resource path="res://seu/classroom/plantenn.png" type="Texture" id=14]
+[ext_resource path="res://seu/classroom/paperiou.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.6477, 21.277 )
@@ -121,3 +128,50 @@ text = "PAUSE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="classroom props" type="Node" parent="."]
+
+[node name="SkriturTaolenn" type="Sprite" parent="classroom props"]
+position = Vector2( 550.051, 30.5903 )
+scale = Vector2( 1.62887, 1.62887 )
+texture = ExtResource( 11 )
+
+[node name="Trashcan" type="Sprite" parent="classroom props"]
+position = Vector2( 326.053, 109.885 )
+scale = Vector2( 3.33594, 3.33594 )
+texture = ExtResource( 9 )
+
+[node name="Trousenn" type="Sprite" parent="classroom props"]
+position = Vector2( 425.187, 395.103 )
+scale = Vector2( 2.76577, 2.76577 )
+texture = ExtResource( 10 )
+
+[node name="Trousenn2" type="Sprite" parent="classroom props"]
+position = Vector2( 533.732, 396.519 )
+scale = Vector2( 2.76577, 2.76577 )
+texture = ExtResource( 10 )
+
+[node name="Levr1" type="Sprite" parent="classroom props"]
+position = Vector2( 397.613, 417.461 )
+scale = Vector2( 1.62605, 1.62605 )
+texture = ExtResource( 13 )
+
+[node name="Levr2" type="Sprite" parent="classroom props"]
+position = Vector2( 555.777, 243.837 )
+scale = Vector2( 1.62605, 1.62605 )
+texture = ExtResource( 13 )
+
+[node name="Plantenn" type="Sprite" parent="classroom props"]
+position = Vector2( 322.293, 549.011 )
+scale = Vector2( 6.33024, 6.43824 )
+texture = ExtResource( 14 )
+
+[node name="Levr3" type="Sprite" parent="classroom props"]
+position = Vector2( 561.81, 409.729 )
+scale = Vector2( 1.80446, 1.80446 )
+texture = ExtResource( 12 )
+
+[node name="Paperiou" type="Sprite" parent="classroom props"]
+position = Vector2( 397.457, 322.188 )
+scale = Vector2( 1.31569, 1.31569 )
+texture = ExtResource( 15 )
