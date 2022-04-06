@@ -60,6 +60,8 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
 		Paw.play("default")
 		if menu_idx == 0 or menu_idx == 1:
+			if freezed == true:	# Second press to skip intro zoom
+				_on_MenuAccept_finished()
 			$MenuAccept.play()
 			freezed = true
 	

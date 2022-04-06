@@ -63,7 +63,7 @@ func _process(delta):
 		move_time = 0
 		wait_time = rand_range(1.0, 5.0)
 		destination = choose_destination()
-
+	
 	
 	var to_dest = destination-position
 	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
@@ -136,8 +136,8 @@ func choose_destination():
 	# Teacher choose a new destination do walk to
 	var max_x = estrade.position.x + estrade.shape.extents.x
 	var min_x = estrade.position.x - estrade.shape.extents.x
-	var max_y = estrade.position.y + estrade.shape.extents.y
-	var min_y = estrade.position.y - estrade.shape.extents.y
+	var max_y = estrade.position.y + estrade.shape.extents.y - 20
+	var min_y = estrade.position.y - estrade.shape.extents.y - 20
 	var new_destination = Vector2()
 	new_destination.x = randf() * (max_x - min_x) + min_x
 	new_destination.y = randf() * (max_y - min_y) + min_y

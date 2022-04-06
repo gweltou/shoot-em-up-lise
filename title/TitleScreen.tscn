@@ -71,7 +71,7 @@ script = ExtResource( 9 )
 [node name="BackgroundGroup" type="Node2D" parent="."]
 
 [node name="Img7144" type="Sprite" parent="BackgroundGroup"]
-position = Vector2( 556.251, 338.984 )
+position = Vector2( 536.069, 337.302 )
 scale = Vector2( 1.43776, 1.43776 )
 texture = ExtResource( 12 )
 
