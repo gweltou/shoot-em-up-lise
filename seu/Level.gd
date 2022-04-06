@@ -32,7 +32,6 @@ func _process(delta):
 	if in_dialog and not is_instance_valid(dialog):
 		in_dialog = false
 		get_tree().paused = false
-		
 	
 	if  not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
 		pauseLabel.visible = true

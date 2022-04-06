@@ -31,6 +31,7 @@ func _process(delta):
 	var decimal_part = fake_time - floor(fake_time)
 	var fake_seconds = lerp(0, 60, decimal_part)	
 	timeLabel.text = "%02d:%02d" % [fake_time, fake_seconds]
+	
 	if life <= 0:
 		get_tree().change_scene("res://seu/GameOver.tscn")
 
@@ -38,3 +39,10 @@ func _on_add_score(points):
 	life = min(life + points, 100)
 
 
+func _on_Timer_timeout():
+	# gounezet !
+	var dialog = Dialogic.start('gounezet')
+	get_parent().dialog = dialog
+	get_parent().add_child(dialog)
+	get_parent().in_dialog = true
+	get_parent().get_tree().paused = true

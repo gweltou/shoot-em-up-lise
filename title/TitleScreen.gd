@@ -30,6 +30,8 @@ var eyelid_counter = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = false
+	
 	Cat.get_node("Eyelid1").visible = false
 	Cat.get_node("Eyelid2").visible = false
 	

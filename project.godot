@@ -134,6 +134,13 @@ IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
+[display]
+
+window/size/borderless=true
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/github-integration/plugin.cfg" )

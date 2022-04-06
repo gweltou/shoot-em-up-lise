@@ -77,7 +77,7 @@ func behave():
 		if randf() < 0.05:
 			var n = randi()%len(phrases)
 			shoot_word(phrases[n])
-		elif randf() < 0.01:
+		elif randf() < 0.02:
 			shoot_random()
 	
 	####### Second phase #######
@@ -93,24 +93,24 @@ func behave():
 	
 	####### Third phase #######
 	elif scoreBar.fake_time > 10:
-		move_speed = 1.0
+		move_speed = 1.5
 		if randf() < 0.03:
 			var n = randi()%len(phrases)
 			shoot_word(phrases[n])
-		elif randf() < 0.06:
+		elif randf() < 0.05:
 			rifle_attack(9, true)
-		elif randf() < 0.02:
-			heart_attack(true)
 		elif randf() < 0.01:
+			heart_attack(true)
+		elif randf() < 0.02:
 			shoot_random()
 			
 	####### Last phase #######
 	else:
-		move_speed = 2.0
+		move_speed = 3.0
 		if randf() < 0.02:
 			var n = randi()%len(phrases)
 			shoot_word(phrases[n])
-		elif randf() < 0.04:
+		elif randf() < 0.02:
 			fivestar_attack()
 			var exclamations = ["Eat my special attack !",
 								"Obey your teacher !",
@@ -120,8 +120,10 @@ func behave():
 			
 			#heart_attack(true)
 			#double_bullet_attack()
-		elif randf() < 0.08:
-				rifle_attack(9, true)
+		elif randf() < 0.06:
+			rifle_attack(9, true)
+		elif randf() < 0.01:
+			heart_attack(true)
 		elif randf() < 0.02:
 			shoot_random()
 
@@ -221,24 +223,22 @@ func rifle_attack(num, aimed):
 func heart_attack(aimed):
 	var bullet = Bullet.instance()
 	bullet.speed = 160
-	bullet.drag = 0.3
+	bullet.drag = 0.2
 	bullet.hitval = -5
 	bullet.size = 0.8
 	
 	var pattern_left = SequencePattern.new(self, bullet)
-	pattern_left.number = 16
-	pattern_left.angle_step = 0.17
-	pattern_left.rate = 0.1
+	pattern_left.number = 14
+	pattern_left.angle_step = 0.18
+	pattern_left.rate = 0.2
 	
 	var pattern_right = SequencePattern.new(self, bullet)
-	pattern_right.number = 16
-	pattern_right.angle_step = -0.17
-	pattern_right.rate = 0.1
+	pattern_right.number = 14
+	pattern_right.angle_step = -0.18
+	pattern_right.rate = 0.2
 	
 	if aimed:
-		#attern_left.aimed = true
 		pattern_left.aim_once = true
-		#pattern_right.aimed = true
 		pattern_right.aim_once = true
 	
 	add_child(pattern_left)
