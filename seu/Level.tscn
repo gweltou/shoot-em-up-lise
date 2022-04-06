@@ -153,11 +153,10 @@ shape = SubResource( 4 )
 
 [node name="LetterCollector" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 738, 28 )
+position = Vector2( 733.593, 501.705 )
 
 [node name="ScoreBar" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 742.927, 555.824 )
 
 [node name="Colleague" parent="." instance=ExtResource( 5 )]
 pause_mode = 1

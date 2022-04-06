@@ -24,6 +24,7 @@ func _ready():
 	dialog = Dialogic.start('k01')
 	add_child(dialog)
 	in_dialog = true
+	$ScoreBar.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +33,7 @@ func _process(delta):
 	if in_dialog and not is_instance_valid(dialog):
 		in_dialog = false
 		get_tree().paused = false
+		$ScoreBar.visible = true
 	
 	if  not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
 		pauseLabel.visible = true

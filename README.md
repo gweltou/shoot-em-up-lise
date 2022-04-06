@@ -1,6 +1,6 @@
 # Prototip Shoot 'Em Up savet el lise
 
-![Game screenshot](/ressources/screenshot_21-12-6.png)
+![Game screenshot](/ressources/screenshot_2.png)
 
 ## Project structure
 The game is divided in two main parts : a Visual Novel and a Shoot 'em Up. \
