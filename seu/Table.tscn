@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.2925, 11.5044 )
+
+[node name="Table" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+mass = 50.0
+gravity_scale = 0.0
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="Icon" type="Sprite" parent="RigidBody2D"]
+position = Vector2( 0.192622, 0.369826 )
+scale = Vector2( 0.614437, 0.386815 )
+texture = ExtResource( 1 )

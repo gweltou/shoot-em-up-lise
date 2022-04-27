@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 class_name Player
 
 var move_speed = 400
@@ -39,11 +39,24 @@ func _physics_process(_delta):
 		$AnimatedSprite.stop()
 		$AnimatedSprite.set_frame(0)
 		moving = false
-		
-	move_and_slide(vel.normalized() * move_speed)
+	
+	add_central_force(vel.normalized() * move_speed)	
+	#move_and_slide(vel.normalized() * move_speed)
 #	for i in range(get_slide_count() - 1):
 #		var collision = get_slide_collision(i)
 #		print(collision.collider.name)
+
+func _integrate_forces(state):
+	var vel = Vector2()
+	if Input.is_action_pressed("move_up"):
+		vel.y -= 1
+	if Input.is_action_pressed("move_down"):
+		vel.y += 1
+	if Input.is_action_pressed("move_left"):
+		vel.x -= 1
+	if Input.is_action_pressed("move_right"):
+		vel.x += 1
+	applied_force = vel * 100000
 
 
 func hit(hitval):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://seu/classroom/paperiou.png" type="Texture" id=15]
 [ext_resource path="res://seu/assets/sounds/dancing with stars intro.mp3" type="AudioStream" id=16]
 [ext_resource path="res://seu/assets/sounds/dancing with stars loop.mp3" type="AudioStream" id=17]
+[ext_resource path="res://seu/Table.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.6477, 21.277 )
@@ -184,6 +185,9 @@ stream = ExtResource( 16 )
 
 [node name="MusicMainLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+
+[node name="Table" parent="." instance=ExtResource( 18 )]
+position = Vector2( 473.958, 475.74 )
 
 [connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
 [connection signal="finished" from="MusicMainLoop" to="." method="_on_MusicIntro_finished"]
