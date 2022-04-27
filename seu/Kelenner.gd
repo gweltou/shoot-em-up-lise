@@ -27,7 +27,6 @@ var phrases = ["John is in the kitchen",
 			 "settle down please", "ok that's enough",
 			 "do you like apples ?", "show me your homework"]
 
-var patterns = []
 
 
 
@@ -37,21 +36,10 @@ func _ready():
 	destination = choose_destination()
 	randomize()
 
-#func _draw():
-	#var vertices = [Vector2(-12, 0), Vector2(12, 0), Vector2(12, 30), Vector2(-12, 30)]
-	# draw_colored_polygon(vertices, Color(0, 0, 1))
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-	
-	# Execute every patterns in queue and remove finished ones
-	var new_patterns = []
-	for p in patterns:
-		if not p.ended:
-			new_patterns.append(p)
-	patterns = new_patterns
 	
 	fire_time -= delta
 	if fire_time <= 0:	# keeps behavior on a tempo
@@ -82,6 +70,8 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			shoot_random()
+		elif randf() < 0.1:
+			wave_attack()
 	
 	####### Second phase #######
 	elif scoreBar.fake_time > 30:
@@ -222,6 +212,16 @@ func rifle_attack(num, aimed):
 	pattern.aimed = aimed
 	add_child(pattern)
 
+
+func wave_attack():
+	print("wave")
+	var bullet = Bullet.instance()
+	
+	var pattern = WavePattern.new(self, bullet)
+	pattern.number = 12
+	pattern.duration = 1
+	#pattern.aimed = aimed
+	add_child(pattern)
 
 func heart_attack(aimed):
 	var bullet = Bullet.instance()

@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://seu/Bullet.gd"
 }, {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
 "base": "Reference",
 "class": "DTS",
 "language": "GDScript",
@@ -59,16 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://seu/FanPattern.gd"
 }, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
-}, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
-}, {
 "base": "Node2D",
 "class": "Kelenner",
 "language": "GDScript",
@@ -78,11 +63,6 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://seu/Player.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 }, {
 "base": "_BulletPattern",
 "class": "SequencePattern",
@@ -94,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://seu/StarPattern.gd"
 }, {
+"base": "_BulletPattern",
+"class": "WavePattern",
+"language": "GDScript",
+"path": "res://seu/WavePattern.gd"
+}, {
 "base": "Node",
 "class": "_BulletPattern",
 "language": "GDScript",
@@ -101,7 +86,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"ContributorClass": "",
 "DTS": "",
 "DialogPopup": "",
 "Dialogic": "",
@@ -110,13 +94,11 @@ _global_script_class_icons={
 "DialogicResources": "",
 "DialogicUtil": "",
 "FanPattern": "",
-"GistItem": "",
-"InvitationItem": "",
 "Kelenner": "",
 "Player": "",
-"RepositoryItem": "",
 "SequencePattern": "",
 "StarPattern": "",
+"WavePattern": "",
 "_BulletPattern": ""
 }
 
@@ -129,10 +111,6 @@ config/icon="res://icon.png"
 [autoload]
 
 GameVariables="*res://GameVariables.gd"
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
 [display]
 
@@ -143,7 +121,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
 
 [importer_defaults]
 
