@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://seu/classroom/levr 1.png" type="Texture" id=13]
 [ext_resource path="res://seu/classroom/plantenn.png" type="Texture" id=14]
 [ext_resource path="res://seu/classroom/paperiou.png" type="Texture" id=15]
+[ext_resource path="res://seu/assets/sounds/dancing with stars intro.mp3" type="AudioStream" id=16]
+[ext_resource path="res://seu/assets/sounds/dancing with stars loop.mp3" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.6477, 21.277 )
@@ -23,7 +25,7 @@ extents = Vector2( 42.6477, 21.277 )
 extents = Vector2( 130.518, 42.5461 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 221.119, 40.1627 )
+extents = Vector2( 221.119, 47.3079 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20.0906, 322.852 )
@@ -136,7 +138,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 481.803, 41.5001 )
+position = Vector2( 481.803, 34.3549 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
@@ -176,3 +178,12 @@ text = "PAUSE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="MusicMainLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
+[connection signal="finished" from="MusicMainLoop" to="." method="_on_MusicIntro_finished"]

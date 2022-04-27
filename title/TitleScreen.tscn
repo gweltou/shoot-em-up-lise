@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://title/assets/title.png" type="Texture" id=1]
 [ext_resource path="res://title/assets/btn_story.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://title/assets/menu.wav" type="AudioStream" id=10]
 [ext_resource path="res://title/assets/menu_accept.wav" type="AudioStream" id=11]
 [ext_resource path="res://title/assets/IMG_7144.JPG" type="Texture" id=12]
+[ext_resource path="res://title/assets/theme song visual novel.mp3" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -184,6 +185,10 @@ pitch_scale = 1.1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
 
 [connection signal="animation_finished" from="Paw" to="." method="_on_Paw_animation_finished"]
 [connection signal="finished" from="MenuAccept" to="." method="_on_MenuAccept_finished"]

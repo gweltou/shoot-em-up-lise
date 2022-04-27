@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dancing with stars intro.mp3-37555d2d9d63c5537f2afe44f1b71770.mp3str"
+
+[deps]
+
+source_file="res://seu/assets/sounds/dancing with stars intro.mp3"
+dest_files=[ "res://.import/dancing with stars intro.mp3-37555d2d9d63c5537f2afe44f1b71770.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
