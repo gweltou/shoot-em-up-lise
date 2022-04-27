@@ -10,7 +10,7 @@ extents = Vector2( 19.2925, 11.5044 )
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 2
-mass = 50.0
+mass = 5.0
 gravity_scale = 0.0
 linear_damp = 1.0
 

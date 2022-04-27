@@ -216,6 +216,7 @@ func rifle_attack(num, aimed):
 func wave_attack():
 	print("wave")
 	var bullet = Bullet.instance()
+	bullet.hitval = -2
 	
 	var pattern = WavePattern.new(self, bullet)
 	pattern.number = 12

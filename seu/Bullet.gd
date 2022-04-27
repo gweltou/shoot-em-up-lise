@@ -73,7 +73,7 @@ func _on_Area2D_body_entered(body):
 		if collected and self.letter != '':
 			emit_signal("letter_collected", letter, global_position)
 		else:
-			body.hit(hitval)
+			body.hit(self)
 	queue_free()
 
 
