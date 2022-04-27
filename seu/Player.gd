@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends RigidBody2D
 class_name Player
 
-var move_speed = 400
+var move_speed = 12000
 var moving = false
 
 
@@ -20,7 +20,7 @@ func _draw():
 #	pass
 
 
-func _physics_process(_delta):
+func _integrate_forces(state):
 	var vel = Vector2()
 	if Input.is_action_pressed("move_up"):
 		vel.y -= 1
@@ -30,25 +30,28 @@ func _physics_process(_delta):
 		vel.x -= 1
 	if Input.is_action_pressed("move_right"):
 		vel.x += 1
+	vel = vel.normalized()
+	set_applied_force(vel * move_speed)
 	
 	var l = vel.length_squared()
 	if not moving and l > 0:
 		$AnimatedSprite.play("default")
+		#set_angular_velocity(0)
+		#rotation_degrees = 0
+		state.transform = Transform2D(0, position)
 		moving = true
 	elif moving and l == 0:
 		$AnimatedSprite.stop()
 		$AnimatedSprite.set_frame(0)
 		moving = false
-		
-	move_and_slide(vel.normalized() * move_speed)
-#	for i in range(get_slide_count() - 1):
-#		var collision = get_slide_collision(i)
-#		print(collision.collider.name)
 
 
-func hit(hitval):
-	if hitval < 0:
+func hit(bullet : Bullet):
+	if bullet.hitval < 0:
 		$PlayerHit.play()
+		var dir = position - bullet.position
+		apply_central_impulse(dir * 80)
+		apply_torque_impulse(1000 * (randf() - 0.5))
 	else:
 		if $PlayerLetter.is_playing():
 			$PlayerLetter2.play()
