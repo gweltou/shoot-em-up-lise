@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://seu/Level.gd" type="Script" id=1]
 [ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ressources/classroom shoot them up 6-1.png" type="Texture" id=4]
+[ext_resource path="res://seu/classroom/classroom empty.png" type="Texture" id=4]
 [ext_resource path="res://seu/Colleague.tscn" type="PackedScene" id=5]
 [ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
@@ -19,12 +19,6 @@
 [ext_resource path="res://seu/assets/sounds/dancing with stars loop.mp3" type="AudioStream" id=17]
 [ext_resource path="res://seu/Table.tscn" type="PackedScene" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 42.6477, 21.277 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 130.518, 42.5461 )
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 221.119, 47.3079 )
 
@@ -36,6 +30,9 @@ size = 32
 extra_spacing_char = 4
 font_data = ExtResource( 8 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 95.0456, 44.6606 )
+
 [node name="Level" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -45,51 +42,50 @@ position = Vector2( 481.438, 297 )
 scale = Vector2( 3.38542, 3.44318 )
 texture = ExtResource( 4 )
 
-[node name="classroom props" type="Node" parent="."]
+[node name="classroom props" type="Node2D" parent="."]
+visible = false
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="SkriturTaolenn" type="Sprite" parent="Node2D"]
+[node name="SkriturTaolenn" type="Sprite" parent="classroom props"]
 position = Vector2( 550.051, 30.5903 )
 scale = Vector2( 1.62887, 1.62887 )
 texture = ExtResource( 11 )
 
-[node name="Trashcan" type="Sprite" parent="Node2D"]
+[node name="Trashcan" type="Sprite" parent="classroom props"]
 position = Vector2( 326.053, 109.885 )
 scale = Vector2( 3.33594, 3.33594 )
 texture = ExtResource( 9 )
 
-[node name="Trousenn" type="Sprite" parent="Node2D"]
+[node name="Trousenn" type="Sprite" parent="classroom props"]
 position = Vector2( 425.187, 395.103 )
 scale = Vector2( 2.76577, 2.76577 )
 texture = ExtResource( 10 )
 
-[node name="Trousenn2" type="Sprite" parent="Node2D"]
+[node name="Trousenn2" type="Sprite" parent="classroom props"]
 position = Vector2( 533.732, 396.519 )
 scale = Vector2( 2.76577, 2.76577 )
 texture = ExtResource( 10 )
 
-[node name="Levr1" type="Sprite" parent="Node2D"]
+[node name="Levr1" type="Sprite" parent="classroom props"]
 position = Vector2( 397.613, 417.461 )
 scale = Vector2( 1.62605, 1.62605 )
 texture = ExtResource( 13 )
 
-[node name="Levr2" type="Sprite" parent="Node2D"]
+[node name="Levr2" type="Sprite" parent="classroom props"]
 position = Vector2( 555.777, 243.837 )
 scale = Vector2( 1.62605, 1.62605 )
 texture = ExtResource( 13 )
 
-[node name="Plantenn" type="Sprite" parent="Node2D"]
+[node name="Plantenn" type="Sprite" parent="classroom props"]
 position = Vector2( 322.293, 549.011 )
 scale = Vector2( 6.33024, 6.43824 )
 texture = ExtResource( 14 )
 
-[node name="Levr3" type="Sprite" parent="Node2D"]
+[node name="Levr3" type="Sprite" parent="classroom props"]
 position = Vector2( 561.81, 409.729 )
 scale = Vector2( 1.80446, 1.80446 )
 texture = ExtResource( 12 )
 
-[node name="Paperiou" type="Sprite" parent="Node2D"]
+[node name="Paperiou" type="Sprite" parent="classroom props"]
 position = Vector2( 397.457, 322.188 )
 scale = Vector2( 1.31569, 1.31569 )
 texture = ExtResource( 15 )
@@ -101,38 +97,6 @@ position = Vector2( 631.276, 502.194 )
 [node name="Kelenner" parent="." instance=ExtResource( 6 )]
 pause_mode = 1
 position = Vector2( 482, 127 )
-
-[node name="Tables" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 403, 239 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 556, 238 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 403, 321 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 556, 321 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 404, 407 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 559, 407 )
-shape = SubResource( 1 )
-
-[node name="Estrade" type="CollisionShape2D" parent="Tables"]
-position = Vector2( 481.982, 125.373 )
-shape = SubResource( 2 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -188,6 +152,12 @@ stream = ExtResource( 17 )
 
 [node name="Table" parent="." instance=ExtResource( 18 )]
 position = Vector2( 473.958, 475.74 )
+
+[node name="Estrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estrade"]
+position = Vector2( 489.968, 130.936 )
+shape = SubResource( 6 )
 
 [connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
 [connection signal="finished" from="MusicMainLoop" to="." method="_on_MusicIntro_finished"]
