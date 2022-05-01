@@ -6,7 +6,7 @@ onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
 onready var player = get_parent().get_node("Player")
 onready var scoreBar = get_parent().get_node("ScoreBar")
 onready var letterCollector = get_parent().get_node("LetterCollector")
-onready var estrade = get_owner().get_node("Estrade")
+onready var estrade = get_owner().get_node("Estrade/CollisionShape2D")
 
 
 #enum {IDLE, WALKING, PATTERN1}
