@@ -21,16 +21,7 @@ func _draw():
 
 
 func _integrate_forces(state):
-	var vel = Vector2()
-	if Input.is_action_pressed("move_up"):
-		vel.y -= 1
-	if Input.is_action_pressed("move_down"):
-		vel.y += 1
-	if Input.is_action_pressed("move_left"):
-		vel.x -= 1
-	if Input.is_action_pressed("move_right"):
-		vel.x += 1
-	vel = vel.normalized()
+	var vel = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	set_applied_force(vel * move_speed)
 	
 	var l = vel.length_squared()

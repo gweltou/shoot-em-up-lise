@@ -108,7 +108,8 @@ func behave():
 			var exclamations = ["Eat my special attack !",
 								"Obey your teacher !",
 								"MOUAHAHAHAHA",
-								"Take this !"]
+								"Take this !",
+								"You little shit !"]
 			dialog.say(exclamations[randi()%len(exclamations)])
 			
 			#heart_attack(true)
