@@ -10,14 +10,16 @@ const sentences = [
 	"Pak ar memes lizherenn\nmeur a wech\nevit ober ur c'hombo"
 ]
 var sentence_idx = 0
-#var cooldown = 1
 var BEHAVE_RATE := 1000
 var behave_timer := 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var sprite = $Sprite
+	remove_child(sprite)
+	$Chair/RigidBody2D.add_child(sprite)
+	sprite.set_owner($Chair/RigidBody2D)
 
 
 func _process(delta):	
