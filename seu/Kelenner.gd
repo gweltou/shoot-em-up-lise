@@ -70,8 +70,6 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			shoot_random()
-		elif randf() < 0.1:
-			wave_attack()
 	
 	####### Second phase #######
 	elif scoreBar.fake_time > 30:
@@ -116,10 +114,10 @@ func behave():
 			#double_bullet_attack()
 		elif randf() < 0.06:
 			rifle_attack(9, true)
-		elif randf() < 0.01:
+		elif randf() < 0.02:
 			heart_attack(true)
 		elif randf() < 0.02:
-			shoot_random()
+			wave_attack()
 
 
 
@@ -215,7 +213,6 @@ func rifle_attack(num, aimed):
 
 
 func wave_attack():
-	print("wave")
 	var bullet = Bullet.instance()
 	bullet.hitval = -2
 	
@@ -224,6 +221,7 @@ func wave_attack():
 	pattern.duration = 1
 	#pattern.aimed = aimed
 	add_child(pattern)
+
 
 func heart_attack(aimed):
 	var bullet = Bullet.instance()

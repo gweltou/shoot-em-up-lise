@@ -19,6 +19,7 @@ func _ready():
 	var sprite = $Sprite
 	remove_child(sprite)
 	$Chair/RigidBody2D.add_child(sprite)
+	$Chair/RigidBody2D.mass += 20
 	sprite.set_owner($Chair/RigidBody2D)
 
 

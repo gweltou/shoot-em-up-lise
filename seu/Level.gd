@@ -61,10 +61,11 @@ func _process(delta):
 		for i in range(len(_walking_students)):
 			var student = _walking_students[i]
 			if student.stopped:
-				var chair = _empty_chairs[i]
+				var chair = _empty_chairs[i].get_node("RigidBody2D")
 				remove_child(student)
-				chair.get_node("RigidBody2D").add_child(student)
-				student.set_owner(chair.get_node("RigidBody2D"))
+				chair.add_child(student)
+				chair.mass += 20	# Chair gets heavier when someone's sitting on it
+				student.set_owner(chair)
 				student.position = Vector2(0, -5)
 				student.rotation = 0
 				_walking_students_cpy.remove(i)
