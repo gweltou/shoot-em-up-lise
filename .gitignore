@@ -15,10 +15,4 @@ mono_crash.*.json
 *~
 user/
 
-
-
-
-
-
-
-
+export/

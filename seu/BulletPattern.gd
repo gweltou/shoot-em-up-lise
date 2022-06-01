@@ -18,7 +18,6 @@ func _init(t , b : Bullet):
 	self._bullet = b.copy()
 
 func _ready():
-	print_debug("pattern ready")
 	if aim_once:
 		var player = _thrower.get_parent().get_node("Player")
 		self.angle = _thrower.position.angle_to_point(player.position) + PI

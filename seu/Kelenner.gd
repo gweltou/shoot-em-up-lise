@@ -6,7 +6,7 @@ onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
 onready var player = get_parent().get_node("Player")
 onready var scoreBar = get_parent().get_node("ScoreBar")
 onready var letterCollector = get_parent().get_node("LetterCollector")
-onready var estrade = get_owner().get_node("Tables/Estrade")
+onready var estrade = get_owner().get_node("Estrade/CollisionShape2D")
 
 
 #enum {IDLE, WALKING, PATTERN1}
@@ -70,8 +70,6 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			shoot_random()
-		elif randf() < 0.1:
-			wave_attack()
 	
 	####### Second phase #######
 	elif scoreBar.fake_time > 30:
@@ -108,17 +106,18 @@ func behave():
 			var exclamations = ["Eat my special attack !",
 								"Obey your teacher !",
 								"MOUAHAHAHAHA",
-								"Take this !"]
+								"Take this !",
+								"You little shit !"]
 			dialog.say(exclamations[randi()%len(exclamations)])
 			
 			#heart_attack(true)
 			#double_bullet_attack()
 		elif randf() < 0.06:
 			rifle_attack(9, true)
-		elif randf() < 0.01:
+		elif randf() < 0.02:
 			heart_attack(true)
 		elif randf() < 0.02:
-			shoot_random()
+			wave_attack()
 
 
 
@@ -214,14 +213,15 @@ func rifle_attack(num, aimed):
 
 
 func wave_attack():
-	print("wave")
 	var bullet = Bullet.instance()
+	bullet.hitval = -2
 	
 	var pattern = WavePattern.new(self, bullet)
 	pattern.number = 12
 	pattern.duration = 1
 	#pattern.aimed = aimed
 	add_child(pattern)
+
 
 func heart_attack(aimed):
 	var bullet = Bullet.instance()

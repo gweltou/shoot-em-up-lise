@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/theme song visual novel.mp3-41fcb68e308529386c394c8e7de66c35.mp3str"
+
+[deps]
+
+source_file="res://title/assets/theme song visual novel.mp3"
+dest_files=[ "res://.import/theme song visual novel.mp3-41fcb68e308529386c394c8e7de66c35.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
