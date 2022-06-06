@@ -88,20 +88,20 @@ __meta__ = {
 }
 
 [node name="Eyelid1" type="ColorRect" parent="BackgroundGroup/Cat"]
-margin_left = 130.0
-margin_top = 167.0
-margin_right = 213.0
-margin_bottom = 221.0
+margin_left = 137.143
+margin_top = 172.937
+margin_right = 220.143
+margin_bottom = 226.937
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Eyelid2" type="ColorRect" parent="BackgroundGroup/Cat"]
-margin_left = 19.2861
-margin_top = 168.119
-margin_right = 102.286
-margin_bottom = 222.119
+margin_left = 28.0168
+margin_top = 172.088
+margin_right = 111.017
+margin_bottom = 226.088
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

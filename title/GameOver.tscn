@@ -1,0 +1,328 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://vn/images/chibi cat.png" type="Texture" id=1]
+[ext_resource path="res://seu/assets/ethnocentric.tres" type="DynamicFont" id=2]
+[ext_resource path="res://title/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://shaders/outline.shader" type="Shader" id=4]
+[ext_resource path="res://title/assets/tear.png" type="Texture" id=5]
+[ext_resource path="res://materials/outline_material.tres" type="Material" id=6]
+[ext_resource path="res://title/assets/takad.png" type="Texture" id=7]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+shader_param/width = 1.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 28, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 28, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 56, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 56, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 84, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 84, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 112, 64, 28 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 112, 64, 28 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": false,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ChibiCat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -237.988, 379.22 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChibiCat/Tear:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.745, 1e-05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ChibiCat/Tear:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ChibiCat/Tear:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 258.343, -89.22 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Splash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Splash:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Splash:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "game_over"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ChibiCat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -240, 360 ), Vector2( 380, 360 ), Vector2( 380, 360 ), Vector2( 380, -438 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChibiCat/Tear:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 3.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.745, 1e-05 ), Vector2( 3.745, 4.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ChibiCat/Tear:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ChibiCat/Tear:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.9, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 258.343, -89.22 ), Vector2( 258.343, -89.22 ), Vector2( 258.343, 1500 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 9.1, 12.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Splash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Splash:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Splash:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -2.0
+margin_top = 4.0
+margin_right = 1023.0
+margin_bottom = 602.0
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChibiCat" type="Sprite" parent="."]
+material = ExtResource( 6 )
+position = Vector2( -237.988, 379.22 )
+scale = Vector2( 0.582708, 0.582708 )
+texture = ExtResource( 1 )
+
+[node name="Tear" type="Sprite" parent="ChibiCat"]
+material = SubResource( 4 )
+position = Vector2( 258.343, -89.22 )
+scale = Vector2( 3.745, 1e-05 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -10, 0 )
+
+[node name="Splash" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 530.399, 527.115 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 13 )
+frame = 9
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "game_over"
+anims/RESET = SubResource( 2 )
+anims/game_over = SubResource( 3 )
+
+[connection signal="animation_finished" from="Splash" to="." method="_on_Splash_animation_finished"]
