@@ -33,7 +33,7 @@ func _process(delta):
 	timeLabel.text = "%02d:%02d" % [fake_time, fake_seconds]
 	
 	if life <= 0:
-		get_tree().change_scene("res://seu/GameOver.tscn")
+		get_tree().change_scene("res://title/GameOver.tscn")
 
 func _on_add_score(points):
 	life = min(life + points, 100)

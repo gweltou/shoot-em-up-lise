@@ -4,7 +4,6 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +12,9 @@ func _ready():
 
 
 func _process(delta):
-	timer += delta
-	if timer > 5:
+	if Input.is_action_pressed("ui_accept"):
 		get_tree().change_scene("res://title/TitleScreen.tscn")
+
+
+func _on_Splash_animation_finished():
+	$Splash.visible = false
