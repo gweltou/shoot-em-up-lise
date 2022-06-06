@@ -148,7 +148,6 @@ angular_damp = 10.0
 
 [node name="Chair" parent="Tables" instance=ExtResource( 19 )]
 position = Vector2( 565.705, 350.258 )
-walk_in = true
 
 [node name="Chair2" parent="Tables" instance=ExtResource( 19 )]
 position = Vector2( 564.474, 433.214 )
