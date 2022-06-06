@@ -1,20 +1,20 @@
 {
-	"color": "#ff0c327c",
+	"color": "#ff58a4f5",
 	"description": "",
 	"display_name": "",
 	"display_name_bool": false,
-	"id": "character-1645612503.json",
+	"id": "character-1651679361.json",
 	"mirror_portraits": false,
-	"name": "Bob",
+	"name": "BUS",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 10,
+	"offset_y": 0,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://vn/images/chibi boy.png"
+			"path": "res://ressources/bus chan.png"
 		}
 	],
-	"scale": 40
+	"scale": 100
 }
