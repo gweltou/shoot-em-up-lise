@@ -5,7 +5,7 @@
 	"display_name_bool": false,
 	"id": "character-1645612818.json",
 	"mirror_portraits": false,
-	"name": "Kelennerez Yezh",
+	"name": "Kelennerez saozneg",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 140,
@@ -16,5 +16,6 @@
 			"path": "res://vn/images/kelennerezh yezh.png"
 		}
 	],
-	"scale": 50
+	"scale": 50,
+	"theme": ""
 }

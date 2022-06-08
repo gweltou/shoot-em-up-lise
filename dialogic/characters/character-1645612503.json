@@ -16,5 +16,6 @@
 			"path": "res://vn/images/chibi boy.png"
 		}
 	],
-	"scale": 40
+	"scale": 40,
+	"theme": ""
 }

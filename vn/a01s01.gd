@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var new_dialog = Dialogic.start('a01s01')
+	var new_dialog = Dialogic.start('mintin bus')
 	add_child(new_dialog)
 
 

@@ -3,6 +3,8 @@ class_name Pupil
 
 export var speed : float = 100
 
+onready var sprite := $AnimatedSprite
+
 var stopped := true
 var delay := 0.0
 
@@ -19,8 +21,10 @@ var _current_goal : Vector2
 
 
 func _ready():
+#	var spriteFrames := SpriteFrames.new()
+	#spriteFrames.resource_path = 
+#	sprite.frames = spriteFrames
 	visible = false
-	pass
 
 
 func _process(delta):
@@ -39,7 +43,7 @@ func _process(delta):
 			rotation = dir * PI * 0.5
 		elif axe == 1:
 			rotation = PI * 0.5 + dir * PI * 0.5
-		$AnimatedSprite.play("default")
+		sprite.play("default")
 		_moving = true
 		visible = true
 	
@@ -50,7 +54,7 @@ func _process(delta):
 		elif axe == 1:
 			position.y += steps
 		_moving = false
-		$AnimatedSprite.stop()
+		sprite.stop()
 		if walk_axe.empty():
 			stopped = true
 	else:

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/QLKSARG-horn-impatient-truck.mp3-a3813e1f1528edaa89abeb936178016c.mp3str"
+
+[deps]
+
+source_file="res://vn/sfx/QLKSARG-horn-impatient-truck.mp3"
+dest_files=[ "res://.import/QLKSARG-horn-impatient-truck.mp3-a3813e1f1528edaa89abeb936178016c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

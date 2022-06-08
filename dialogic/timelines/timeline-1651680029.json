@@ -1,103 +1,151 @@
 {
 	"events": [
 		{
-			"background": "res://ressources/fonsoù lise/IMG_7148.JPG",
+			"background": "res://vn/background/IMG_7148.JPG",
 			"event_id": "dialogic_021",
-			"fade_duration": 1
+			"fade_duration": 2
 		},
 		{
-			"action": "join",
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2,
+			"waiting_skippable": true
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0.5,
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
+			"mirror_portrait": false,
+			"portrait": "Default",
 			"position": {
 				"0": false,
 				"1": false,
 				"2": true,
 				"3": false,
 				"4": false
-			}
+			},
+			"type": 0,
+			"z_index": 0
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "ret eo din kavout va vignon, sur hon e vefe ur gomen ganto"
+			"text": "Ret eo din kavout va mignoned. Sur a-walc'h o deus ur gomenn da brestiñ din."
 		},
 		{
-			"action": "leaveall",
-			"character": "[All]",
-			"event_id": "dialogic_003"
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "BOUM!"
-		},
-		{
-			"action": "join",
+			"animation": "bounce.gd",
+			"animation_length": 0.5,
+			"change_mirror_portrait": false,
+			"change_position": true,
+			"change_z_index": false,
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
 			"position": {
 				"0": false,
 				"1": true,
 				"2": false,
 				"3": false,
 				"4": false
-			}
+			},
+			"type": 2,
+			"z_index": 0
 		},
 		{
-			"action": "join",
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[center][b][shake rate=30 level=25]BOUUUM !!![/shake][/b] [nw=0.8]"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://vn/sfx/W3QSRME-pain-grunt.mp3",
+			"volume": 0
+		},
+		{
+			"animation": "instant_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
 			"position": {
 				"0": false,
 				"1": false,
 				"2": false,
 				"3": true,
 				"4": false
-			}
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "shake_x.gd",
+			"animation_length": 0.5,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1645612503.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "oups na m'oa ket gwellet arc'hannout Bob, digaraezh. Mont a ra ?"
+			"text": "Oups na m'oa ket gwellet ac'hanout Bob, digarez.\nMont a ra ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ya ! Mont a ra 'rez ket bill. Klask a rez un dra ?"
+			"text": "Ya ! Mont a ra, 'rez ket bill.\nKlask a rez un dra bennak ?"
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "ya, dishonjet 'm eus va drousenn ar mintin mañ. Ur c'heillon hag ur gommen zo gannit ?"
+			"text": "Ya, disoñjet 'm eus va drousenn ar mintin mañ.\nUr c'hreion hag ur gomenn pefe da brestiñ din ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Galout a ran reiñ ur c'heillon dit m'et m'eus ket a gommen."
+			"text": "Galout a ran reiñ ur c'hreion dit met n'em eus ket a gomenn siwaz."
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Dreist! Trugaraez !"
+			"text": "Dreist ! Trugarez !"
 		},
 		{
-			"action": "leaveall",
+			"animation": "[Default]",
+			"animation_length": 0.5,
 			"character": "[All]",
-			"event_id": "dialogic_003"
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"type": 1,
+			"z_index": 0
 		},
 		{
 			"background": "res://ressources/fons item/fond item pen.png",
@@ -105,20 +153,32 @@
 			"fade_duration": 0.3
 		},
 		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "tin tin tin tin"
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://vn/sfx/A42LJVD-small-achievement.mp3",
+			"volume": 0
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "kavet eo bet ur c'heillon !"
+			"text": "[center][b]TIÑ TIÑ TIÑ TIÑ[/b][/center]"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[center][b]Kavet o peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar c'helennerien)"
+		},
+		{
+			"change_timeline": "timeline-1651682075.json",
+			"event_id": "dialogic_020"
 		}
 	],
 	"metadata": {
-		"dialogic-version": "1.3",
+		"dialogic-version": "1.4.2 - Dev",
 		"file": "timeline-1651680029.json",
 		"name": "el lycee"
 	}

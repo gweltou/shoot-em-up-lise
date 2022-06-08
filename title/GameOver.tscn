@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://vn/images/chibi cat.png" type="Texture" id=1]
 [ext_resource path="res://seu/assets/ethnocentric.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://title/assets/tear.png" type="Texture" id=5]
 [ext_resource path="res://materials/outline_material.tres" type="Material" id=6]
 [ext_resource path="res://title/assets/takad.png" type="Texture" id=7]
+[ext_resource path="res://title/assets/game_over.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
@@ -317,12 +318,15 @@ visible = false
 position = Vector2( 530.399, 527.115 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 13 )
-frame = 9
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "game_over"
 anims/RESET = SubResource( 2 )
 anims/game_over = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [connection signal="animation_finished" from="Splash" to="." method="_on_Splash_animation_finished"]

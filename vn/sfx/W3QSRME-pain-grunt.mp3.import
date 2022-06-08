@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/W3QSRME-pain-grunt.mp3-0b071c3b8e4db74984f7de3296f8b43e.mp3str"
+
+[deps]
+
+source_file="res://vn/sfx/W3QSRME-pain-grunt.mp3"
+dest_files=[ "res://.import/W3QSRME-pain-grunt.mp3-0b071c3b8e4db74984f7de3296f8b43e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

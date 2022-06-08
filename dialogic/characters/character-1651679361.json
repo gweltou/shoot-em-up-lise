@@ -5,7 +5,7 @@
 	"display_name_bool": false,
 	"id": "character-1651679361.json",
 	"mirror_portraits": false,
-	"name": "BUS",
+	"name": "Bus",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
@@ -16,5 +16,6 @@
 			"path": "res://ressources/bus chan.png"
 		}
 	],
-	"scale": 100
+	"scale": 30,
+	"theme": ""
 }

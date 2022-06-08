@@ -20,6 +20,9 @@ Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, re
      └─ ...
 ```
 
+## Dialogic
+[Official documentation](https://dialogic.coppolaemilio.com/documentation)
+
 ## Shooting bullets
 
 Intanciating a bullet and changing its parameters :
@@ -87,9 +90,7 @@ var angle_step = 0.2			# Angle between each bullet
 
 ## Da ober :
 ### Kodiñ :
- * Pattern "wave"
- * Tennañ an taolioù eus al live (tresadenn SVG ha collision shape)
- * Krouiñ ur scene "taol", evit gallout krouiñ levelioù gant dasparzhioù taolioù disheñvel
+ * Menu option
 
 ### Tresañ :
  * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.*

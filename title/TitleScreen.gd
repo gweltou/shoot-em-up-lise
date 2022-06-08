@@ -50,24 +50,23 @@ func move_paw():
 	$MenuChange.play()
 
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_up") and not freezed:
+
+func _process(delta):
+	timer += delta
+	
+	if Input.is_action_just_pressed("ui_up") and not freezed:
 		menu_idx = (menu_idx - 1) % len(menu_pos)
 		move_paw()
-	elif event.is_action_pressed("ui_down") and not freezed:
+	elif Input.is_action_just_pressed("ui_down") and not freezed:
 		menu_idx = (menu_idx + 1) % len(menu_pos)
 		move_paw()
-	elif event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept"):
 		Paw.play("default")
 		if menu_idx == 0 or menu_idx == 1:
 			if freezed == true:	# Second press to skip intro zoom
 				_on_MenuAccept_finished()
 			$MenuAccept.play()
 			freezed = true
-	
-
-func _process(delta):
-	timer += delta
 	
 	if eyelid_counter <= 0.0:
 		Cat.get_node("Eyelid1").visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SYB8SKP-cartoon-level-complete.mp3-ccebb75d086ad103438ec5b0591c3536.mp3str"
+
+[deps]
+
+source_file="res://vn/sfx/SYB8SKP-cartoon-level-complete.mp3"
+dest_files=[ "res://.import/SYB8SKP-cartoon-level-complete.mp3-ccebb75d086ad103438ec5b0591c3536.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

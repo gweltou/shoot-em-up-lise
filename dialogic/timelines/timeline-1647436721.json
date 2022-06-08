@@ -1,18 +1,21 @@
 {
 	"events": [
 		{
-			"action": "join",
+			"animation": "[Default]",
+			"animation_length": 0.5,
 			"character": "character-1645612818.json",
 			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
+			"mirror_portrait": false,
+			"portrait": "Default",
 			"position": {
 				"0": true,
 				"1": false,
 				"2": false,
 				"3": false,
 				"4": false
-			}
+			},
+			"type": 0,
+			"z_index": 0
 		},
 		{
 			"character": "character-1645612818.json",
@@ -21,18 +24,21 @@
 			"text": "You're almost 37 seconds late, Harozez !"
 		},
 		{
-			"action": "join",
+			"animation": "[Default]",
+			"animation_length": 0.5,
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_002",
-			"mirror": false,
-			"portrait": "",
+			"mirror_portrait": false,
+			"portrait": "Default",
 			"position": {
 				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
 				"4": true
-			}
+			},
+			"type": 0,
+			"z_index": 0
 		},
 		{
 			"character": "character-1644673207.json",
@@ -48,7 +54,7 @@
 		}
 	],
 	"metadata": {
-		"dialogic-version": "1.3",
+		"dialogic-version": "1.4.2 - Dev",
 		"file": "timeline-1647436721.json",
 		"name": "k01"
 	}
