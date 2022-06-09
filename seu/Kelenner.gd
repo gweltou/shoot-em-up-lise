@@ -20,14 +20,32 @@ var timer = 0.0
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
-var phrases = ["John is in the kitchen",
-			 "silence !", "please",
-			 "repeat after me",
-			 "please be quiet",
-			 "settle down please", "ok that's enough",
-			 "do you like apples ?", "show me your homework"]
+var phrases = [
+				"John is in the kitchen",
+				"where is Brian",
+				"to be or not to be",
+				"my tailor is rich",
+				"how are you today",
+				"hello world",
+				"repeat after me",
+				"do you like apples",
+				"show me your homework"
+				]
 
-
+var exclamations1 = [
+					"Settle down please",
+					"Please be quiet",
+					"Could you sit down, please ?",
+					"Why are you still up ?"
+					]
+					
+var exclamations2 = [
+					"Eat my special attack !",
+					"Obey your teacher !",
+					"MOUAHAHAHAHA",
+					"Take this !",
+					"You little shit !"
+					]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -70,6 +88,7 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			shoot_random()
+			dialog.say(exclamations1[randi()%len(exclamations1)])
 	
 	####### Second phase #######
 	elif scoreBar.fake_time > 30:
@@ -103,12 +122,7 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			fivestar_attack()
-			var exclamations = ["Eat my special attack !",
-								"Obey your teacher !",
-								"MOUAHAHAHAHA",
-								"Take this !",
-								"You little shit !"]
-			dialog.say(exclamations[randi()%len(exclamations)])
+			dialog.say(exclamations2[randi()%len(exclamations2)])
 			
 			#heart_attack(true)
 			#double_bullet_attack()

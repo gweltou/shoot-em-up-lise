@@ -26,7 +26,7 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Pfiouf... Redet m'eus buan a-walc'h evit tapout ar bus ar wech mañ, [wave amp=50 freq=8]youpi[/wave] !"
+			"text": "Pfiouf... Redet m'eus buan a-walc'h evit tapout ar c'harr-boutin ar wech-mañ, [wave amp=50 freq=8]youpi[/wave] !"
 		},
 		{
 			"event_id": "dialogic_023",
@@ -113,7 +113,7 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oh naaann... disoñjet m'eus va zrousenn er gêr.\nRet 'vo din goulenn ur c'hreion hag ur gomenn digant unan bennak a-raok ma grogfe ar gentel saozneg..."
+			"text": "Oh naaann... disoñjet m'eus va zrousenn er gêr.\nRet 'vo din goulenn ur c'hreion hag ur c'homenn digant unan bennak a-raok ma krogfe ar gentel saozneg..."
 		},
 		{
 			"animation": "[Default]",

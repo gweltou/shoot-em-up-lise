@@ -32,7 +32,7 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ret eo din kavout va mignoned. Sur a-walc'h o deus ur gomenn da brestiñ din."
+			"text": "Ret eo din kavout va mignoned. Sur a-walc'h o deus ur c'homenn da brestiñ din."
 		},
 		{
 			"animation": "bounce.gd",
@@ -112,25 +112,25 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oups na m'oa ket gwellet ac'hanout Bob, digarez.\nMont a ra ?"
+			"text": "Oups n'em boa ket gwelet ac'hanout Bob, digarez.\nMont a ra ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ya ! Mont a ra, 'rez ket bill.\nKlask a rez un dra bennak ?"
+			"text": "Ya ! Mont a ra, 'rez ket bil.\nKlask a rez un dra bennak ?"
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ya, disoñjet 'm eus va drousenn ar mintin mañ.\nUr c'hreion hag ur gomenn pefe da brestiñ din ?"
+			"text": "Ya, disoñjet 'm eus va zrousenn ar mintin-mañ.\nUr c'hreion hag ur c'homenn 'pefe da brestiñ din ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Galout a ran reiñ ur c'hreion dit met n'em eus ket a gomenn siwaz."
+			"text": "Gallout a ran reiñ ur c'hreion dit met n'em eus ket a c'homenn siwaz."
 		},
 		{
 			"character": "character-1644673207.json",
@@ -170,7 +170,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[center][b]Kavet o peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar c'helennerien)"
+			"text": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)"
 		},
 		{
 			"change_timeline": "timeline-1651682075.json",

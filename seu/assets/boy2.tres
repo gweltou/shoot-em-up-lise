@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
 
-[ext_resource path="res://seu/assets/boy3.png" type="Texture" id=1]
-[ext_resource path="res://seu/Pupil.gd" type="Script" id=2]
+[ext_resource path="res://seu/assets/boy2.png" type="Texture" id=1]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -19,19 +18,10 @@ region = Rect2( 0, 12, 12, 12 )
 atlas = ExtResource( 1 )
 region = Rect2( 12, 12, 12, 12 )
 
-[sub_resource type="SpriteFrames" id=5]
+[resource]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
 } ]
-
-[node name="Pupil" type="Node2D"]
-script = ExtResource( 2 )
-speed = 200.0
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 3, 3 )
-frames = SubResource( 5 )
-animation = "walk"
