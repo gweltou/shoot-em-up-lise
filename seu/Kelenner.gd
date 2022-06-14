@@ -172,7 +172,7 @@ func shoot_letter(letter, angle):
 	bullet.lifetime = 10
 	if randf() < 0.1:
 		bullet.hitval = 10
-		bullet.collected = true
+		bullet.collectable = true
 		bullet.size *= 1.5
 	shoot(bullet, angle)
 
