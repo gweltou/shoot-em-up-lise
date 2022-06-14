@@ -1,5 +1,9 @@
 extends Node
 
+var lang = ["br", "fr"]
+var option_lang := 0
+
+var option_vibration := true
 
 var bullet_font = DynamicFont.new()
 const bullet_font_size = 14
@@ -16,5 +20,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+	pass
+#	if Input.is_action_just_pressed("quit"):
+#		get_tree().quit()
