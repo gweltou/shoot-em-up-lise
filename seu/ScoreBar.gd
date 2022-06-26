@@ -41,7 +41,8 @@ func _on_add_score(points):
 
 func _on_Timer_timeout():
 	# gounezet !
-	var dialog = Dialogic.start('gounezet')
+	var lang = GameVariables.internal_lang[GameVariables.option_lang]
+	var dialog = Dialogic.start('gounezet', '', "res://addons/dialogic/Nodes/DialogNode.tscn", true, lang)
 	get_parent().dialog = dialog
 	get_parent().add_child(dialog)
 	get_parent().in_dialog = true

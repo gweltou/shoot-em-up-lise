@@ -1,13 +1,20 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://vn/images/chibi cat.png" type="Texture" id=1]
-[ext_resource path="res://seu/assets/ethnocentric.tres" type="DynamicFont" id=2]
 [ext_resource path="res://title/GameOver.gd" type="Script" id=3]
 [ext_resource path="res://shaders/outline.shader" type="Shader" id=4]
 [ext_resource path="res://title/assets/tear.png" type="Texture" id=5]
 [ext_resource path="res://materials/outline_material.tres" type="Material" id=6]
 [ext_resource path="res://title/assets/takad.png" type="Texture" id=7]
 [ext_resource path="res://title/assets/game_over.ogg" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://title/assets/CecepsHandwriting-vmpKZ.ttf"
+
+[sub_resource type="DynamicFont" id=24]
+size = 150
+outline_size = 2
+font_data = SubResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
@@ -283,8 +290,7 @@ margin_right = 1023.0
 margin_bottom = 602.0
 size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 24 )
 text = "GAME OVER"
 align = 1
 valign = 1

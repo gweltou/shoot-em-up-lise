@@ -4,6 +4,16 @@ extends "res://addons/dialogic/Editor/Events/Parts/EventPart.gd"
 onready var text_editor = $VBoxContainer/TextEditor
 onready var voice_editor = $VBoxContainer/VoiceEditor
 
+#multilang support variables
+#These support-consts are used to pull data regarding multible language settings.
+const MULTI_SECTION_NAME := "multilang"
+const MULTI_IS_ENABLED_NAME := "enabled"
+const MULTI_LIST_NAME := "list"
+const MULTI_DEFAULT_NAME := "default"
+
+#onready var lang_selector = $VBoxContainer/Language_Selector
+onready var c_lang := "INTERNAL" #current language
+#end of multilang support variables
 
 func _ready() -> void:
 	text_editor.connect("data_changed", self, "_on_text_editor_data_changed")
@@ -28,7 +38,14 @@ func get_preview():
 
 func use_voices():
 	var config = DialogicResources.get_settings_config()
-	return config.get_value('dialog', 'text_event_audio_enable', false)
+	#if the voice settings are turned off, hide audio.
+	if not config.get_value('dialog', 'text_event_audio_enable', false):
+		return false
+	#if current language is set to internal/default, show audio
+	if c_lang == "INTERNAL":
+		return true
+	#If current language is set to use internal language's audio, hide audio
+	return not DialogicResources.get_settings_value(MULTI_SECTION_NAME, MULTI_LIST_NAME, {}).get(c_lang, {}).get("use_default_voice", true) 
 
 
 func _on_text_editor_data_changed(data) -> void:
@@ -50,6 +67,14 @@ func _on_voice_editor_data_changed(data) -> void:
 	voice_editor.visible = use_voices()
 	# informs the parent 
 	data_changed()
+
+#part of the multilang support.
+#Called from the editorview's toolbar via timeline editor and eventblock
+func on_language_changed(language):
+	c_lang = language
+	text_editor.on_language_changed(language)
+	voice_editor.on_language_changed(language)
+	voice_editor.visible = use_voices()
 
 func focus():
 	text_editor.focus()

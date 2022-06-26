@@ -2,7 +2,7 @@ extends Node2D
 class_name Kelenner
 
 onready var Bullet = preload("res://seu/Bullet.tscn")
-onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
+onready var dialog = $DialogPopup
 onready var player = get_parent().get_node("Player")
 onready var scoreBar = get_parent().get_node("ScoreBar")
 onready var letterCollector = get_parent().get_node("LetterCollector")
@@ -38,8 +38,18 @@ var exclamations1 = [
 					"Could you sit down, please ?",
 					"Why are you still up ?"
 					]
-					
+
 var exclamations2 = [
+					"This is my last warning",
+					"You're a pain in the ass !",
+					"Unteachable brat !",
+					"You wanna go see the headmaster ?",
+					"And where is your pencil case ?",
+					"Have you forgot your eraser again ?",
+					"Are you not listening to what I say ?"
+					]
+
+var exclamations3 = [
 					"Eat my special attack !",
 					"Obey your teacher !",
 					"MOUAHAHAHAHA",
@@ -50,7 +60,6 @@ var exclamations2 = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_child(dialog)
 	destination = choose_destination()
 	randomize()
 
@@ -100,6 +109,8 @@ func behave():
 			fivestar_attack()
 		elif randf() < 0.04:
 			rifle_attack(4, true)
+		elif randf() < 0.02:
+			dialog.say(exclamations2[randi()%len(exclamations2)])
 	
 	####### Third phase #######
 	elif scoreBar.fake_time > 10:
@@ -113,6 +124,8 @@ func behave():
 			heart_attack(true)
 		elif randf() < 0.02:
 			shoot_random()
+		elif randf() < 0.02:
+			dialog.say(exclamations2[randi()%len(exclamations2)])
 			
 	####### Last phase #######
 	else:
@@ -122,7 +135,7 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			fivestar_attack()
-			dialog.say(exclamations2[randi()%len(exclamations2)])
+			dialog.say(exclamations3[randi()%len(exclamations3)])
 			
 			#heart_attack(true)
 			#double_bullet_attack()

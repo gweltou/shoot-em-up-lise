@@ -7,6 +7,7 @@ var waiting : bool = false
 const letterDelay = 0.04
 var letterIdx : int = 0
 var timeCounter = 0
+var base_position : Vector2
 
 onready var font = $Label.get_font("font")
 onready var tween = $Tween
@@ -15,6 +16,8 @@ onready var tween = $Tween
 func _ready():
 	hide()
 	rect_size = Vector2()
+	base_position = rect_position
+	print_debug(base_position)
 	
 
 func _process(delta):
@@ -38,7 +41,7 @@ func _process(delta):
 func say(t : String):
 	#var toSize = font.get_string_size(t) + Vector2(24, 15)
 	var toSize = _get_text_size(t) + Vector2(24, 15)
-	self.rect_position = Vector2(-toSize.x / 2, -toSize.y - 10)
+	self.rect_position = base_position + Vector2(-toSize.x / 2, -toSize.y + 15)
 	self.text = t
 	$Label.text = ""
 	self.letterIdx = 0

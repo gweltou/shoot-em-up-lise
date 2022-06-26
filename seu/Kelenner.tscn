@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://seu/Kelenner.gd" type="Script" id=1]
 [ext_resource path="res://seu/assets/kelenerezh yezh idle.png" type="Texture" id=2]
 [ext_resource path="res://seu/assets/kelenerezh yezh walk.png" type="Texture" id=3]
+[ext_resource path="res://seu/DialogPopup.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -41,4 +42,11 @@ position = Vector2( -2.19135e-08, 2.19135e-08 )
 scale = Vector2( 2.125, 2.125 )
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
+
+[node name="DialogPopup" parent="." instance=ExtResource( 4 )]
+margin_left = -9.40593
+margin_top = -47.4305
+margin_right = 8.59407
+margin_bottom = -29.4305
