@@ -43,7 +43,8 @@ func hit(bullet : Bullet):
 		var dir = position - bullet.position
 		apply_central_impulse(dir * 80)
 		apply_torque_impulse(1000 * (randf() - 0.5))
-		Input.start_joy_vibration(0, 0, 1, 0.1)
+		if GameVariables.option_vibration == true:
+			Input.start_joy_vibration(0, 0, 1, 0.1)
 	else:
 		if $PlayerLetter.is_playing():
 			$PlayerLetter2.play()

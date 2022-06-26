@@ -26,7 +26,8 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Pfiouf... Redet m'eus buan a-walc'h evit tapout ar c'harr-boutin ar wech-mañ, [wave amp=50 freq=8]youpi[/wave] !"
+			"text": "Pfiouf... Redet m'eus buan a-walc'h evit tapout ar c'harr-boutin ar wech-mañ, [wave amp=50 freq=8]youpi[/wave] !",
+			"text_FRA": "Pfiouf... J'ai réussie à prendre le cars à temps cette fois çi, [wave amp=50 freq=8]youpi[/wave] !"
 		},
 		{
 			"event_id": "dialogic_023",
@@ -70,7 +71,8 @@
 			"character": "character-1651679361.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Tut ! Tut ![nw]"
+			"text": "Tut ! Tut ![nw]",
+			"text_FRA": "Tut Tut[nw]"
 		},
 		{
 			"animation": "[Default]",
@@ -113,7 +115,8 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oh naaann... disoñjet m'eus va zrousenn er gêr.\nRet 'vo din goulenn ur c'hreion hag ur c'homenn digant unan bennak a-raok ma krogfe ar gentel saozneg..."
+			"text": "Oh naaann... disoñjet m'eus va zrousenn er gêr.\nRet 'vo din goulenn ur c'hreion hag ur c'homenn digant unan bennak a-raok ma krogfe ar gentel saozneg...",
+			"text_FRA": "Oh nooon... j'ai oubliée ma trousse. Il va falloir que j'emprunte un crayon et une gomme à quelqu'un avant le cours d'anglais..."
 		},
 		{
 			"animation": "[Default]",

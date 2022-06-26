@@ -32,7 +32,8 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ret eo din kavout va mignoned. Sur a-walc'h o deus ur c'homenn da brestiñ din."
+			"text": "Ret eo din kavout va mignoned. Sur a-walc'h o deus ur c'homenn da brestiñ din.",
+			"text_FRA": "Il faut que je retrouve mes amis. Ils auront surement une gomme à me prêter."
 		},
 		{
 			"animation": "bounce.gd",
@@ -112,31 +113,36 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oups n'em boa ket gwelet ac'hanout Bob, digarez.\nMont a ra ?"
+			"text": "Oups n'em boa ket gwelet ac'hanout Bob, digarez.\nMont a ra ?",
+			"text_FRA": "Oups, je ne t'avais pas vue Bob, excuse-moi.\nÇa va ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ya ! Mont a ra, 'rez ket bil.\nKlask a rez un dra bennak ?"
+			"text": "Ya ! Mont a ra, 'rez ket bil.\nKlask a rez un dra bennak ?",
+			"text_FRA": "Oui ! Ça va, t'en fais pas.\nTu cherches quelque chose ?"
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Ya, disoñjet 'm eus va zrousenn ar mintin-mañ.\nUr c'hreion hag ur c'homenn 'pefe da brestiñ din ?"
+			"text": "Ya, disoñjet 'm eus va zrousenn ar mintin-mañ.\nUr c'hreion hag ur c'homenn 'pefe da brestiñ din ?",
+			"text_FRA": "Oui, j'ai oubliée ma trousse ce matin.\nT'aurais un crayon et une gomme à me prêter s'il-te-plaît ?"
 		},
 		{
 			"character": "character-1645612503.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Gallout a ran reiñ ur c'hreion dit met n'em eus ket a c'homenn siwaz."
+			"text": "Gallout a ran reiñ ur c'hreion dit met n'em eus ket a c'homenn siwaz.",
+			"text_FRA": "Je peux te prêter un crayon mais je n'ai pas d'autre gomme..."
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Dreist ! Trugarez !"
+			"text": "Dreist ! Trugarez !",
+			"text_FRA": "Super ! Merci !"
 		},
 		{
 			"animation": "[Default]",
@@ -170,7 +176,9 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)"
+			"text": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)",
+			"text_FRA": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)"
+			
 		},
 		{
 			"change_timeline": "timeline-1651682075.json",

@@ -8,7 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var new_dialog = Dialogic.start('mintin bus')
+	var lang = GameVariables.internal_lang[GameVariables.option_lang]
+	var new_dialog = Dialogic.start('mintin bus', '', "res://addons/dialogic/Nodes/DialogNode.tscn", true, lang)
 	add_child(new_dialog)
 
 

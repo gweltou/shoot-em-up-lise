@@ -1,11 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://title/assets/title.png" type="Texture" id=1]
-[ext_resource path="res://title/assets/btn_story.png" type="Texture" id=2]
-[ext_resource path="res://title/assets/btn_options.png" type="Texture" id=3]
+[ext_resource path="res://title/assets/br.png" type="Texture" id=2]
 [ext_resource path="res://title/assets/cat.png" type="Texture" id=4]
-[ext_resource path="res://title/assets/btn_arcade.png" type="Texture" id=5]
-[ext_resource path="res://title/assets/btn_quit.png" type="Texture" id=6]
 [ext_resource path="res://title/assets/date.png" type="Texture" id=7]
 [ext_resource path="res://title/assets/cat_paw.png" type="Texture" id=8]
 [ext_resource path="res://title/TitleScreen.gd" type="Script" id=9]
@@ -13,7 +10,8 @@
 [ext_resource path="res://title/assets/menu_accept.wav" type="AudioStream" id=11]
 [ext_resource path="res://title/assets/IMG_7144.JPG" type="Texture" id=12]
 [ext_resource path="res://title/assets/theme song visual novel.mp3" type="AudioStream" id=13]
-[ext_resource path="res://addons/dialogic/Documentation/Theme/DocumentationH1.tres" type="DynamicFont" id=14]
+[ext_resource path="res://materials/outline_material.tres" type="Material" id=14]
+[ext_resource path="res://title/assets/menu_font.tres" type="DynamicFont" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -70,7 +68,11 @@ animations = [ {
 [node name="TitleMenu" type="Node"]
 script = ExtResource( 9 )
 
-[node name="BackgroundGroup" type="Node2D" parent="."]
+[node name="BackgroundGroup" type="Control" parent="."]
+rect_pivot_offset = Vector2( 532.79, 312.595 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BackgroundImage" type="Sprite" parent="BackgroundGroup"]
 position = Vector2( 536.069, 337.302 )
@@ -109,6 +111,7 @@ __meta__ = {
 }
 
 [node name="Title" type="TextureRect" parent="."]
+material = ExtResource( 14 )
 margin_left = 46.8315
 margin_top = 35.4134
 margin_right = 626.832
@@ -119,45 +122,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnStory" type="TextureRect" parent="."]
-margin_left = 212.979
-margin_top = 200.571
-margin_right = 463.979
-margin_bottom = 283.571
-texture = ExtResource( 2 )
+[node name="BtnStory" type="Label" parent="."]
+margin_left = 213.0
+margin_top = 201.0
+margin_right = 487.0
+margin_bottom = 276.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
+text = "Story Mode"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnArcade" type="TextureRect" parent="."]
+[node name="BtnArcade" type="Label" parent="."]
 margin_left = 213.316
 margin_top = 294.071
-margin_right = 470.316
-margin_bottom = 352.071
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_right = 532.316
+margin_bottom = 369.071
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
+text = "Arcade Mode"
 
-[node name="BtnOption" type="TextureRect" parent="."]
+[node name="BtnOption" type="Label" parent="."]
 margin_left = 214.418
 margin_top = 379.458
-margin_right = 383.418
-margin_bottom = 456.458
-texture = ExtResource( 3 )
+margin_right = 401.418
+margin_bottom = 454.458
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnQuit" type="TextureRect" parent="."]
+[node name="BtnQuit" type="Label" parent="."]
 margin_left = 214.53
 margin_top = 468.396
-margin_right = 394.53
-margin_bottom = 544.396
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_right = 323.53
+margin_bottom = 543.396
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
+text = "Quit"
 
 [node name="Date" type="TextureRect" parent="."]
 margin_left = 868.76
@@ -173,6 +178,7 @@ __meta__ = {
 position = Vector2( 150.847, 235.201 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
+speed_scale = 2.0
 flip_h = true
 
 [node name="MenuChange" type="AudioStreamPlayer" parent="."]
@@ -192,49 +198,67 @@ stream = ExtResource( 13 )
 autoplay = true
 
 [node name="LblLanguage" type="Label" parent="."]
-margin_left = 1165.56
-margin_top = 251.411
-margin_right = 1314.56
-margin_bottom = 293.411
-custom_fonts/font = ExtResource( 14 )
+margin_left = 1300.0
+margin_top = 200.031
+margin_right = 1495.0
+margin_bottom = 260.031
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
 text = "Language"
+percent_visible = -0.125
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Flag" type="Sprite" parent="LblLanguage"]
+position = Vector2( 355.051, 43.7631 )
+scale = Vector2( 0.697978, 0.697978 )
+texture = ExtResource( 2 )
+
 [node name="LabelLangValue" type="Label" parent="LblLanguage"]
-margin_left = 204.107
+margin_left = 320.0
 margin_right = 244.107
 margin_bottom = 42.0
-custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
 text = "br"
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LblVibration" type="Label" parent="."]
-margin_left = 1172.29
-margin_top = 330.455
-margin_right = 1313.29
-margin_bottom = 372.455
-custom_fonts/font = ExtResource( 14 )
+margin_left = 1300.0
+margin_top = 296.476
+margin_right = 1484.0
+margin_bottom = 352.476
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
 text = "Vibration"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LblVibrationValue" type="Label" parent="LblVibration"]
-margin_left = 198.036
-margin_top = 2.11597
-margin_right = 260.036
-margin_bottom = 44.116
-custom_fonts/font = ExtResource( 14 )
+margin_left = 320.0
+margin_right = 257.036
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
 text = "on"
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="."]
+[node name="TweenPages" type="Tween" parent="."]
+
+[node name="TweenStart" type="Tween" parent="."]
+
+[node name="TweenItem" type="Tween" parent="."]
 
 [connection signal="finished" from="StartGameSFX" to="." method="_on_StartGameSFX_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="tween_all_completed" from="TweenPages" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="tween_all_completed" from="TweenStart" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="tween_all_completed" from="TweenItem" to="." method="_on_Tween_tween_all_completed"]

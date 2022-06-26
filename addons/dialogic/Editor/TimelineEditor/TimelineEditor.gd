@@ -1079,6 +1079,12 @@ func unfold_all_nodes():
 		event.set_expanded(true)
 	add_extra_scroll_area_to_timeline()
 
+# called from the toolbar
+# part of multilang support
+func on_language_changed(language):
+	for event in timeline.get_children():
+		event.on_language_changed(language)
+
 func get_current_events_anchors():
 	var anchors = {}
 	for event in timeline.get_children():

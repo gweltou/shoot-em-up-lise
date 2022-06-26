@@ -48,7 +48,7 @@ func _process(delta):
 			rotation = dir * PI * 0.5
 		elif axe == 1:
 			rotation = PI * 0.5 + dir * PI * 0.5
-		sprite.play("default")
+		sprite.play("walk")
 		_moving = true
 		visible = true
 	

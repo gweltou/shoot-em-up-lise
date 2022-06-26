@@ -5,10 +5,8 @@
 
 [node name="DialogPopup" type="NinePatchRect"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = 4.84844
-margin_top = 6.46887
-margin_right = 22.8484
-margin_bottom = 24.4689
+margin_right = 18.0
+margin_bottom = 18.0
 texture = ExtResource( 2 )
 patch_margin_left = 9
 patch_margin_top = 9

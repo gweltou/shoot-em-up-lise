@@ -1,6 +1,7 @@
 extends Node
 
 var lang = ["br", "fr"]
+var internal_lang = ["INTERNAL", "FRA"]
 var option_lang := 0
 
 var option_vibration := true
