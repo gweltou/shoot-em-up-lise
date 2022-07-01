@@ -11,7 +11,7 @@ onready var scoreLabel = $ScoreLabel
 onready var maxScore = $MaxScore
 
 const ROUND_DURATION = 200	# in seconds
-const TIME_PENALTY = 0.6
+const TIME_PENALTY = 0.55
 var life = 50
 var fake_time = 45
 
