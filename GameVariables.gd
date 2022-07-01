@@ -3,6 +3,9 @@ extends Node
 var lang = ["br", "fr"]
 var internal_lang = ["INTERNAL", "FRA"]
 var option_lang := 0
+var arcade_mode = false
+var current_score := 0
+var max_score := 0
 
 var option_vibration := true
 

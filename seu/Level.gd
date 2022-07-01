@@ -19,6 +19,8 @@ onready var _empty_chairs = [$Tables/Chair, $Tables/Chair2, $Tables/Chair3, $Tab
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameVariables.current_score = 0
+	
 	for chair in _empty_chairs:
 		var student = Student.instance()
 		_walking_students.append(student)

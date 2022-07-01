@@ -97,6 +97,10 @@ func _process(delta):
 				if locked == true:	# Second press to skip intro zoom
 					_on_StartGameSFX_finished()
 				$StartGameSFX.play()
+				if menu_idx == 1:
+					GameVariables.arcade_mode = true
+				else:
+					GameVariables.arcade_mode = false
 				locked = true
 				var tweenStart = $TweenStart
 				tweenStart.interpolate_property($BackgroundGroup, "rect_scale",
