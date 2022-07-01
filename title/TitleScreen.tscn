@@ -205,7 +205,6 @@ margin_bottom = 260.031
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 15 )
 text = "Language"
-percent_visible = -0.125
 __meta__ = {
 "_edit_use_anchors_": false
 }
