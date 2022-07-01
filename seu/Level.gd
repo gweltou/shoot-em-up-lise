@@ -51,7 +51,7 @@ func _process(delta):
 		$ScoreBar.visible = true
 		$MusicIntro.play()
 	
-	if  not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
+	if not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
 		pauseLabel.visible = true
 	else:
 		pauseLabel.visible = false
@@ -78,6 +78,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_pause"):
 		get_tree().paused = not get_tree().paused
+	
+	if Input.is_action_just_pressed("ui_cancel") and not in_dialog and get_tree().paused:
+		get_tree().change_scene("res://title/TitleScreen.tscn")
+		
 
 
 func _on_MusicIntro_finished():
