@@ -30,6 +30,7 @@ var menu_xpos := 180
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timer = 0
 	get_tree().paused = false
 	
 	Cat.get_node("Eyelid1").visible = false
@@ -87,7 +88,7 @@ func _process(delta):
 		tween.start()
 		move_paw()
 	
-	elif Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept"):
+	elif timer > 0.1 and (Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept")):
 		Paw.set_frame(0)
 		Paw.play("default") # Paw animation
 		

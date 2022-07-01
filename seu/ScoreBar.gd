@@ -8,7 +8,7 @@ onready var lifebar = $TextureProgress
 onready var timer = $Timer
 onready var timeLabel = $TimeLabel
 
-const ROUND_DURATION = 200	# in seconds
+const ROUND_DURATION = 20	# in seconds
 const TIME_PENALTY = 0.6
 var life = 50
 var fake_time = 45
@@ -43,7 +43,7 @@ func _on_Timer_timeout():
 	# gounezet !
 	var lang = GameVariables.internal_lang[GameVariables.option_lang]
 	var dialog = Dialogic.start('gounezet', '', "res://addons/dialogic/Nodes/DialogNode.tscn", true, lang)
-	get_parent().dialog = dialog
 	get_parent().add_child(dialog)
+	get_parent().dialog = dialog
 	get_parent().in_dialog = true
 	get_parent().get_tree().paused = true
