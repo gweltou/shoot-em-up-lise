@@ -3,7 +3,7 @@
 [ext_resource path="res://seu/Colleague.gd" type="Script" id=1]
 [ext_resource path="res://seu/DialogPopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seu/Chair.tscn" type="PackedScene" id=3]
-[ext_resource path="res://seu/assets/pupil1.png" type="Texture" id=4]
+[ext_resource path="res://seu/assets/boy1.png" type="Texture" id=4]
 
 [node name="Colleague" type="Node2D"]
 script = ExtResource( 1 )
