@@ -32,7 +32,7 @@ func _ready():
 	
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
-	letterCollector.connect("letter_collected", player, "_on_letter_collected")
+	#letterCollector.connect("letter_collected", player, "_on_letter_collected")
 	
 	dialog = Dialogic.start('k01')
 	add_child(dialog)

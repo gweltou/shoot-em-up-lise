@@ -177,8 +177,7 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)",
-			"text_FRA": "[center][b]Kavet ho peus ur c'hreion ![/b][/center][br](gant ar c'hreion e c'hellit pakout an [b]tennoù [color=green]gwer[/color][/b] bannet gant ar gelennerien)"
-			
+			"text_FRA": "[center][b]Vous avez trouvé un crayon ![/b][/center][br]Avec le crayon vous pouvez attaper les [b]projectiles [color=green]verts[/color][/b] (morceaux de courfts condensés) pour augmenter votre barre de vie pédagogique !"
 		},
 		{
 			"change_timeline": "timeline-1651682075.json",
