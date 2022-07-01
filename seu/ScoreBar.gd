@@ -8,7 +8,7 @@ onready var lifebar = $TextureProgress
 onready var timer = $Timer
 onready var timeLabel = $TimeLabel
 
-const ROUND_DURATION = 20	# in seconds
+const ROUND_DURATION = 200	# in seconds
 const TIME_PENALTY = 0.6
 var life = 50
 var fake_time = 45
