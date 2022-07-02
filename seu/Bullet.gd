@@ -13,7 +13,7 @@ var lifetime = 8				# In seconds
 var hitval = 0					# Score added or reduces when player is hit
 var size = 1 setget set_size
 var letter = '' setget set_letter
-var collected = false
+var collectable = false
 var homing = false				# Bullet follows player
 
 
@@ -51,16 +51,15 @@ func _process(delta):
 
 func _draw():
 	var col = Color(1, 1, 1)
-	if collected:
+	if collectable:
 		col = Color(1, 1, 0)
+		draw_circle(Vector2(0, 0), size*8, col)
 	elif hitval > 0:
 		col = Color(0, 1, 0)
-	elif hitval < 0:
-		col = Color(1, 0.4, 0)
-	draw_circle(Vector2(0, 0), size*8, col)
+		draw_circle(Vector2(0, 0), size*8, col)
 	
 	if letter != "":
-		$Sprite.hide()
+		$AnimatedSprite.hide()
 		var font = GameVariables.bullet_font
 		var offset = GameVariables.bullet_font_size / 2.0
 		draw_string(font, Vector2(-offset, offset), letter, Color(0, 0, 0))
@@ -70,17 +69,23 @@ func _on_Area2D_body_entered(body):
 	# Destroy bullet if it touches anything else
 	if body.get_name() == "Player":
 		emit_signal("add_score", hitval)
-		if collected and self.letter != '':
+		if collectable and self.letter != '':
 			emit_signal("letter_collected", letter, global_position)
+			queue_free()
 		else:
 			body.hit(self)
-	queue_free()
+			$Area2D/CollisionShape2D.disabled = true
+			if $AnimatedSprite.visible :
+				#speed = 0
+				$AnimatedSprite.play("default")
+			else:
+				queue_free()
 
 
 func set_size(s):
 	size = s
 	$Area2D.scale = Vector2(s, s)
-	$Sprite.scale = Vector2(s, s)
+	$AnimatedSprite.scale = Vector2(s, s)
 
 
 func set_letter(l):
@@ -98,5 +103,9 @@ func copy():
 	new_bullet.size = size
 	new_bullet.letter = letter
 	new_bullet.homing = homing
-	new_bullet.collected = collected
+	new_bullet.collectable = collectable
 	return new_bullet
+
+
+func _on_AnimatedSprite_animation_finished():
+	queue_free()

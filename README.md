@@ -23,6 +23,7 @@ Assets, scripts and scenes of each part goes into the `vn` and `seu` folders, re
 ## Dialogic
 [Official documentation](https://dialogic.coppolaemilio.com/documentation)
 
+
 ## Shooting bullets
 
 Intanciating a bullet and changing its parameters :
@@ -90,11 +91,11 @@ var angle_step = 0.2			# Angle between each bullet
 
 ## Da ober :
 ### Kodiñ :
- * Menu option
+ * Menu option (yezh, vibration)
 
 ### Tresañ :
  * **Pa vez treset ur sprite : Arabat "upsamplañ" anezho (brasaat ar resolution). Chomm hep leskel spasoù goulo tro dro.*
- * Ar sprite "pod" (seu/classroom/pod.png) a zo iskis (re vihan marteze ?)
+
 
 ## Menozioù :
  * Al lisead "kasos" oc'h ober evezhiadennoù tagus pa vez gloazet an aroz er SEU

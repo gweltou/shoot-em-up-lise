@@ -3,21 +3,25 @@ class_name Player
 
 var move_speed = 12000
 var moving = false
+var counter = 0
+
+onready var invicibility = $InvicibilityTimer
+onready var sprite = $AnimatedSprite
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():	
 	pass # Replace with function body.
 
 
-func _draw():
-	var r = $CollisionShape2D.shape.radius
-	draw_circle(Vector2(0, 0), r, Color(0, 0, 1))
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	counter += delta
+	
+	if not invicibility.is_stopped() and fmod(counter, 0.2) < 0.1:
+		sprite.material.set_shader_param("activated", true)
+	else:
+		sprite.material.set_shader_param("activated", false)
 
 
 func _integrate_forces(state):
@@ -38,12 +42,14 @@ func _integrate_forces(state):
 
 
 func hit(bullet : Bullet):
-	if bullet.hitval < 0:
+	if bullet.hitval < 0 and invicibility.is_stopped():
+		invicibility.start()
 		$PlayerHit.play()
 		var dir = position - bullet.position
 		apply_central_impulse(dir * 80)
 		apply_torque_impulse(1000 * (randf() - 0.5))
-		Input.start_joy_vibration(0, 0, 1, 0.1)
+		if GameVariables.option_vibration == true:
+			Input.start_joy_vibration(0, 0, 1, 0.1)
 	else:
 		if $PlayerLetter.is_playing():
 			$PlayerLetter2.play()

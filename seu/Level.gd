@@ -19,6 +19,8 @@ onready var _empty_chairs = [$Tables/Chair, $Tables/Chair2, $Tables/Chair3, $Tab
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameVariables.current_score = 0
+	
 	for chair in _empty_chairs:
 		var student = Student.instance()
 		_walking_students.append(student)
@@ -32,7 +34,7 @@ func _ready():
 	
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
-	letterCollector.connect("letter_collected", player, "_on_letter_collected")
+	#letterCollector.connect("letter_collected", player, "_on_letter_collected")
 	
 	dialog = Dialogic.start('k01')
 	add_child(dialog)
@@ -49,7 +51,7 @@ func _process(delta):
 		$ScoreBar.visible = true
 		$MusicIntro.play()
 	
-	if  not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
+	if not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
 		pauseLabel.visible = true
 	else:
 		pauseLabel.visible = false
@@ -76,6 +78,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_pause"):
 		get_tree().paused = not get_tree().paused
+	
+	if Input.is_action_just_pressed("ui_cancel") and not in_dialog and get_tree().paused:
+		get_tree().change_scene("res://title/TitleScreen.tscn")
+		
 
 
 func _on_MusicIntro_finished():

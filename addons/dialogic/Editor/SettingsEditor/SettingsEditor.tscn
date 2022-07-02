@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/dialogic/Editor/SettingsEditor/SettingsEditor.gd" type="Script" id=1]
 [ext_resource path="res://addons/dialogic/Editor/Common/SectionTitle.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/dialogic/Editor/SettingsEditor/Scenes/HistorySettings.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/dialogic/Editor/Events/Parts/ResourcePickers/ResourcePickerMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres" type="Theme" id=7]
+[ext_resource path="res://addons/dialogic/Editor/SettingsEditor/Scenes/MultilangSettings.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Image" id=1]
 data = {
@@ -508,6 +509,11 @@ settings_key = "stop_mouse"
 margin_top = 314.0
 margin_right = 336.0
 margin_bottom = 658.0
+
+[node name="MultilangSettings" parent="VBoxContainer/HBoxContainer3/VBoxContainer2" instance=ExtResource( 8 )]
+margin_top = 340.0
+margin_right = 306.0
+margin_bottom = 618.0
 
 [node name="CustomEvents" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
 margin_top = 662.0

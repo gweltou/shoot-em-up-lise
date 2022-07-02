@@ -2,7 +2,7 @@ extends Node2D
 class_name Kelenner
 
 onready var Bullet = preload("res://seu/Bullet.tscn")
-onready var dialog = preload("res://seu/DialogPopup.tscn").instance()
+onready var dialog = $DialogPopup
 onready var player = get_parent().get_node("Player")
 onready var scoreBar = get_parent().get_node("ScoreBar")
 onready var letterCollector = get_parent().get_node("LetterCollector")
@@ -20,19 +20,46 @@ var timer = 0.0
 
 const FIRE_RATE = 0.3
 var fire_time = 0.0
-var phrases = ["John is in the kitchen",
-			 "silence !", "please",
-			 "repeat after me",
-			 "please be quiet",
-			 "settle down please", "ok that's enough",
-			 "do you like apples ?", "show me your homework"]
+var phrases = [
+				"John is in the kitchen",
+				"where is Brian",
+				"to be or not to be",
+				"my tailor is rich",
+				"how are you today",
+				"hello world",
+				"repeat after me",
+				"do you like apples",
+				"show me your homework"
+				]
 
+var exclamations1 = [
+					"Settle down please",
+					"Please be quiet",
+					"Could you sit down, please ?",
+					"Why are you still up ?"
+					]
 
+var exclamations2 = [
+					"This is my last warning",
+					"You're a pain in the ass !",
+					"Unteachable brat !",
+					"You wanna go see the headmaster ?",
+					"And where is your pencil case ?",
+					"Have you forgot your eraser again ?",
+					"Are you listening to what I say ?"
+					]
+
+var exclamations3 = [
+					"Eat my special attack !",
+					"Obey your teacher !",
+					"MOUAHAHAHAHA",
+					"Take this !",
+					"You little shit !"
+					]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_child(dialog)
 	destination = choose_destination()
 	randomize()
 
@@ -54,7 +81,7 @@ func _process(delta):
 	
 	
 	var to_dest = destination-position
-	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
+	if to_dest.length_squared() > 3:	# Paouez fival ma'z eo tost tre eus ar pall
 		position += to_dest.normalized() * move_speed   ##finvadenn ar gelenner
 		$AnimatedSprite.play("walk")
 	else:
@@ -70,6 +97,7 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			shoot_random()
+			dialog.say(exclamations1[randi()%len(exclamations1)])
 	
 	####### Second phase #######
 	elif scoreBar.fake_time > 30:
@@ -81,6 +109,8 @@ func behave():
 			fivestar_attack()
 		elif randf() < 0.04:
 			rifle_attack(4, true)
+		elif randf() < 0.02:
+			dialog.say(exclamations2[randi()%len(exclamations2)])
 	
 	####### Third phase #######
 	elif scoreBar.fake_time > 10:
@@ -94,6 +124,8 @@ func behave():
 			heart_attack(true)
 		elif randf() < 0.02:
 			shoot_random()
+		elif randf() < 0.02:
+			dialog.say(exclamations2[randi()%len(exclamations2)])
 			
 	####### Last phase #######
 	else:
@@ -103,12 +135,7 @@ func behave():
 			shoot_word(phrases[n])
 		elif randf() < 0.02:
 			fivestar_attack()
-			var exclamations = ["Eat my special attack !",
-								"Obey your teacher !",
-								"MOUAHAHAHAHA",
-								"Take this !",
-								"You little shit !"]
-			dialog.say(exclamations[randi()%len(exclamations)])
+			dialog.say(exclamations3[randi()%len(exclamations3)])
 			
 			#heart_attack(true)
 			#double_bullet_attack()
@@ -158,7 +185,7 @@ func shoot_letter(letter, angle):
 	bullet.lifetime = 10
 	if randf() < 0.1:
 		bullet.hitval = 10
-		bullet.collected = true
+		bullet.collectable = true
 		bullet.size *= 1.5
 	shoot(bullet, angle)
 

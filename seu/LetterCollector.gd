@@ -21,6 +21,8 @@ signal letter_collected(number)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.add_font_override("font", GameVariables.bullet_font)
+	label.add_color_override("font_color", Color(1, 1, 0))
+
 	label.text = ""
 	font = label.get_font("font")
 

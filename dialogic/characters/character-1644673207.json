@@ -9,12 +9,13 @@
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": -40,
-	"offset_y": 10,
+	"offset_y": 50,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": "res://vn/images/chibi player.png"
 		}
 	],
-	"scale": 40
+	"scale": 40,
+	"theme": ""
 }

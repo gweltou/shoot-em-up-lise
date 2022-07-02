@@ -5,6 +5,9 @@ export var speed : float = 100
 
 onready var sprite := $AnimatedSprite
 
+var skins_folder = "res://seu/assets/"
+var skins = ["girl1.tres", "girl2.tres", "girl3.tres", "boy1.tres", "boy2.tres", "boy3.tres"]
+
 var stopped := true
 var delay := 0.0
 
@@ -21,8 +24,10 @@ var _current_goal : Vector2
 
 
 func _ready():
+	var rnd_i = randi() % len(skins)
+	sprite.set_sprite_frames(load(skins_folder.plus_file(skins[rnd_i])))
 #	var spriteFrames := SpriteFrames.new()
-	#spriteFrames.resource_path = 
+#	spriteFrames.resource_path = skins_folder.plus_file(skins[rnd_i])
 #	sprite.frames = spriteFrames
 	visible = false
 
@@ -43,7 +48,7 @@ func _process(delta):
 			rotation = dir * PI * 0.5
 		elif axe == 1:
 			rotation = PI * 0.5 + dir * PI * 0.5
-		sprite.play("default")
+		sprite.play("walk")
 		_moving = true
 		visible = true
 	

@@ -88,6 +88,8 @@ func _ready():
 	$ToolBar/FoldTools/ButtonFold.connect('pressed', $MainPanel/TimelineEditor, 'fold_all_nodes')
 	$ToolBar/FoldTools/ButtonUnfold.connect('pressed', $MainPanel/TimelineEditor, 'unfold_all_nodes')
 	$ToolBar/FoldTools/PlayTimeline.connect('pressed', $MainPanel/TimelineEditor, 'play_timeline')
+	#Part of multilang support
+	$ToolBar/FoldTools/Language_Selector.connect('language_changed', $MainPanel/TimelineEditor, 'on_language_changed')
 	
 	
 	#Connecting confirmation

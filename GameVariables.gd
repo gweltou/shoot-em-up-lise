@@ -1,5 +1,13 @@
 extends Node
 
+var lang = ["br", "fr"]
+var internal_lang = ["INTERNAL", "FRA"]
+var option_lang := 0
+var arcade_mode = false
+var current_score := 0
+export var max_score := 0
+
+var option_vibration := true
 
 var bullet_font = DynamicFont.new()
 const bullet_font_size = 14
@@ -15,6 +23,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+func _process(_delta):
+	pass
+#	if Input.is_action_just_pressed("quit"):
+#		get_tree().quit()

@@ -21,13 +21,15 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oh my god ! Echu eo ar gentel kentañ..."
+			"text": "Oh my god ! Echu eo ar gentel kentañ...",
+			"text_FRA": "Oh my god ! Le cours est fini..."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Tost da vervel e oant !!!"
+			"text": "Tost da vervel e oant !!!",
+			"text_FRA": "J'ai cru mourrir !!!"
 		},
 		{
 			"animation": "[Default]",
@@ -50,7 +52,7 @@
 			"character": "character-1645612818.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Good job Harozez !"
+			"text": "Good job Mona !"
 		},
 		{
 			"character": "character-1645612818.json",

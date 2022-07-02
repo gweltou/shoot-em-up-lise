@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paperiou.png-d836c21d9cf09ffc3cc95e7e181ea1a7.stex"
+path="res://.import/boy3.png-7116994b5aba68d33a724ead6144eea9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/paperiou.png"
-dest_files=[ "res://.import/paperiou.png-d836c21d9cf09ffc3cc95e7e181ea1a7.stex" ]
+source_file="res://seu/assets/boy3.png"
+dest_files=[ "res://.import/boy3.png-7116994b5aba68d33a724ead6144eea9.stex" ]
 
 [params]
 

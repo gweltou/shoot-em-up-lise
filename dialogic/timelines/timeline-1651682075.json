@@ -49,19 +49,21 @@
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Demat Kazhig !\nPenaos 'mañ kont ?"
+			"text": "Demat Kazhig !\nPenaos 'mañ kont ?",
+			"text_FRA": "Bonjour chaton-coeur !\nComment ça va ?"
 		},
 		{
 			"character": "character-1644673466.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Miaou miaou, rrrr..."
+			"text": "Miniaou miaou, rrrr yao..."
 		},
 		{
 			"character": "character-1644673207.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Gwir eo, ret eo din mont ! M'eus ket amzer da gavout ur gomenn."
+			"text": "Gwir eo, ret eo din mont ! M'eus ket amzer da gavout ur c'homenn.",
+			"text_FRA": "Ah oui, tu as raison, il faut y aller ! Pas le temps de trouver une gomme."
 		},
 		{
 			"animation": "[Default]",

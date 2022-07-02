@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plantenn.png-938e2d91ca595d0f4fcb6c96083f3b83.stex"
+path="res://.import/boy2.png-f6a6c314186d89b7629443916a8a7b68.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/plantenn.png"
-dest_files=[ "res://.import/plantenn.png-938e2d91ca595d0f4fcb6c96083f3b83.stex" ]
+source_file="res://seu/assets/boy2.png"
+dest_files=[ "res://.import/boy2.png-f6a6c314186d89b7629443916a8a7b68.stex" ]
 
 [params]
 
