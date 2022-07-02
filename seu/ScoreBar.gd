@@ -11,7 +11,7 @@ onready var scoreLabel = $ScoreLabel
 onready var maxScore = $MaxScore
 
 const ROUND_DURATION = 200	# in seconds
-const TIME_PENALTY = 0.55
+var time_penalty = 0.6
 var life = 50
 var fake_time = 45
 
@@ -24,7 +24,7 @@ func _ready():
 
 
 func _process(delta):
-	life -= delta * TIME_PENALTY
+	life -= delta * time_penalty
 	lifebar.texture_progress = bar_green
 	if life < lifebar.max_value * 0.7:
 		lifebar.texture_progress = bar_yellow
@@ -52,6 +52,7 @@ func _on_add_score(points):
 func _on_Timer_timeout():
 	# gounezet !
 	if GameVariables.arcade_mode == true:
+		time_penalty = 0.7
 		pass
 	else:
 		var lang = GameVariables.internal_lang[GameVariables.option_lang]
