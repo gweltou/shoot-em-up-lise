@@ -81,7 +81,7 @@ func _process(delta):
 	
 	
 	var to_dest = destination-position
-	if to_dest.length_squared() > 2:	# Paouez fival ma'z eo tost tre eus ar pall
+	if to_dest.length_squared() > 3:	# Paouez fival ma'z eo tost tre eus ar pall
 		position += to_dest.normalized() * move_speed   ##finvadenn ar gelenner
 		$AnimatedSprite.play("walk")
 	else:
