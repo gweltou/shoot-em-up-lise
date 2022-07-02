@@ -17,7 +17,6 @@ func _ready():
 	hide()
 	rect_size = Vector2()
 	base_position = rect_position
-	print_debug(base_position)
 	
 
 func _process(delta):

@@ -46,7 +46,7 @@ var exclamations2 = [
 					"You wanna go see the headmaster ?",
 					"And where is your pencil case ?",
 					"Have you forgot your eraser again ?",
-					"Are you not listening to what I say ?"
+					"Are you listening to what I say ?"
 					]
 
 var exclamations3 = [
