@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://seu/Kelenner.gd" type="Script" id=1]
+[ext_resource path="res://seu/KelennerezYezh.gd" type="Script" id=1]
 [ext_resource path="res://seu/assets/kelenerezh yezh idle.png" type="Texture" id=2]
 [ext_resource path="res://seu/assets/kelenerezh yezh walk.png" type="Texture" id=3]
 [ext_resource path="res://seu/DialogPopup.tscn" type="PackedScene" id=4]

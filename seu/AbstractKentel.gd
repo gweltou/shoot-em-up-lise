@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name AbstractKentel
 
 onready var player = $Player
 onready var kelenner = $Kelenner
@@ -7,10 +7,13 @@ onready var colleague = $Colleague
 onready var letterCollector = $LetterCollector
 onready var scoreBar = $ScoreBar
 onready var pauseLabel = $TopLayer/PauseLabel
+
 var dialog
 var in_dialog
 
-var counter := 0.0
+var time := 0.0
+var kelenner_phases = []
+var kelenner_phase_idx := 0
 
 var Student = preload("res://seu/Pupil.tscn")
 var _walking_students = []
@@ -19,8 +22,6 @@ onready var _empty_chairs = [$Tables/Chair, $Tables/Chair2, $Tables/Chair3, $Tab
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameVariables.current_score = 0
-	
 	for chair in _empty_chairs:
 		var student = Student.instance()
 		_walking_students.append(student)
@@ -35,26 +36,27 @@ func _ready():
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
 	#letterCollector.connect("letter_collected", player, "_on_letter_collected")
-	
-	dialog = Dialogic.start('k01')
-	add_child(dialog)
-	in_dialog = true
-	$ScoreBar.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	counter += delta
+	time += delta
 	if in_dialog and not is_instance_valid(dialog):
 		in_dialog = false
 		get_tree().paused = false
 		$ScoreBar.visible = true
 		$MusicIntro.play()
 	
-	if not in_dialog and get_tree().paused and fmod(counter, 1) < 0.5:
+	if not in_dialog and get_tree().paused and fmod(time, 1) < 0.5:
 		pauseLabel.visible = true
 	else:
 		pauseLabel.visible = false
+	
+	# Update teacher game phase
+	if kelenner_phase_idx < len(kelenner_phases) - 1 and 1 - (scoreBar.fake_time / 45.0) > kelenner_phases[kelenner_phase_idx+1]:
+		kelenner_phase_idx += 1
+		kelenner.phase = kelenner_phase_idx
+		$DebugLabel.text = str(kelenner_phase_idx)
 	
 	# Students walking or sitting
 	if not _walking_students.empty():

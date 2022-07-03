@@ -92,6 +92,8 @@ func _process(delta):
 		Paw.set_frame(0)
 		Paw.play("default") # Paw animation
 		
+		GameVariables.current_score = 0
+		
 		if current_menu == main_menu:
 			if menu_idx == 0 or menu_idx == 1: # Start game
 				if locked == true:	# Second press to skip intro zoom
