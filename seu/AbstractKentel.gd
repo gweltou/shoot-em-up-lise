@@ -15,13 +15,16 @@ var time := 0.0
 var kelenner_phases = []
 var kelenner_phase_idx := 0
 
-var Student = preload("res://seu/Pupil.tscn")
-var _walking_students = []
 onready var _empty_chairs = [$Tables/Chair, $Tables/Chair2, $Tables/Chair3, $Tables/Chair5]
+var _walking_students = []
+var Student = preload("res://seu/Pupil.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	letterCollector.connect("add_score", scoreBar, "_on_add_score")
+	letterCollector.connect("add_score", colleague, "_on_add_score")
+	
+	# Spawn students
 	for chair in _empty_chairs:
 		var student = Student.instance()
 		_walking_students.append(student)
@@ -32,27 +35,25 @@ func _ready():
 		student.walk_to(chair.position)
 	
 	get_tree().paused = true
-	
-	letterCollector.connect("add_score", scoreBar, "_on_add_score")
-	letterCollector.connect("add_score", colleague, "_on_add_score")
-	#letterCollector.connect("letter_collected", player, "_on_letter_collected")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta
+	
+	# Start the level after intro dialog
 	if in_dialog and not is_instance_valid(dialog):
 		in_dialog = false
 		get_tree().paused = false
 		$ScoreBar.visible = true
 		$MusicIntro.play()
 	
+	# Make pause label blink
 	if not in_dialog and get_tree().paused and fmod(time, 1) < 0.5:
 		pauseLabel.visible = true
 	else:
 		pauseLabel.visible = false
 	
-	# Update teacher game phase
+	# Update teacher game phase if needed
 	if kelenner_phase_idx < len(kelenner_phases) - 1 and 1 - (scoreBar.fake_time / 45.0) > kelenner_phases[kelenner_phase_idx+1]:
 		kelenner_phase_idx += 1
 		kelenner.phase = kelenner_phase_idx
@@ -78,12 +79,13 @@ func _process(delta):
 		_walking_students = _walking_students_cpy
 		_empty_chairs = _empty_chairs_cpy
 	
+	
 	if Input.is_action_just_pressed("ui_pause"):
 		get_tree().paused = not get_tree().paused
 	
+	# Quit level if cancel button is pressed whiled game is paused
 	if Input.is_action_just_pressed("ui_cancel") and not in_dialog and get_tree().paused:
 		get_tree().change_scene("res://title/TitleScreen.tscn")
-		
 
 
 func _on_MusicIntro_finished():
