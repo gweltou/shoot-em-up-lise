@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "AbstractKelenner",
+"language": "GDScript",
+"path": "res://seu/AbstractKelenner.gd"
+}, {
+"base": "Node2D",
+"class": "AbstractKentel",
+"language": "GDScript",
+"path": "res://seu/AbstractKentel.gd"
+}, {
+"base": "Node2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://seu/Bullet.gd"
@@ -79,11 +89,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
-"base": "Node2D",
-"class": "Kelenner",
-"language": "GDScript",
-"path": "res://seu/Kelenner.gd"
-}, {
 "base": "RigidBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -115,6 +120,8 @@ _global_script_classes=[ {
 "path": "res://seu/BulletPattern.gd"
 } ]
 _global_script_class_icons={
+"AbstractKelenner": "",
+"AbstractKentel": "",
 "Bullet": "",
 "DTS": "",
 "DialogPopup": "",
@@ -129,7 +136,6 @@ _global_script_class_icons={
 "DialogicUtil": "",
 "FanPattern": "",
 "HistoryRow": "",
-"Kelenner": "",
 "Player": "",
 "Pupil": "",
 "SequencePattern": "",
