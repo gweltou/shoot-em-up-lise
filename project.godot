@@ -146,7 +146,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Shooter Lise"
+config/name="Lise Adventure"
 run/main_scene="res://title/TitleScreen.tscn"
 config/icon="res://icon.png"
 

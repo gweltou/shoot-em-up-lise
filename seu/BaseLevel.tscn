@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://seu/KentelYezh.gd" type="Script" id=1]
+[ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://seu/classroom/classroom empty.png" type="Texture" id=4]
+[ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=8]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 131.328, 47.424 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 221.119, 47.3079 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20.0906, 322.852 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+extra_spacing_char = 4
+font_data = ExtResource( 8 )
+
+[node name="Level" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="MusicIntro" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicMainLoop" type="AudioStreamPlayer" parent="."]
+
+[node name="BackgroundImage" type="Sprite" parent="."]
+position = Vector2( 481.438, 297 )
+scale = Vector2( 3.38542, 3.44318 )
+texture = ExtResource( 4 )
+
+[node name="Estrade" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estrade"]
+position = Vector2( 481.776, 120.913 )
+shape = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+pause_mode = 1
+position = Vector2( 631.276, 502.194 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 481.803, 34.3549 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 481.133, 608.472 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 277.967, 324.852 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 685.506, 325.347 )
+shape = SubResource( 4 )
+
+[node name="LetterCollector" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
+position = Vector2( 721.836, 149.862 )
+
+[node name="ScoreBar" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseLabel" type="Label" parent="TopLayer"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 396.142
+margin_top = 264.57
+margin_right = 568.142
+margin_bottom = 344.57
+custom_fonts/font = SubResource( 5 )
+text = "PAUSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DebugLabel" type="Label" parent="TopLayer"]
+visible = false
+margin_left = 13.0
+margin_top = 78.0
+margin_right = 59.0
+margin_bottom = 92.0
+text = "DEBUG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
+[connection signal="finished" from="MusicMainLoop" to="." method="_on_MusicIntro_finished"]

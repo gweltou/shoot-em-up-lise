@@ -1,20 +1,20 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://seu/KentelYezh.gd" type="Script" id=1]
-[ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://seu/classroom/classroom empty.png" type="Texture" id=4]
-[ext_resource path="res://seu/Colleague.tscn" type="PackedScene" id=5]
-[ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://seu/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://seu/classroom/trashcan.png" type="Texture" id=9]
-[ext_resource path="res://seu/classroom/skritur taolenn.png" type="Texture" id=11]
-[ext_resource path="res://seu/classroom/plantenn.png" type="Texture" id=14]
-[ext_resource path="res://seu/assets/sounds/dancing with stars intro.mp3" type="AudioStream" id=16]
-[ext_resource path="res://seu/assets/sounds/dancing with stars loop.mp3" type="AudioStream" id=17]
-[ext_resource path="res://seu/Table.tscn" type="PackedScene" id=18]
-[ext_resource path="res://seu/Chair.tscn" type="PackedScene" id=19]
+[ext_resource path="res://seu/classroom/skritur taolenn.png" type="Texture" id=2]
+[ext_resource path="res://seu/classroom/trashcan.png" type="Texture" id=3]
+[ext_resource path="res://seu/Chair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://seu/classroom/plantenn.png" type="Texture" id=5]
+[ext_resource path="res://seu/assets/sounds/dancing with stars intro.mp3" type="AudioStream" id=6]
+[ext_resource path="res://seu/Table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://seu/assets/sounds/dancing with stars loop.mp3" type="AudioStream" id=8]
+[ext_resource path="res://seu/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Fipps-Regular.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://seu/ScoreBar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://seu/classroom/classroom empty.png" type="Texture" id=12]
+[ext_resource path="res://seu/Colleague.tscn" type="PackedScene" id=13]
+[ext_resource path="res://seu/Kelenner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://seu/LetterCollector.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 131.328, 47.424 )
@@ -28,22 +28,22 @@ extents = Vector2( 20.0906, 322.852 )
 [sub_resource type="DynamicFont" id=5]
 size = 32
 extra_spacing_char = 4
-font_data = ExtResource( 8 )
+font_data = ExtResource( 10 )
 
 [node name="Level" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="MusicIntro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 6 )
 
 [node name="MusicMainLoop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 8 )
 
 [node name="sal_klas1" type="Sprite" parent="."]
 position = Vector2( 481.438, 297 )
 scale = Vector2( 3.38542, 3.44318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 12 )
 
 [node name="Estrade" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -58,23 +58,23 @@ shape = SubResource( 6 )
 [node name="SkriturTaolenn" type="Sprite" parent="classroom props"]
 position = Vector2( 550.051, 30.5903 )
 scale = Vector2( 1.62887, 1.62887 )
-texture = ExtResource( 11 )
+texture = ExtResource( 2 )
 
 [node name="Trashcan" type="Sprite" parent="classroom props"]
 position = Vector2( 326.053, 109.885 )
 scale = Vector2( 3.33594, 3.33594 )
-texture = ExtResource( 9 )
+texture = ExtResource( 3 )
 
 [node name="Plantenn" type="Sprite" parent="classroom props"]
 position = Vector2( 322.293, 549.011 )
 scale = Vector2( 6.33024, 6.43824 )
-texture = ExtResource( 14 )
+texture = ExtResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 7 )]
+[node name="Player" parent="." instance=ExtResource( 9 )]
 pause_mode = 1
 position = Vector2( 631.276, 502.194 )
 
-[node name="Kelenner" parent="." instance=ExtResource( 6 )]
+[node name="Kelenner" parent="." instance=ExtResource( 14 )]
 pause_mode = 1
 position = Vector2( 482, 127 )
 
@@ -98,11 +98,11 @@ shape = SubResource( 4 )
 position = Vector2( 685.506, 325.347 )
 shape = SubResource( 4 )
 
-[node name="LetterCollector" parent="." instance=ExtResource( 3 )]
+[node name="LetterCollector" parent="." instance=ExtResource( 15 )]
 pause_mode = 1
 position = Vector2( 721.836, 149.862 )
 
-[node name="ScoreBar" parent="." instance=ExtResource( 2 )]
+[node name="ScoreBar" parent="." instance=ExtResource( 11 )]
 pause_mode = 1
 
 [node name="TopLayer" type="CanvasLayer" parent="."]
@@ -122,46 +122,46 @@ __meta__ = {
 
 [node name="Tables" type="Node2D" parent="."]
 
-[node name="Table" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 413.377, 388.432 )
 angular_damp = 10.0
 
-[node name="Table2" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table2" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 408.922, 315.378 )
 angular_damp = 10.0
 
-[node name="Table3" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table3" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 567.502, 470.395 )
 angular_damp = 10.0
 
-[node name="Table4" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table4" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 410.319, 475.595 )
 angular_damp = 10.0
 
-[node name="Table5" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table5" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 563.096, 398.184 )
 angular_damp = 10.0
 
-[node name="Table6" parent="Tables" instance=ExtResource( 18 )]
+[node name="Table6" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 565.721, 315.378 )
 angular_damp = 10.0
 
-[node name="Chair" parent="Tables" instance=ExtResource( 19 )]
+[node name="Chair" parent="Tables" instance=ExtResource( 4 )]
 position = Vector2( 565.705, 350.258 )
 
-[node name="Chair2" parent="Tables" instance=ExtResource( 19 )]
+[node name="Chair2" parent="Tables" instance=ExtResource( 4 )]
 position = Vector2( 564.474, 433.214 )
 
-[node name="Chair3" parent="Tables" instance=ExtResource( 19 )]
+[node name="Chair3" parent="Tables" instance=ExtResource( 4 )]
 position = Vector2( 411.739, 510.288 )
 
-[node name="Chair4" parent="Tables" instance=ExtResource( 19 )]
+[node name="Chair4" parent="Tables" instance=ExtResource( 4 )]
 position = Vector2( 412.446, 349.068 )
 
-[node name="Chair5" parent="Tables" instance=ExtResource( 19 )]
+[node name="Chair5" parent="Tables" instance=ExtResource( 4 )]
 position = Vector2( 563.767, 506.046 )
 
-[node name="Colleague" parent="." instance=ExtResource( 5 )]
+[node name="Colleague" parent="." instance=ExtResource( 13 )]
 position = Vector2( 413.095, 423.295 )
 
 [node name="DebugLabel" type="Label" parent="."]

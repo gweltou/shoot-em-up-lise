@@ -15,7 +15,7 @@ var time := 0.0
 var kelenner_phases = []
 var kelenner_phase_idx := 0
 
-onready var _empty_chairs = [$Tables/Chair, $Tables/Chair2, $Tables/Chair3, $Tables/Chair5]
+onready var _empty_chairs : Array
 var _walking_students = []
 var Student = preload("res://seu/Pupil.tscn")
 
