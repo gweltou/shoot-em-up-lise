@@ -226,7 +226,7 @@ func _on_StartGameSFX_finished():
 	if menu_idx == 0:
 		get_tree().change_scene("res://vn/a01s01.tscn")
 	elif menu_idx == 1:
-		get_tree().change_scene("res://seu/Level.tscn")
+		get_tree().change_scene("res://seu/LevelYezh.tscn")
 	
 
 

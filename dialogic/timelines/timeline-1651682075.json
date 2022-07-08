@@ -75,7 +75,7 @@
 			"z_index": 0
 		},
 		{
-			"change_scene": "res://seu/Level.tscn",
+			"change_scene": "res://seu/LevelYezh.tscn",
 			"event_id": "dialogic_041"
 		}
 	],

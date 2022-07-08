@@ -10,3 +10,5 @@ func _ready():
 	#.add_child(self.dialog)
 	self.in_dialog = true
 	self.scoreBar.visible = false
+	
+	spawn_students()

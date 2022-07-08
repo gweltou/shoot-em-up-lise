@@ -21,18 +21,9 @@ var Student = preload("res://seu/Pupil.tscn")
 
 
 func _ready():
+	print_debug("parent ready")
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
-	
-	# Spawn students
-	for chair in _empty_chairs:
-		var student = Student.instance()
-		_walking_students.append(student)
-		add_child(student)
-		student.delay = randf() * 3
-		student.set_global_position(Vector2(640, 515))
-		student.walk_to(Vector2(480, 515))
-		student.walk_to(chair.position)
 	
 	get_tree().paused = true
 
@@ -87,6 +78,16 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel") and not in_dialog and get_tree().paused:
 		get_tree().change_scene("res://title/TitleScreen.tscn")
 
+
+func spawn_students():
+	for chair in _empty_chairs:
+		var student = Student.instance()
+		_walking_students.append(student)
+		add_child(student)
+		student.delay = randf() * 3
+		student.set_global_position(Vector2(640, 515))
+		student.walk_to(Vector2(480, 515))
+		student.walk_to(chair.position)
 
 func _on_MusicIntro_finished():
 	$MusicMainLoop.play()
