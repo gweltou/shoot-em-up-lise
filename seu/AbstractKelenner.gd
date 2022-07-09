@@ -1,11 +1,13 @@
 extends Node2D
 class_name AbstractKelenner
 
+
 onready var Bullet = preload("res://seu/Bullet.tscn")
 onready var dialog = $DialogPopup
 onready var scoreBar = get_parent().get_node("ScoreBar")
 onready var letterCollector = get_parent().get_node("LetterCollector")
-onready var estrade = get_owner().get_node("Estrade/CollisionShape2D")
+onready var estrade = null
+#onready var estrade = get_owner().get_node("Estrade/CollisionShape2D")
 
 #enum {IDLE, WALKING, PATTERN1}
 #var state = IDLE
@@ -43,28 +45,32 @@ func _process(delta):
 		destination = choose_destination()
 	
 	
-	var to_dest = destination-position
-	if to_dest.length_squared() > 3:	# Paouez fival ma'z eo tost tre eus ar pall
-		position += to_dest.normalized() * move_speed   ##finvadenn ar gelenner
+	var to_dest = destination - position
+	if to_dest.length_squared() > 3:
+		# Fiñv ma'z eo pell eus ar pall nemetken
+		position += to_dest.normalized() * move_speed   #finvadenn ar gelenner
 		$AnimatedSprite.play("walk")
 	else:
 		$AnimatedSprite.play("idle")
 
 
 func behave():
-	print("behave")
+	pass
 
 
 func choose_destination():
 	# Teacher choose a new destination do walk to
-	var max_x = estrade.position.x + estrade.shape.extents.x
-	var min_x = estrade.position.x - estrade.shape.extents.x
-	var max_y = estrade.position.y + estrade.shape.extents.y - 20
-	var min_y = estrade.position.y - estrade.shape.extents.y - 20
-	var new_destination = Vector2()
-	new_destination.x = randf() * (max_x - min_x) + min_x
-	new_destination.y = randf() * (max_y - min_y) + min_y
-	return new_destination
+	if estrade != null:
+		var max_x = estrade.position.x + estrade.shape.extents.x
+		var min_x = estrade.position.x - estrade.shape.extents.x
+		var max_y = estrade.position.y + estrade.shape.extents.y - 20
+		var min_y = estrade.position.y - estrade.shape.extents.y - 20
+		var new_destination = Vector2()
+		new_destination.x = randf() * (max_x - min_x) + min_x
+		new_destination.y = randf() * (max_y - min_y) + min_y
+		return new_destination
+	else:
+		return Vector2.ZERO
 
 
 func shoot_random():

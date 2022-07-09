@@ -7,6 +7,7 @@ onready var colleague = $Colleague
 onready var letterCollector = $LetterCollector
 onready var scoreBar = $ScoreBar
 onready var pauseLabel = $TopLayer/PauseLabel
+onready var Debug = $TopLayer/DebugLabel
 
 var dialog
 var in_dialog
@@ -24,6 +25,8 @@ func _ready():
 	print_debug("parent ready")
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
+	
+	kelenner.estrade = $Estrade/CollisionShape2D
 	
 	get_tree().paused = true
 
@@ -48,7 +51,7 @@ func _process(delta):
 	if kelenner_phase_idx < len(kelenner_phases) - 1 and 1 - (scoreBar.fake_time / 45.0) > kelenner_phases[kelenner_phase_idx+1]:
 		kelenner_phase_idx += 1
 		kelenner.phase = kelenner_phase_idx
-		$DebugLabel.text = str(kelenner_phase_idx)
+		Debug.text = str(kelenner_phase_idx)
 	
 	# Students walking or sitting
 	if not _walking_students.empty():

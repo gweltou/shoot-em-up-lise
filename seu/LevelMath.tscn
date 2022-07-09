@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://seu/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://seu/Table.tscn" type="PackedScene" id=2]
 [ext_resource path="res://seu/KentelMath.gd" type="Script" id=3]
+[ext_resource path="res://seu/Chair.tscn" type="PackedScene" id=4]
+[ext_resource path="res://seu/KelennerMath.tscn" type="PackedScene" id=5]
 
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+
+[node name="Tables" type="Node" parent="." index="9"]
+
+[node name="Table" parent="Tables" index="0" instance=ExtResource( 2 )]
+position = Vector2( 409.813, 386.65 )
+
+[node name="Table2" parent="Tables" index="1" instance=ExtResource( 2 )]
+position = Vector2( 579.084, 386.65 )
+
+[node name="Chair" parent="Tables" index="2" instance=ExtResource( 4 )]
+position = Vector2( 408.032, 432.977 )
+
+[node name="Chair2" parent="Tables" index="3" instance=ExtResource( 4 )]
+position = Vector2( 580.866, 429.413 )
+
+[node name="Kelenner" parent="." index="10" instance=ExtResource( 5 )]
+position = Vector2( 485.128, 127.63 )
