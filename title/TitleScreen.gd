@@ -6,7 +6,7 @@ onready var BgImage = $BackgroundGroup/BackgroundImage
 onready var Paw = $Paw
 onready var tweenPages = $TweenPages
 
-onready var main_menu := [$BtnStory, $BtnArcade, $BtnOption, $BtnQuit]
+onready var main_menu := [$BtnStory, $BtnArcade, $BtnOption, $BtnCredits, $BtnQuit]
 onready var option_menu := [$LblLanguage, $LblVibration]
 
 var flags = [preload("res://title/assets/br.png"),
@@ -64,31 +64,8 @@ func move_paw():
 	$MenuChange.play()
 
 
-func _process(delta):
-	timer += delta
-	
-	if Input.is_action_just_pressed("ui_up") and not locked:
-		var prev = menu_idx
-		menu_idx = (menu_idx + len(current_menu) - 1) % len(current_menu)
-		var tween = $TweenItem
-		tween.interpolate_property(current_menu[prev], "rect_scale",
-										Vector2(1.2, 1.2), Vector2(1, 1), 0.1)
-		tween.interpolate_property(current_menu[menu_idx], "rect_scale",
-										Vector2(1, 1), Vector2(1.2, 1.2), 0.1)
-		tween.start()
-		move_paw()
-	elif Input.is_action_just_pressed("ui_down") and not locked:
-		var prev = menu_idx
-		menu_idx = (menu_idx + 1) % len(current_menu)
-		var tween = $TweenItem
-		tween.interpolate_property(current_menu[prev], "rect_scale",
-										Vector2(1.2, 1.2), Vector2(1, 1), 0.1)
-		tween.interpolate_property(current_menu[menu_idx], "rect_scale",
-										Vector2(1, 1), Vector2(1.2, 1.2), 0.1)
-		tween.start()
-		move_paw()
-	
-	elif timer > 0.1 and (Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept")):
+func _input(event):
+	if event.is_action_released("ui_accept") or event.is_action_released("ui_select"):
 		Paw.set_frame(0)
 		Paw.play("default") # Paw animation
 		
@@ -112,7 +89,10 @@ func _process(delta):
 				tweenStart.start()
 			elif menu_idx == 2:
 				_to_option_menu()
-				
+			elif menu_idx == 3:
+				# Credits
+				get_tree().change_scene("res://title/Credits.tscn")
+		
 		elif current_menu == option_menu:
 			$MenuChange.play()
 			if menu_idx == 0: # Language
@@ -125,6 +105,76 @@ func _process(delta):
 					$LblVibration/LblVibrationValue.text = "on"
 				else:
 					$LblVibration/LblVibrationValue.text = "off"
+		
+		get_tree().set_input_as_handled()
+
+
+func _process(delta):
+	timer += delta
+	
+	if Input.is_action_just_pressed("ui_up") and not locked:
+		var prev = menu_idx
+		menu_idx = (menu_idx + len(current_menu) - 1) % len(current_menu)
+		var tween = $TweenItem
+		tween.interpolate_property(current_menu[prev], "rect_scale",
+										Vector2(1.2, 1.2), Vector2(1, 1), 0.1)
+		tween.interpolate_property(current_menu[menu_idx], "rect_scale",
+										Vector2(1, 1), Vector2(1.2, 1.2), 0.1)
+		tween.start()
+		move_paw()
+		
+	elif Input.is_action_just_pressed("ui_down") and not locked:
+		var prev = menu_idx
+		menu_idx = (menu_idx + 1) % len(current_menu)
+		var tween = $TweenItem
+		tween.interpolate_property(current_menu[prev], "rect_scale",
+										Vector2(1.2, 1.2), Vector2(1, 1), 0.1)
+		tween.interpolate_property(current_menu[menu_idx], "rect_scale",
+										Vector2(1, 1), Vector2(1.2, 1.2), 0.1)
+		tween.start()
+		move_paw()
+	
+#	elif timer > 0.1 and (Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept")):
+#		Paw.set_frame(0)
+#		Paw.play("default") # Paw animation
+#
+#		GameVariables.current_score = 0
+#
+#		if current_menu == main_menu:
+#			if menu_idx == 0 or menu_idx == 1: # Start game
+#				if locked == true:	# Second press to skip intro zoom
+#					_on_StartGameSFX_finished()
+#				$StartGameSFX.play()
+#				if menu_idx == 1:
+#					GameVariables.arcade_mode = true
+#				else:
+#					GameVariables.arcade_mode = false
+#				locked = true
+#				var tweenStart = $TweenStart
+#				tweenStart.interpolate_property($BackgroundGroup, "rect_scale",
+#											Vector2(1, 1), Vector2(2, 2), 4)
+#				tweenStart.interpolate_method($BackgroundGroup, "set_rotation",
+#											0, 100, 4, Tween.TRANS_LINEAR)
+#				tweenStart.start()
+#			elif menu_idx == 2:
+#				_to_option_menu()
+#			elif menu_idx == 3:
+#				# Credits
+#				get_tree().change_scene("res://title/Credits.tscn")
+#
+#		elif current_menu == option_menu:
+#			$MenuChange.play()
+#			if menu_idx == 0: # Language
+#				GameVariables.option_lang = (GameVariables.option_lang + 1) % len(GameVariables.lang)
+#				$LblLanguage/LabelLangValue.text = GameVariables.lang[GameVariables.option_lang]
+#				$LblLanguage/Flag.set_texture(flags[GameVariables.option_lang])
+#			elif menu_idx == 1:	# Vibration
+#				GameVariables.option_vibration = not GameVariables.option_vibration
+#				if GameVariables.option_vibration == true:
+#					$LblVibration/LblVibrationValue.text = "on"
+#				else:
+#					$LblVibration/LblVibrationValue.text = "off"
+		
 	
 	elif Input.is_action_just_pressed("ui_cancel"):
 		if current_menu == option_menu:

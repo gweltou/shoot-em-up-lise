@@ -22,7 +22,6 @@ var Student = preload("res://seu/Pupil.tscn")
 
 
 func _ready():
-	print_debug("parent ready")
 	letterCollector.connect("add_score", scoreBar, "_on_add_score")
 	letterCollector.connect("add_score", colleague, "_on_add_score")
 	

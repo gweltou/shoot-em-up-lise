@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://title/assets/credit_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://title/Credits.gd" type="Script" id=2]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -390.0
+margin_top = -281.0
+margin_right = 390.0
+margin_bottom = 319.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CreditContainer"]
+margin_right = 780.0
+margin_bottom = 172.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ur c'hoari bet graet
+el lise Diwan Karaez
+gant ar stal urzhiataerezh
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditContainer"]
+margin_top = 176.0
+margin_right = 780.0
+margin_bottom = 453.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelRol" type="Label" parent="CreditContainer/HBoxContainer"]
+margin_right = 354.0
+margin_bottom = 277.0
+rect_min_size = Vector2( 354, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "Menoz
+
+Tresadennou
+Kod
+
+Sonnerezh
+
+Poltriji"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CreditContainer/HBoxContainer"]
+margin_left = 358.0
+margin_right = 422.0
+margin_bottom = 277.0
+rect_min_size = Vector2( 64, 0 )
+
+[node name="LabelAnviou" type="Label" parent="CreditContainer/HBoxContainer"]
+margin_left = 426.0
+margin_right = 691.0
+margin_bottom = 277.0
+custom_fonts/font = ExtResource( 1 )
+text = "Loula Nguyen
+Gweltaz Duval-Guennoc
+Loula Nguyen
+Gweltaz Duval-Guennoc
+Jan Donal
+Loula Nguyen
+Eileen Le Gentil
+Eneour Robin Vigneron"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CreditContainer"]
+margin_top = 457.0
+margin_right = 780.0
+margin_bottom = 594.0
+custom_fonts/font = ExtResource( 1 )
+text = "
+
+2021-2022
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
