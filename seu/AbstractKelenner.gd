@@ -82,9 +82,10 @@ func shoot_random():
 	shoot(bullet, angle)
 
 
-func shoot(bullet : Bullet, angle):
-	bullet.global_position = global_position
-	bullet.direction = Vector2(cos(angle), sin(angle))
+func shoot(bullet, angle):
+	var direction := Vector2(cos(angle), sin(angle))
+	bullet.global_position = global_position + direction * 8
+	bullet.direction = direction
 	bullet.connect("add_score", scoreBar, "_on_add_score")
 	bullet.connect("letter_collected", letterCollector, "_on_letter_collected")
 	owner.add_child(bullet)

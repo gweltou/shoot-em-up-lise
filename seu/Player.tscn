@@ -43,7 +43,8 @@ audio_stream = ExtResource( 3 )
 random_pitch = 1.05
 
 [node name="Player" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 7
 gravity_scale = 0.0
 linear_damp = 30.0
 angular_damp = 4.0

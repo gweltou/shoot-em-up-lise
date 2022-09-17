@@ -42,14 +42,15 @@ func _integrate_forces(state):
 
 
 func hit(bullet : Bullet):
-	if bullet.hitval < 0 and invicibility.is_stopped():
-		invicibility.start()
-		$PlayerHit.play()
-		var dir = position - bullet.position
-		apply_central_impulse(dir * 80)
-		apply_torque_impulse(1000 * (randf() - 0.5))
-		if GameVariables.option_vibration == true:
-			Input.start_joy_vibration(0, 0, 1, 0.1)
+	if bullet.hitval < 0:
+		if invicibility.is_stopped():
+			invicibility.start()
+			$PlayerHit.play()
+			var dir = position - bullet.position
+			apply_central_impulse(dir * 80)
+			apply_torque_impulse(1000 * (randf() - 0.5))
+			if GameVariables.option_vibration == true:
+				Input.start_joy_vibration(0, 0, 1, 0.1)
 	else:
 		if $PlayerLetter.is_playing():
 			$PlayerLetter2.play()

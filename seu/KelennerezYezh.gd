@@ -149,7 +149,7 @@ func wave_attack():
 	pattern.number = 12
 	pattern.duration = 1
 	#pattern.aimed = aimed
-	.add_child(pattern)
+	add_child(pattern)
 
 
 func heart_attack(aimed):

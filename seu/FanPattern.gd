@@ -23,4 +23,4 @@ func _process(delta):
 		for _i in range(self.number):
 			self._thrower.shoot(self._bullet.copy(), self.angle)
 			self.angle += angle_step
-		.queue_free()
+		queue_free()

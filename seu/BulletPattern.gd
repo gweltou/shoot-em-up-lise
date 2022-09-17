@@ -3,7 +3,7 @@ class_name _BulletPattern
 
 
 var _thrower
-var _bullet : Bullet
+var _bullet
 var angle = PI * 0.5				# Start angle of pattern
 var number = 4						# Number of bullets in pattern
 var aimed = false					# Pattern is directed towards player
@@ -13,9 +13,10 @@ var _time_counter := 0.0
 var ended = false
 
 
-func _init(t , b : Bullet):
+func _init(t , b):
 	self._thrower = t
 	self._bullet = b.copy()
+
 
 func _ready():
 	if aim_once:

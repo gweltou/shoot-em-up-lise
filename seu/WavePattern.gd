@@ -11,7 +11,7 @@ var aim_angle = 0.0
 var rate : float
 var started := false
 
-func _init(t , b : Bullet).(t, b):
+func _init(t, b).(t, b):
 	self.aim_once = true
 
 
@@ -27,7 +27,8 @@ func _process(delta):
 			if number <= 0:
 				num_waves -= 1
 				if num_waves <= 0:
-					.queue_free()
+#					_bullet.queue_free()
+					queue_free()
 				else:
 					number = number_init
 					span = -span

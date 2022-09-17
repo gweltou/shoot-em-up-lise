@@ -36,7 +36,7 @@ texture = ExtResource( 4 )
 
 [node name="Estrade" type="StaticBody2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Estrade"]
 position = Vector2( 481.776, 120.913 )
@@ -48,7 +48,7 @@ position = Vector2( 631.276, 502.194 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2( 481.803, 34.3549 )

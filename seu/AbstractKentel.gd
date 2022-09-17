@@ -75,6 +75,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_pause"):
 		get_tree().paused = not get_tree().paused
+		print_stray_nodes()
 	
 	# Quit level if cancel button is pressed whiled game is paused
 	if Input.is_action_just_pressed("ui_cancel") and not in_dialog and get_tree().paused:

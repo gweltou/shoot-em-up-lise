@@ -120,6 +120,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="DebugLabel" type="Label" parent="TopLayer"]
+visible = false
+margin_left = 13.0
+margin_top = 78.0
+margin_right = 59.0
+margin_bottom = 92.0
+text = "DEBUG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tables" type="Node2D" parent="."]
 
 [node name="Table" parent="Tables" instance=ExtResource( 7 )]
@@ -163,17 +174,6 @@ position = Vector2( 563.767, 506.046 )
 
 [node name="Colleague" parent="." instance=ExtResource( 13 )]
 position = Vector2( 413.095, 423.295 )
-
-[node name="DebugLabel" type="Label" parent="."]
-visible = false
-margin_left = 13.0
-margin_top = 78.0
-margin_right = 59.0
-margin_bottom = 92.0
-text = "DEBUG"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="finished" from="MusicIntro" to="." method="_on_MusicIntro_finished"]
 [connection signal="finished" from="MusicMainLoop" to="." method="_on_MusicIntro_finished"]
